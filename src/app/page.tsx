@@ -1,12 +1,18 @@
-export default function Home() {
+import { HeroSection } from "@/components/organisms/hero-section";
+import { OfferGrid } from "@/components/organisms/offer-grid";
+import { CourseSlider } from "@/components/organisms/course-slider";
+
+export default function HomePage() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold">Willkommen im Kochatelier</h1>
-      <p className="mt-4 text-gray-600">
-        Placeholder – Startseite. Hier entstehen: Hero, Angebots-Cards,
-        Kurs-Slider, Buchungskalender, Eventlocation-Teaser, Partner,
-        Kontaktformular.
-      </p>
-    </div>
+    <>
+      <HeroSection
+        title="Willkommen im Kochatelier"
+        subtitle="Kreative Kochkurse, private Events und Catering in familiärer Atmosphäre – mitten in Wiesbaden."
+        primaryCta={{ label: "Zu den Kursen", href: "/aktuelle-kurse" }}
+        secondaryCta={{ label: "Location ansehen", href: "/eventlocation" }}
+      />
+      <OfferGrid />
+      <CourseSlider />
+    </>
   );
 }
