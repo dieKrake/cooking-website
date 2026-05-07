@@ -22,21 +22,21 @@
 
 ## 2.2 Tech-Stack
 
-| Bereich            | Technologie                  | Version              |
-| ------------------ | ---------------------------- | -------------------- |
-| **Framework**      | Next.js (App Router)         | latest stable (15.x) |
-| **Styling**        | Tailwind CSS                 | 4.x                  |
-| **Sprache**        | TypeScript                   | 5.x                  |
-| **UI-Komponenten** | shadcn/ui                    | latest               |
-| **Icons**          | Lucide React                 | latest               |
-| **Testing (Unit)** | Jest + React Testing Library | latest               |
-| **Testing (E2E)**  | Playwright                   | latest               |
-| **Linting**        | ESLint + Prettier            | latest               |
-| **Formatierung**   | Prettier + Tailwind Plugin   | latest               |
-| **VCS**            | Git + GitHub                 | –                    |
-| **CI/CD**          | GitHub Actions               | –                    |
-| **Hosting**        | Vercel (empfohlen)           | Free Tier / Pro      |
-| **Paketmanager**   | npm                          | latest               |
+| Bereich            | Technologie                    | Version              |
+| ------------------ | ------------------------------ | -------------------- |
+| **Framework**      | Next.js (App Router)           | latest stable (15.x) |
+| **Styling**        | Tailwind CSS                   | 4.x                  |
+| **Sprache**        | TypeScript                     | 5.x                  |
+| **UI-Komponenten** | shadcn/ui                      | latest               |
+| **Icons**          | Lucide React                   | latest               |
+| **Testing (Unit)** | Vitest + React Testing Library | latest               |
+| **Testing (E2E)**  | Playwright                     | latest               |
+| **Linting**        | ESLint + Prettier              | latest               |
+| **Formatierung**   | Prettier + Tailwind Plugin     | latest               |
+| **VCS**            | Git + GitHub                   | –                    |
+| **CI/CD**          | GitHub Actions                 | –                    |
+| **Hosting**        | Vercel (empfohlen)             | Free Tier / Pro      |
+| **Paketmanager**   | npm                            | latest               |
 
 ---
 
@@ -256,21 +256,21 @@ src/
          │  E2E    │  Playwright (5–10 Tests)
          │ Tests   │  Kritische User-Journeys
         ┌┴─────────┴┐
-        │Integration │  Jest + RTL (pro Seite)
+        │Integration │  Vitest + RTL (pro Seite)
         │   Tests    │  Seitenlevel-Rendering
        ┌┴────────────┴┐
-       │  Unit Tests   │  Jest + RTL (pro Komponente)
+       │  Unit Tests   │  Vitest + RTL (pro Komponente)
        │               │  Alle UI-Komponenten, Utilities
        └───────────────┘
 ```
 
-### Unit-Tests (Jest + React Testing Library)
+### Unit-Tests (Vitest + React Testing Library)
 
 - Jede UI-Komponente: Rendering, Props, Zustände
 - Utility-Funktionen: `formatDate()`, `cn()`, etc.
 - Datei-Konvention: `*.test.tsx` / `*.test.ts`
 
-### Integration-Tests (Jest + RTL)
+### Integration-Tests (Vitest + RTL)
 
 - Seitenlevel-Rendering: Prüfe, ob Seite korrekt rendert
 - Formular-Flows: Ausfüllen → Validierung → Submit
@@ -325,7 +325,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint
-      - run: npm test -- --coverage
+      - run: npm run test:coverage
       - run: npm run build
 ```
 
@@ -348,7 +348,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint
-      - run: npm test
+      - run: npm run test:coverage
       - run: npm run build
       # Vercel Preview Deployment (automatisch via GitHub-Integration)
       # Alternativ: manueller Deploy via Vercel CLI
@@ -374,7 +374,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint
-      - run: npm test
+      - run: npm run test:coverage
       - run: npm run build
       # Vercel Production Deployment
 ```
