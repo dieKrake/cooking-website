@@ -1,33 +1,28 @@
 import type { Metadata } from "next";
 import { PLACEHOLDER_LOCATION_FEATURES } from "@/lib/placeholder-data";
+import { LocationFeaturesGrid } from "@/components/organisms/location-features-grid";
+import { InquiryForm } from "@/components/organisms/inquiry-form";
 
 export const metadata: Metadata = {
   title: "Eventlocation",
   description:
-    "Miete unsere stilvolle Location für private oder geschäftliche Events.",
+    "Miete unsere stilvolle Location für private oder geschäftliche Events in Wiesbaden.",
 };
 
 export default function EventlocationPage() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold">Deine Eventlocation</h1>
-      <p className="mt-2 text-gray-600">
-        Placeholder – Eventlocation. Hier entstehen: HeroSection, FeatureList,
-        Gallery, InquiryForm.
-      </p>
-
-      <h2 className="mt-8 text-xl font-semibold">Ausstattung</h2>
-      <ul className="mt-4 space-y-2">
-        {PLACEHOLDER_LOCATION_FEATURES.map((feature) => (
-          <li key={feature.title} className="border p-4 rounded">
-            <strong>{feature.title}</strong> – {feature.description}
-          </li>
-        ))}
-      </ul>
-
-      <p className="mt-6 text-gray-600">
-        Preise: ca. 85 – 130 € pro Person, je nach Kursleiter und Menü.
-      </p>
-    </div>
+    <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mb-4">
+        <h1 className="text-4xl font-bold tracking-tight">
+          Deine Eventlocation
+        </h1>
+        <p className="text-foreground/60 mt-3 text-lg">
+          110 m² mitten in Wiesbaden – für Geburtstage, Teamevents, Hochzeiten
+          und mehr. Bis zu 25 Personen, vollständig ausgestattet.
+        </p>
+      </div>
+      <LocationFeaturesGrid features={PLACEHOLDER_LOCATION_FEATURES} />
+      <InquiryForm />
+    </main>
   );
 }
