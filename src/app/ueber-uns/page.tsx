@@ -1,25 +1,23 @@
 import type { Metadata } from "next";
+import { StorySection } from "@/components/organisms/story-section";
 
 export const metadata: Metadata = {
-  title: "Über uns",
+  title: "Über mich",
   description:
     "Erfahre mehr über die Gründerin und die Vision hinter dem Kochatelier.",
 };
 
 export default function UeberUnsPage() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold">Über uns</h1>
-      <p className="mt-4 text-gray-600">
-        Placeholder – Über uns. Hier entsteht die StorySection mit der
-        Gründer-Geschichte.
-      </p>
-      <p className="mt-4">
-        Das Kochatelier ist mehr als ein Kochkursbetrieb – es ist ein Raum für
-        Begegnung, Genuss und Veränderung. Hier teilen wir Wissen über gesunde
-        Ernährung, entdecken altes Handwerk neu und verbinden Menschen durch
-        gutes Essen.
-      </p>
-    </div>
+    <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mb-12">
+        <h1 className="text-4xl font-bold tracking-tight">Über mich</h1>
+        <p className="text-foreground/60 mt-3 text-lg">
+          Das Kochatelier ist mehr als ein Kochkursbetrieb – es ist ein Raum für
+          Begegnung, Genuss und echte Handwerkskunst.
+        </p>
+      </div>
+      <StorySection />
+    </main>
   );
 }

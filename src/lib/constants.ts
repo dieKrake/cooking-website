@@ -30,7 +30,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Catering", href: "/catering" },
   { label: "Gutscheine", href: "/gutscheine" },
   { label: "Kontakt", href: "/#kontakt" },
-  { label: "Über uns", href: "/ueber-uns" },
+  { label: "Über mich", href: "/ueber-uns" },
 ];
 
 export const FOOTER_LEGAL_LINKS = [
