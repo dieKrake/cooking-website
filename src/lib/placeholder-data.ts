@@ -214,6 +214,29 @@ export const PLACEHOLDER_OFFER_CARDS: OfferCard[] = [
   },
 ];
 
+export const PLACEHOLDER_CATERING_STYLES: Benefit[] = [
+  {
+    title: "Orientalisch",
+    description:
+      "Safran, Granatapfel, Kreuzkümmel – persische und arabische Aromen für deinen Tisch.",
+  },
+  {
+    title: "Asiatisch",
+    description:
+      "Von Sushi über Dim Sum bis Thai-Curry – authentische Rezepte aus ganz Asien.",
+  },
+  {
+    title: "Mediterran",
+    description:
+      "Italien, Spanien, Griechenland – echtes Handwerk mit frischen Zutaten und Olivenöl.",
+  },
+  {
+    title: "Gesunde Küche",
+    description:
+      "Saisonal, ausgewogen und voller Nährstoffe – gut für Körper und Geschmack.",
+  },
+];
+
 export const PLACEHOLDER_LOCATION_FEATURES: LocationFeature[] = [
   {
     title: "110 m² Fläche",
