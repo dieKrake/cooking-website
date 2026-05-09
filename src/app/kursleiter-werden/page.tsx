@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { PLACEHOLDER_BENEFITS } from "@/lib/placeholder-data";
+import { BenefitsGrid } from "@/components/organisms/benefits-grid";
+import { ApplicationForm } from "@/components/organisms/application-form";
 
 export const metadata: Metadata = {
   title: "Werde Kursleiter",
@@ -9,24 +11,19 @@ export const metadata: Metadata = {
 
 export default function KursleiterWerdenPage() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold">
-        Teile deine Leidenschaft – Werde Kursleiter!
-      </h1>
-      <p className="mt-2 text-gray-600">
-        Placeholder – Kursleiter werden. Hier entstehen: HeroSection,
-        BenefitsList, ApplicationForm.
-      </p>
-
-      <h2 className="mt-8 text-xl font-semibold">Warum du bei uns richtig bist</h2>
-      <ul className="mt-4 space-y-3">
-        {PLACEHOLDER_BENEFITS.map((benefit) => (
-          <li key={benefit.title} className="border p-4 rounded">
-            <strong>{benefit.title}</strong>
-            <p className="mt-1 text-sm text-gray-600">{benefit.description}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mb-4">
+        <h1 className="text-4xl font-bold tracking-tight">
+          Teile deine Leidenschaft – Werde Kursleiter!
+        </h1>
+        <p className="text-foreground/60 mt-3 text-lg">
+          Du liebst es zu kochen und möchtest dein Wissen weitergeben? Dann bist
+          du bei uns genau richtig. Wir stellen dir die Location, du bringst die
+          Idee.
+        </p>
+      </div>
+      <BenefitsGrid benefits={PLACEHOLDER_BENEFITS} />
+      <ApplicationForm />
+    </main>
   );
 }
