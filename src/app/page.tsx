@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/organisms/hero-section";
 import { OfferGrid } from "@/components/organisms/offer-grid";
 import { CourseSlider } from "@/components/organisms/course-slider";
+import { ContactSection } from "@/components/organisms/contact-section";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       />
       <OfferGrid />
       <CourseSlider />
+      <ContactSection />
     </>
   );
 }
