@@ -1,4 +1,10 @@
-import type { Course, TeamMember, Benefit, OfferCard, LocationFeature } from "@/types";
+import type {
+  Course,
+  TeamMember,
+  Benefit,
+  OfferCard,
+  LocationFeature,
+} from "@/types";
 
 export const PLACEHOLDER_COURSES: Course[] = [
   {
@@ -122,7 +128,7 @@ export const PLACEHOLDER_TEAM: TeamMember[] = [
     role: "Ernährungsberaterin & Kursleitung",
     bio: "Zertifizierte Ernährungsberaterin und Fastenleiterin. Ihre Mission: Komplexes Ernährungswissen verständlich und alltagstauglich machen.",
     image: "https://placehold.co/400x400?text=Bettina",
-    externalUrl: "https://www.ernaehrungsberatung.plus",
+    externalUrl: "https://www.google.com",
   },
   {
     id: "zohre",
@@ -130,7 +136,7 @@ export const PLACEHOLDER_TEAM: TeamMember[] = [
     role: "Persische Küche – Kursleitung",
     bio: "Die ‚Gewürzpäpstin': Mit iranischen Wurzeln und internationalen Inspirationen teilt sie die Vielfalt persischer Aromen und Kochbücher.",
     image: "https://placehold.co/400x400?text=Zohre",
-    externalUrl: "https://zohreshahi.de",
+    externalUrl: "https://www.google.com",
   },
   {
     id: "luca",
@@ -152,7 +158,7 @@ export const PLACEHOLDER_TEAM: TeamMember[] = [
     role: "Wildkräuter & Natur – Kursleitung",
     bio: "Zertifizierte Kräuterpädagogin und Naturenthusiastin. Sie zeigt, wie Wildkräuter mit wenig Aufwand in die Alltagsküche integriert werden können.",
     image: "https://placehold.co/400x400?text=Esther",
-    externalUrl: "https://www.kraeuterschwesther.de",
+    externalUrl: "https://www.google.com",
   },
 ];
 
@@ -211,18 +217,21 @@ export const PLACEHOLDER_OFFER_CARDS: OfferCard[] = [
 export const PLACEHOLDER_LOCATION_FEATURES: LocationFeature[] = [
   {
     title: "110 m² Fläche",
-    description: "Offenes, flexibel nutzbares Raumkonzept für bis zu 25 Personen.",
+    description:
+      "Offenes, flexibel nutzbares Raumkonzept für bis zu 25 Personen.",
   },
   {
     title: "Multimedia",
-    description: "WLAN-Zugang und 100\" Flachbild-TV für Präsentationen.",
+    description: 'WLAN-Zugang und 100" Flachbild-TV für Präsentationen.',
   },
   {
     title: "Professionelle Küche",
-    description: "Hochwertige, funktionale Einrichtung für alle Veranstaltungstypen.",
+    description:
+      "Hochwertige, funktionale Einrichtung für alle Veranstaltungstypen.",
   },
   {
     title: "Zentrale Lage",
-    description: "Sehr gute Anbindung an öffentliche Verkehrsmittel und Parkplätze.",
+    description:
+      "Sehr gute Anbindung an öffentliche Verkehrsmittel und Parkplätze.",
   },
 ];
