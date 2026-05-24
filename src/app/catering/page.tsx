@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { PLACEHOLDER_CATERING_STYLES } from "@/lib/placeholder-data";
+import {
+  PLACEHOLDER_CATERING_FEATURES,
+  PLACEHOLDER_CATERING_STYLES,
+  PLACEHOLDER_LOCATION_FEATURES,
+} from "@/lib/placeholder-data";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { BenefitCard } from "@/components/molecules/benefit-card";
 import { CateringForm } from "@/components/organisms/catering-form";
+import { LocationFeaturesGrid } from "@/components/organisms/location-features-grid";
+import { CtaButton } from "@/components/atoms/cta-button";
 
 export const metadata: Metadata = {
   title: "Catering",
@@ -42,6 +48,28 @@ export default function CateringPage() {
           ))}
         </div>
       </section>
+      <p className="text-foreground/60 mt-3 text-lg">
+        Unsere Eventlocation in Aalen eignet sich ideal für:
+      </p>
+      <LocationFeaturesGrid features={PLACEHOLDER_CATERING_FEATURES} />
+      <p className="text-foreground/60 mt-3 text-lg">
+        Mit viel Leidenschaft fürs Kochen und einem Gespür für Gastfreundschaft
+        schaffen wir Catering-Erlebnisse, die in Erinnerung bleiben.
+      </p>
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <CtaButton
+          href="/aktuelle-kurse"
+          label="Zu den Kochkursen"
+          variant="outline"
+          size="lg"
+        />
+        <CtaButton
+          href="/gutscheine"
+          label="Zu den Gutscheinen"
+          variant="outline"
+          size="lg"
+        />
+      </div>
       <CateringForm />
     </main>
   );

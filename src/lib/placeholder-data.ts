@@ -316,3 +316,24 @@ export const PLACEHOLDER_LOCATION_FEATURES: LocationFeature[] = [
     title: "Kulinarische Workshops & Live Cooking",
   },
 ];
+
+export const PLACEHOLDER_CATERING_FEATURES: LocationFeature[] = [
+  {
+    title: "Firmenfeiern & Business-Events",
+  },
+  {
+    title: "Geburtstage & private Feiern",
+  },
+  {
+    title: "Hochwertige Flying Buffets",
+  },
+  {
+    title: "Empfänge & Networking-Events",
+  },
+  {
+    title: "Kulinarische Genussabende",
+  },
+  {
+    title: "Individuelle Eventkonzepte",
+  },
+];
