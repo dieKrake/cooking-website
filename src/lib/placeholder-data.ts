@@ -270,22 +270,18 @@ export const PLACEHOLDER_GALLERY_IMAGES: GalleryImage[] = [
 
 export const PLACEHOLDER_LOCATION_FEATURES: LocationFeature[] = [
   {
-    title: "110 m² Fläche",
-    description:
-      "Offenes, flexibel nutzbares Raumkonzept für bis zu 25 Personen.",
+    title: "Firmenfeiern & Teamevents",
   },
   {
-    title: "Multimedia",
-    description: 'WLAN-Zugang und 100" Flachbild-TV für Präsentationen.',
+    title: "Geburtstage & private Feiern",
   },
   {
-    title: "Professionelle Küche",
-    description:
-      "Hochwertige, funktionale Einrichtung für alle Veranstaltungstypen.",
+    title: "Kochkurse & Genussabende",
   },
   {
-    title: "Zentrale Lage",
-    description:
-      "Sehr gute Anbindung an öffentliche Verkehrsmittel und Parkplätze.",
+    title: "Networking-Events",
+  },
+  {
+    title: "Kulinarische Workshops & Live Cooking",
   },
 ];

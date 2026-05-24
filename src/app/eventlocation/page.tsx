@@ -6,6 +6,7 @@ import {
 import { LocationGallery } from "@/components/molecules/location-gallery";
 import { LocationFeaturesGrid } from "@/components/organisms/location-features-grid";
 import { InquiryForm } from "@/components/organisms/inquiry-form";
+import { CtaButton } from "@/components/atoms/cta-button";
 
 export const metadata: Metadata = {
   title: "Eventlocation",
@@ -38,7 +39,34 @@ export default function EventlocationPage() {
         </p>
       </div>
       <LocationGallery images={PLACEHOLDER_GALLERY_IMAGES} />
+      <p className="text-foreground/60 mt-3 text-lg">
+        Besonders beliebt ist unser Flying Buffet: Statt eines klassischen
+        Buffets werden kleine, frisch zubereitete Speisen direkt serviert und
+        flexibel im Raum angeboten. So entsteht eine lockere, kommunikative
+        Atmosphäre, in der sich Genuss und Austausch ganz natürlich verbinden.
+      </p>
+      <p className="text-foreground/60 mt-3 text-lg">
+        Unsere Eventlocation in Aalen eignet sich ideal für:
+      </p>
       <LocationFeaturesGrid features={PLACEHOLDER_LOCATION_FEATURES} />
+      <p className="text-foreground/60 mt-3 text-lg">
+        Mit viel Liebe zum Detail schaffen wir einen Ort, an dem gutes Essen,
+        gemeinsame Erlebnisse und echte Gastfreundschaft im Mittelpunkt stehen.
+      </p>
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <CtaButton
+          href="/aktuelle-kurse"
+          label="Zu den Kochkursen"
+          variant="outline"
+          size="lg"
+        />
+        <CtaButton
+          href="/gutscheine"
+          label="Zu den Gutscheinen"
+          variant="outline"
+          size="lg"
+        />
+      </div>
       <InquiryForm />
     </main>
   );

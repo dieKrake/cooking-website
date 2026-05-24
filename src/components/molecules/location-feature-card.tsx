@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardTitle } from "@/components/ui/card";
 import type { LocationFeature } from "@/types";
 
 interface LocationFeatureCardProps {
@@ -7,13 +7,8 @@ interface LocationFeatureCardProps {
 
 export function LocationFeatureCard({ feature }: LocationFeatureCardProps) {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-base">{feature.title}</CardTitle>
-      </CardHeader>
-      <CardContent className="text-sm text-foreground/70">
-        {feature.description}
-      </CardContent>
+    <Card className="flex min-h-24 items-center justify-center px-4 py-6 text-center">
+      <CardTitle className="text-base font-semibold">{feature.title}</CardTitle>
     </Card>
   );
 }

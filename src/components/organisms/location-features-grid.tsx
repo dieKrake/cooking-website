@@ -8,12 +8,8 @@ interface LocationFeaturesGridProps {
 
 export function LocationFeaturesGrid({ features }: LocationFeaturesGridProps) {
   return (
-    <section className="py-12">
-      <SectionHeading
-        title="Ausstattung & Highlights"
-        subtitle="Alles, was du für ein unvergessliches Event brauchst."
-      />
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <section className="py-8">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {features.map((feature) => (
           <LocationFeatureCard key={feature.title} feature={feature} />
         ))}

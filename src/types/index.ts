@@ -47,7 +47,6 @@ export interface PartnerLogo {
 
 export interface LocationFeature {
   title: string;
-  description: string;
 }
 
 export interface GalleryImage {
