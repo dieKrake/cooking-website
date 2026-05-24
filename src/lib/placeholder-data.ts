@@ -192,25 +192,25 @@ export const PLACEHOLDER_BENEFITS: Benefit[] = [
 
 export const PLACEHOLDER_OFFER_CARDS: OfferCard[] = [
   {
-    title: "Kochkurse",
+    title: "Kochkurse in Aalen",
     description:
-      "Entdecke die Welt der Aromen in kleinen, individuellen Kursen. Ob Fermentation, Sauerteigbrot oder internationale Küche – authentisch und mit Herz.",
+      "Erlebe inspirierende Kochevents voller Genuss, Spaß und echter Begegnungen - mit Freunden, Familie oder Kollegen bei Culina (ehemals Koch Klub am Kocher)",
     ctaLabel: "Zu den Kursen",
     ctaHref: "/aktuelle-kurse",
   },
   {
-    title: "Eventlocation",
+    title: "Catering in die Region",
     description:
-      "Miete unser Kochatelier für deine persönlichen Anlässe: Geburtstage, Teamevents oder ein geselliger Abend mit Freunden.",
-    ctaLabel: "Location ansehen",
-    ctaHref: "/eventlocation",
+      "Unser Catering in Aalen und Umgebung bringt frische, kreative Küche direkt zu deinem Event. Vom entspannten Familienfest bis zum Firmenevent sorgen wir für genussvolle Momente mit persönlicher Note. ",
+    ctaLabel: "Catering anfragen",
+    ctaHref: "/catering",
   },
   {
-    title: "Werde Kursleiter",
+    title: "Feinkost bester Qualität",
     description:
-      "Wir bieten Köchen und Hobbyköchen die Möglichkeit, ihre Spezialitäten vorzustellen und eigene Kurse zu geben.",
-    ctaLabel: "Jetzt bewerben",
-    ctaHref: "/kursleiter-werden",
+      "Entdecke ausgewählte Feinkost-Produkte, besondere Delikatessen und kulinarische Geschenkideen mit Geschmack. Perfekt für Genießer, besondere Anlässe oder ein Stück mediterranes Lebensgefühl für zuhause.",
+    ctaLabel: "Feinkost entdecken",
+    ctaHref: "/feinkost",
   },
 ];
 

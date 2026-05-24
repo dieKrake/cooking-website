@@ -21,7 +21,7 @@ function NavDropdown({ item }: NavDropdownProps) {
     <div className="relative" onMouseLeave={() => setOpen(false)}>
       <button
         className={cn(
-          "hover:text-foreground/80 flex items-center gap-1 text-sm font-medium transition-colors",
+          "hover:text-foreground/80 flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors",
           pathname.startsWith(item.href)
             ? "text-foreground"
             : "text-foreground/60",
@@ -32,26 +32,41 @@ function NavDropdown({ item }: NavDropdownProps) {
         aria-haspopup="true"
       >
         {item.label}
-        <ChevronDown className="h-3 w-3" />
+        <ChevronDown
+          className={cn(
+            "h-3 w-3 transition-transform duration-200",
+            open && "rotate-180",
+          )}
+        />
       </button>
 
-      {open && (
-        <div className="bg-background absolute top-full left-0 z-50 mt-1 min-w-40 rounded-md border shadow-md">
-          <ul role="menu">
-            {item.children?.map((child) => (
-              <li key={child.href} role="menuitem">
-                <Link
-                  href={child.href}
-                  className="hover:bg-muted block px-4 py-2 text-sm transition-colors"
-                  onClick={() => setOpen(false)}
-                >
-                  {child.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="absolute top-full left-0 z-50 pt-2"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.15, ease: "easeInOut" }}
+          >
+            <div className="bg-background min-w-44 overflow-hidden rounded-md border shadow-md">
+              <ul role="menu">
+                {item.children?.map((child) => (
+                  <li key={child.href} role="menuitem">
+                    <Link
+                      href={child.href}
+                      className="hover:bg-muted block px-4 py-2.5 text-sm transition-colors"
+                      onClick={() => setOpen(false)}
+                    >
+                      {child.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -72,7 +87,7 @@ export function Navbar() {
         </Link>
 
         <nav
-          className="hidden items-center gap-6 md:flex"
+          className="hidden items-center gap-1 md:flex"
           aria-label="Hauptnavigation"
         >
           {NAV_ITEMS.map((item) =>
@@ -83,7 +98,7 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "hover:text-foreground/80 text-sm font-medium transition-colors",
+                  "hover:text-foreground/80 rounded-md px-3 py-2 text-sm font-medium transition-colors",
                   pathname === item.href
                     ? "text-foreground"
                     : "text-foreground/60",
