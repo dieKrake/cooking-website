@@ -50,6 +50,12 @@ export interface LocationFeature {
   description: string;
 }
 
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  span?: "tall" | "wide" | "default";
+}
+
 export interface ContactInfo {
   email: string;
   phone: string;

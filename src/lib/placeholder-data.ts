@@ -3,6 +3,7 @@ import type {
   TeamMember,
   Benefit,
   OfferCard,
+  GalleryImage,
   LocationFeature,
 } from "@/types";
 
@@ -234,6 +235,36 @@ export const PLACEHOLDER_CATERING_STYLES: Benefit[] = [
     title: "Gesunde Küche",
     description:
       "Saisonal, ausgewogen und voller Nährstoffe – gut für Körper und Geschmack.",
+  },
+];
+
+export const PLACEHOLDER_GALLERY_IMAGES: GalleryImage[] = [
+  {
+    src: "https://placehold.co/800x600?text=Kochstudio+%C3%9Cbersicht",
+    alt: "Blick in das offene Kochstudio mit moderner Ausstattung",
+    span: "wide",
+  },
+  {
+    src: "https://placehold.co/600x800?text=K%C3%BCchenzeile",
+    alt: "Professionelle Küchenzeile mit NEFF-Equipment",
+    span: "tall",
+  },
+  {
+    src: "https://placehold.co/600x400?text=Essbereich",
+    alt: "Gemütlicher Essbereich für gemeinsame Genussmomente",
+  },
+  {
+    src: "https://placehold.co/600x400?text=Kochinseln",
+    alt: "Kochinseln für interaktive Kochkurse und Events",
+  },
+  {
+    src: "https://placehold.co/800x600?text=Event+Atmosph%C3%A4re",
+    alt: "Stimmungsvolle Atmosphäre bei einem Abend-Event",
+    span: "wide",
+  },
+  {
+    src: "https://placehold.co/600x400?text=Eingangsbereich",
+    alt: "Einladender Eingangsbereich der Eventlocation",
   },
 ];
 
