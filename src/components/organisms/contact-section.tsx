@@ -44,29 +44,38 @@ export function ContactSection() {
         <div className="space-y-6">
           <a
             href={`mailto:${CONTACT_INFO.email}`}
-            className="flex items-start gap-4 rounded-lg border p-4 transition-colors hover:bg-muted"
+            className="hover:bg-muted flex items-start gap-4 rounded-lg border p-4 transition-colors"
           >
-            <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+            <Mail
+              className="text-primary mt-0.5 h-5 w-5 shrink-0"
+              aria-hidden="true"
+            />
             <div>
               <p className="font-medium">E-Mail</p>
-              <p className="text-sm text-foreground/60">{CONTACT_INFO.email}</p>
+              <p className="text-foreground/60 text-sm">{CONTACT_INFO.email}</p>
             </div>
           </a>
           <a
             href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
-            className="flex items-start gap-4 rounded-lg border p-4 transition-colors hover:bg-muted"
+            className="hover:bg-muted flex items-start gap-4 rounded-lg border p-4 transition-colors"
           >
-            <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+            <Phone
+              className="text-primary mt-0.5 h-5 w-5 shrink-0"
+              aria-hidden="true"
+            />
             <div>
               <p className="font-medium">Telefon</p>
-              <p className="text-sm text-foreground/60">{CONTACT_INFO.phone}</p>
+              <p className="text-foreground/60 text-sm">{CONTACT_INFO.phone}</p>
             </div>
           </a>
           <div className="flex items-start gap-4 rounded-lg border p-4">
-            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+            <MapPin
+              className="text-primary mt-0.5 h-5 w-5 shrink-0"
+              aria-hidden="true"
+            />
             <div>
               <p className="font-medium">Adresse</p>
-              <p className="text-sm text-foreground/60">
+              <p className="text-foreground/60 text-sm">
                 {CONTACT_INFO.address.street}
                 <br />
                 {CONTACT_INFO.address.zip} {CONTACT_INFO.address.city}
@@ -78,16 +87,20 @@ export function ContactSection() {
         </div>
 
         {submitted ? (
-          <div className="flex items-center justify-center rounded-xl border border-primary/20 bg-primary/5 px-6 py-10 text-center">
+          <div className="border-primary/20 bg-primary/5 flex items-center justify-center rounded-xl border px-6 py-10 text-center">
             <div>
               <p className="text-2xl font-semibold">Nachricht gesendet! ✉️</p>
-              <p className="mt-2 text-foreground/60">
+              <p className="text-foreground/60 mt-2">
                 Wir melden uns so schnell wie möglich bei dir.
               </p>
             </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-4"
+            noValidate
+          >
             <div className="flex flex-col gap-1.5">
               <label htmlFor="contact-name" className="text-sm font-medium">
                 Name <span aria-hidden="true">*</span>
@@ -129,7 +142,12 @@ export function ContactSection() {
                 required
               />
             </div>
-            <Button type="submit" size="lg" className="self-start">
+            <Button
+              type="submit"
+              size="lg"
+              className="cursor-pointer self-start"
+              variant="outline"
+            >
               Nachricht senden
             </Button>
           </form>

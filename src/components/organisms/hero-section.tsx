@@ -20,9 +20,16 @@ export function HeroSection({
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             {title}
           </h1>
-          <p className="mt-6 text-lg text-foreground/60 sm:text-xl">{subtitle}</p>
+          <p className="text-foreground/60 mt-6 text-lg sm:text-xl">
+            {subtitle}
+          </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <CtaButton href={primaryCta.href} label={primaryCta.label} size="lg" />
+            <CtaButton
+              href={primaryCta.href}
+              label={primaryCta.label}
+              size="lg"
+              variant="outline"
+            />
             {secondaryCta && (
               <CtaButton
                 href={secondaryCta.href}

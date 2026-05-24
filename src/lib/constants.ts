@@ -1,8 +1,8 @@
 import type { NavItem, ContactInfo } from "@/types";
 
-export const SITE_NAME = "Kochatelier";
+export const SITE_NAME = "Culina";
 export const SITE_DESCRIPTION =
-  "Kreative Kochkurse, private Events und Catering in familiärer Atmosphäre.";
+  "Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente (ehemals Koch Klub am Kocher)";
 
 export const CONTACT_INFO: ContactInfo = {
   email: "kontakt@kochatelier.de",

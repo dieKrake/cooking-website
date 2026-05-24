@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Kochatelier – Kreative Kochkurse & Eventlocation",
-    template: "%s | Kochatelier",
+    default: "Culina – Gemeinsam kochen im Herzen von Aalen",
+    template: "%s | Culina",
   },
   description:
-    "Kreative Kochkurse, private Events und Catering in familiärer Atmosphäre.",
+    "Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente (ehemals Koch Klub am Kocher)",
 };
 
 export default function RootLayout({

@@ -26,7 +26,10 @@ export function CourseSlider() {
         </div>
         <div className="flex gap-5 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-3">
           {upcomingCourses.map((course) => (
-            <div key={course.slug} className="w-72 shrink-0 sm:w-auto">
+            <div
+              key={course.slug}
+              className="w-72 shrink-0 sm:h-full sm:w-auto"
+            >
               <CourseCard course={course} />
             </div>
           ))}

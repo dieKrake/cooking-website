@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarDays, Clock, User } from "lucide-react";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/utils";
 import type { Course } from "@/types";
@@ -12,8 +18,8 @@ interface CourseCardProps {
 
 export function CourseCard({ course }: CourseCardProps) {
   return (
-    <Card className="flex flex-col">
-      <div className="relative h-48 w-full overflow-hidden">
+    <Card className="flex h-full flex-col">
+      <div className="relative h-64 w-full overflow-hidden">
         <Image
           src={course.image}
           alt={course.title}
@@ -30,7 +36,7 @@ export function CourseCard({ course }: CourseCardProps) {
           </Badge>
         </div>
       </CardHeader>
-      <CardContent className="flex flex-1 flex-col gap-2 text-sm text-foreground/60">
+      <CardContent className="text-foreground/60 flex flex-1 flex-col gap-2 text-sm">
         {course.date && (
           <div className="flex items-center gap-1.5">
             <CalendarDays className="h-4 w-4 shrink-0" />

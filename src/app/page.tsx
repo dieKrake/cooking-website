@@ -7,8 +7,8 @@ export default function HomePage() {
   return (
     <>
       <HeroSection
-        title="Willkommen im Kochatelier"
-        subtitle="Kreative Kochkurse, private Events und Catering in familiärer Atmosphäre – mitten in Wiesbaden."
+        title="Culina – Gemeinsam kochen im Herzen von Aalen"
+        subtitle="Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente (ehemals Koch Klub am Kocher)"
         primaryCta={{ label: "Zu den Kursen", href: "/aktuelle-kurse" }}
         secondaryCta={{ label: "Location ansehen", href: "/eventlocation" }}
       />
