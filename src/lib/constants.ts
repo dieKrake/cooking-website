@@ -5,7 +5,7 @@ export const SITE_DESCRIPTION =
   "Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente (ehemals Koch Klub am Kocher)";
 
 export const CONTACT_INFO: ContactInfo = {
-  email: "kontakt@kochatelier.de",
+  email: "kontakt@culina.de",
   phone: "+49 123 456 789",
   address: {
     street: "Musterstraße 1",

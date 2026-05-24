@@ -3,7 +3,7 @@ import { LegalPage } from "@/components/atoms/legal-page";
 
 export const metadata: Metadata = {
   title: "Datenschutz",
-  description: "Datenschutzerklärung des Kochateliers gemäß DSGVO.",
+  description: "Datenschutzerklärung von Culina gemäß DSGVO.",
 };
 
 export default function DatenschutzPage() {
@@ -14,11 +14,11 @@ export default function DatenschutzPage() {
         <p>
           Verantwortlich im Sinne der DSGVO ist:
           <br />
-          Kochatelier Sandra Muster
+          Culina Sandra Muster
           <br />
           Musterstraße 1, 65185 Wiesbaden
           <br />
-          E-Mail: kontakt@kochatelier.de
+          E-Mail: kontakt@culina.de
           <br />
           Telefon: +49 123 456 789
         </p>
@@ -93,8 +93,8 @@ export default function DatenschutzPage() {
         </ul>
         <p>
           Zur Ausübung Ihrer Rechte wenden Sie sich bitte per E-Mail an
-          kontakt@kochatelier.de. Sie haben zudem das Recht, sich bei der
-          zuständigen Datenschutzaufsichtsbehörde zu beschweren.
+          kontakt@culina.de. Sie haben zudem das Recht, sich bei der zuständigen
+          Datenschutzaufsichtsbehörde zu beschweren.
         </p>
       </section>
 

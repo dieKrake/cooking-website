@@ -3,7 +3,7 @@ import { LegalPage } from "@/components/atoms/legal-page";
 
 export const metadata: Metadata = {
   title: "AGB",
-  description: "Allgemeine Geschäftsbedingungen des Kochateliers.",
+  description: "Allgemeine Geschäftsbedingungen von Culina.",
 };
 
 export default function AgbPage() {
@@ -13,8 +13,8 @@ export default function AgbPage() {
         <h2>§ 1 Geltungsbereich</h2>
         <p>
           Diese Allgemeinen Geschäftsbedingungen gelten für alle Buchungen und
-          Verträge zwischen dem Kochatelier (Sandra Muster, Musterstraße 1,
-          65185 Wiesbaden) und den Teilnehmenden der angebotenen Kochkurse,
+          Verträge zwischen Culina (Sandra Muster, Musterstraße 1, 65185
+          Wiesbaden) und den Teilnehmenden der angebotenen Kochkurse,
           Veranstaltungen und sonstigen Leistungen.
         </p>
       </section>
@@ -22,9 +22,9 @@ export default function AgbPage() {
       <section>
         <h2>§ 2 Vertragsschluss</h2>
         <p>
-          Eine Buchung kommt zustande, sobald das Kochatelier die Anmeldung
-          schriftlich per E-Mail bestätigt. Ein Anspruch auf Teilnahme besteht
-          erst nach Eingang der vollständigen Zahlung.
+          Eine Buchung kommt zustande, sobald Culina die Anmeldung schriftlich
+          per E-Mail bestätigt. Ein Anspruch auf Teilnahme besteht erst nach
+          Eingang der vollständigen Zahlung.
         </p>
       </section>
 
@@ -55,22 +55,22 @@ export default function AgbPage() {
       </section>
 
       <section>
-        <h2>§ 5 Absage durch das Kochatelier</h2>
+        <h2>§ 5 Absage durch Culina</h2>
         <p>
-          Das Kochatelier behält sich vor, Kurse bei nicht ausreichender
-          Teilnehmerzahl oder aus wichtigem Grund abzusagen. In diesem Fall
-          werden bereits gezahlte Beträge vollständig erstattet. Weitergehende
-          Ansprüche sind ausgeschlossen.
+          Culina behält sich vor, Kurse bei nicht ausreichender Teilnehmerzahl
+          oder aus wichtigem Grund abzusagen. In diesem Fall werden bereits
+          gezahlte Beträge vollständig erstattet. Weitergehende Ansprüche sind
+          ausgeschlossen.
         </p>
       </section>
 
       <section>
         <h2>§ 6 Haftung</h2>
         <p>
-          Die Teilnahme an Kochkursen erfolgt auf eigene Verantwortung. Das
-          Kochatelier haftet nicht für Schäden, die durch unsachgemäße Nutzung
-          von Geräten oder Zutaten entstehen, sofern kein vorsätzliches oder
-          grob fahrlässiges Handeln vorliegt.
+          Die Teilnahme an Kochkursen erfolgt auf eigene Verantwortung. Culina
+          haftet nicht für Schäden, die durch unsachgemäße Nutzung von Geräten
+          oder Zutaten entstehen, sofern kein vorsätzliches oder grob
+          fahrlässiges Handeln vorliegt.
         </p>
       </section>
 

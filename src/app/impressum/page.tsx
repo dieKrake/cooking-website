@@ -3,7 +3,7 @@ import { LegalPage } from "@/components/atoms/legal-page";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum des Kochateliers gemäß § 5 TMG.",
+  description: "Impressum von Culina gemäß § 5 TMG.",
 };
 
 export default function ImpressumPage() {
@@ -12,7 +12,7 @@ export default function ImpressumPage() {
       <section>
         <h2>Angaben gemäß § 5 TMG</h2>
         <p>
-          Kochatelier Sandra Muster
+          Culina Sandra Muster
           <br />
           Musterstraße 1<br />
           65185 Wiesbaden
@@ -26,7 +26,7 @@ export default function ImpressumPage() {
         <p>
           Telefon: +49 123 456 789
           <br />
-          E-Mail: kontakt@kochatelier.de
+          E-Mail: kontakt@culina.de
         </p>
       </section>
 
