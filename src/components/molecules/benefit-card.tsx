@@ -7,15 +7,17 @@ interface BenefitCardProps {
 }
 
 export function BenefitCard({ benefit }: BenefitCardProps) {
+  const Icon = benefit.icon ?? CheckCircle2;
+
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+          <Icon className="text-primary h-5 w-5 shrink-0" aria-hidden="true" />
           {benefit.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-sm text-foreground/70">
+      <CardContent className="text-foreground/70 text-sm">
         {benefit.description}
       </CardContent>
     </Card>

@@ -1,3 +1,12 @@
+import {
+  Sun,
+  Beef,
+  Carrot,
+  Leaf,
+  Flame,
+  Sparkles,
+  UtensilsCrossed,
+} from "lucide-react";
 import type {
   Course,
   TeamMember,
@@ -217,24 +226,46 @@ export const PLACEHOLDER_OFFER_CARDS: OfferCard[] = [
 
 export const PLACEHOLDER_CATERING_STYLES: Benefit[] = [
   {
-    title: "Orientalisch",
+    title: "Mediterrane Küche",
     description:
-      "Safran, Granatapfel, Kreuzkümmel – persische und arabische Aromen für deinen Tisch.",
+      "Frische Antipasti, mediterrane Feinkost, aromatische Kräuter und leichte Gerichte voller Genuss.",
+    icon: Sun,
   },
   {
-    title: "Asiatisch",
+    title: "Gutbürgerliche Küche",
     description:
-      "Von Sushi über Dim Sum bis Thai-Curry – authentische Rezepte aus ganz Asien.",
+      "Regionale Klassiker modern interpretiert – herzhaft, hochwertig und mit viel Liebe gekocht.",
+    icon: Beef,
   },
   {
-    title: "Mediterran",
+    title: "Vegetarische Küche",
     description:
-      "Italien, Spanien, Griechenland – echtes Handwerk mit frischen Zutaten und Olivenöl.",
+      "Kreative Gerichte mit frischem Gemüse, saisonalen Zutaten und abwechslungsreichen Geschmackskombinationen.",
+    icon: Carrot,
   },
   {
-    title: "Gesunde Küche",
+    title: "Vegane Küche",
     description:
-      "Saisonal, ausgewogen und voller Nährstoffe – gut für Körper und Geschmack.",
+      "Moderne pflanzliche Speisen mit Fokus auf Frische, Qualität und bewussten Genuss.",
+    icon: Leaf,
+  },
+  {
+    title: "Moderne Fleischgerichte",
+    description:
+      "Hochwertige Fleischspezialitäten kombiniert mit kreativen Beilagen und zeitgemäßer Küche.",
+    icon: Flame,
+  },
+  {
+    title: "Kreative Fleischalternativen",
+    description:
+      "Innovative pflanzliche Alternativen mit überraschenden Aromen und moderner Interpretation.",
+    icon: Sparkles,
+  },
+  {
+    title: "Feinkost & Flying Buffet",
+    description:
+      "Kleine, stilvoll servierte Snacks und Delikatessen für lockere Events, Empfänge und besondere Genussmomente.",
+    icon: UtensilsCrossed,
   },
 ];
 

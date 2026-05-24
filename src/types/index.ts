@@ -24,6 +24,7 @@ export interface TeamMember {
 export interface Benefit {
   title: string;
   description: string;
+  icon?: React.ComponentType<{ className?: string }>;
 }
 
 export interface NavItem {
