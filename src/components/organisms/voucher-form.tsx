@@ -31,7 +31,9 @@ export function VoucherForm() {
   const [submitted, setSubmitted] = useState(false);
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
@@ -44,9 +46,9 @@ export function VoucherForm() {
   if (submitted) {
     return (
       <section className="py-12">
-        <div className="rounded-xl border border-primary/20 bg-primary/5 px-6 py-10 text-center">
+        <div className="border-primary/20 bg-primary/5 rounded-xl border px-6 py-10 text-center">
           <p className="text-2xl font-semibold">Bestellung eingegangen! 🎁</p>
-          <p className="mt-2 text-foreground/60">
+          <p className="text-foreground/60 mt-2">
             Wir senden dir den Gutschein so schnell wie möglich zu.
           </p>
         </div>
@@ -60,7 +62,11 @@ export function VoucherForm() {
         title="Gutschein bestellen"
         subtitle="Füll das Formular aus – wir kümmern uns um den Rest."
       />
-      <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2" noValidate>
+      <form
+        onSubmit={handleSubmit}
+        className="grid gap-5 sm:grid-cols-2"
+        noValidate
+      >
         <div className="flex flex-col gap-1.5">
           <label htmlFor="amount" className="text-sm font-medium">
             Betrag <span aria-hidden="true">*</span>
@@ -71,11 +77,15 @@ export function VoucherForm() {
             value={form.amount}
             onChange={handleChange}
             required
-            className="h-8 w-full rounded-lg border border-input bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full rounded-lg border bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:ring-3"
           >
-            <option value="" disabled>Bitte wählen …</option>
+            <option value="" disabled>
+              Bitte wählen …
+            </option>
             {AMOUNTS.map((a) => (
-              <option key={a} value={a}>{a} €</option>
+              <option key={a} value={a}>
+                {a} €
+              </option>
             ))}
           </select>
         </div>
@@ -89,7 +99,7 @@ export function VoucherForm() {
             value={form.format}
             onChange={handleChange}
             required
-            className="h-8 w-full rounded-lg border border-input bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full rounded-lg border bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:ring-3"
           >
             <option value="digital">Digital (PDF per E-Mail)</option>
             <option value="gedruckt">Gedruckt (per Post)</option>
@@ -150,7 +160,12 @@ export function VoucherForm() {
           />
         </div>
         <div className="sm:col-span-2">
-          <Button type="submit" size="lg">
+          <Button
+            type="submit"
+            size="lg"
+            className="cursor-pointer"
+            variant="outline"
+          >
             Jetzt bestellen
           </Button>
         </div>
