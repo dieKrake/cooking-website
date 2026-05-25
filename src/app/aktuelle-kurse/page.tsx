@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { COURSES, AKTUELLE_KURSE_PAGE } from "@/lib/placeholder-data";
+import { COURSES, AKTUELLE_KURSE_PAGE } from "@/lib/data";
 import { CoursesGrid } from "@/components/organisms/courses-grid";
 
 export const metadata: Metadata = {

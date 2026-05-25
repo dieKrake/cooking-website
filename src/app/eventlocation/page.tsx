@@ -3,7 +3,7 @@ import {
   EVENTLOCATION_PAGE,
   GALLERY_IMAGES,
   LOCATION_FEATURES,
-} from "@/lib/placeholder-data";
+} from "@/lib/data";
 import { LocationGallery } from "@/components/molecules/location-gallery";
 import { LocationFeaturesGrid } from "@/components/organisms/location-features-grid";
 import { InquiryForm } from "@/components/organisms/inquiry-form";

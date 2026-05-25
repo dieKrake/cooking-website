@@ -3,7 +3,7 @@ import {
   FEINKOST_PAGE,
   FEINKOST_HIGHLIGHTS,
   FEINKOST_USAGE,
-} from "@/lib/placeholder-data";
+} from "@/lib/data";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { LocationFeaturesGrid } from "@/components/organisms/location-features-grid";
 

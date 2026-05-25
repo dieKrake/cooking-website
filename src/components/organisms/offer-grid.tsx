@@ -1,6 +1,6 @@
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { OfferCard } from "@/components/molecules/offer-card";
-import { PLACEHOLDER_OFFER_CARDS } from "@/lib/placeholder-data";
+import { PLACEHOLDER_OFFER_CARDS } from "@/lib/data";
 
 export function OfferGrid() {
   return (

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { CourseCard } from "@/components/molecules/course-card";
-import { COURSES } from "@/lib/placeholder-data";
+import { COURSES } from "@/lib/data";
 
 export function CourseSlider() {
   const upcomingCourses = COURSES.filter((course) => course.hasFixedDate);

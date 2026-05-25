@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PLACEHOLDER_TEAM } from "@/lib/placeholder-data";
+import { PLACEHOLDER_TEAM } from "@/lib/data";
 import { TeamGrid } from "@/components/organisms/team-grid";
 
 export const metadata: Metadata = {

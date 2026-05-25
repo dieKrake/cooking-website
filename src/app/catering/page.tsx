@@ -3,7 +3,7 @@ import {
   CATERING_PAGE,
   CATERING_FEATURES,
   CATERING_STYLES,
-} from "@/lib/placeholder-data";
+} from "@/lib/data";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { BenefitCard } from "@/components/molecules/benefit-card";
 import { CateringForm } from "@/components/organisms/catering-form";

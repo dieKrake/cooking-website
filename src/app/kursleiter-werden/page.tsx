@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PLACEHOLDER_BENEFITS } from "@/lib/placeholder-data";
+import { PLACEHOLDER_BENEFITS } from "@/lib/data";
 import { BenefitsGrid } from "@/components/organisms/benefits-grid";
 import { ApplicationForm } from "@/components/organisms/application-form";
 

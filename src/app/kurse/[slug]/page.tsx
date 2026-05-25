@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { COURSES } from "@/lib/placeholder-data";
+import { COURSES } from "@/lib/data";
 import { CourseDetail } from "@/components/organisms/course-detail";
 
 interface CourseDetailPageProps {

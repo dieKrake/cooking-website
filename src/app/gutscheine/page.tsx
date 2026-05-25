@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GUTSCHEINE_PAGE } from "@/lib/placeholder-data";
+import { GUTSCHEINE_PAGE } from "@/lib/data";
 import { VoucherOptions } from "@/components/organisms/voucher-options";
 import { VoucherIdeas } from "@/components/organisms/voucher-ideas";
 import { VoucherForm } from "@/components/organisms/voucher-form";

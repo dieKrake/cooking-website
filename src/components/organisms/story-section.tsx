@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { UEBER_MICH_PAGE } from "@/lib/placeholder-data";
+import { UEBER_MICH_PAGE } from "@/lib/data";
 
 export function StorySection() {
   return (

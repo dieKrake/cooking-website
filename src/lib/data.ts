@@ -292,16 +292,16 @@ export const CATERING_STYLES: Benefit[] = [
 
 export const EVENTLOCATION_PAGE = {
   title:
-    "Unsere Eventlocation mitten in Aalen \u2013 Genussvolle Events in besonderer Atmosph\u00e4re",
+    "Unsere Eventlocation mitten in Aalen – Genussvolle Events in besonderer Atmosphäre",
   description:
-    "Modernes Kochstudio f\u00fcr Firmenfeiern, private Events und gemeinsame Genussmomente in Aalen.",
+    "Modernes Kochstudio für Firmenfeiern, private Events und gemeinsame Genussmomente in Aalen.",
   subtitle:
-    "Modernes Kochstudio f\u00fcr Firmenfeiern, private Events und gemeinsame Genussmomente",
+    "Modernes Kochstudio für Firmenfeiern, private Events und gemeinsame Genussmomente",
   intro:
-    "Unser Kochstudio in Aalen verbindet moderne Ausstattung mit famili\u00e4rer Atmosph\u00e4re und schafft den perfekten Rahmen f\u00fcr unvergessliche Events, Kochabende und Feiern. Ob Firmenevent, Geburtstag, Teamabend oder private Feier \u2013 unsere Eventlocation bietet Platz f\u00fcr bis zu 50 Personen und l\u00e4dt zum gemeinsamen Genie\u00dfen und Erleben ein. Die helle, offene Raumgestaltung sorgt f\u00fcr eine einladende Atmosph\u00e4re, in der sich G\u00e4ste sofort wohlf\u00fchlen. Hochwertiges K\u00fcchenequipment von NEFF erm\u00f6glicht professionelle Kochkurse, Live-Cooking-Erlebnisse und kulinarische Events auf h\u00f6chstem Niveau.",
+    "Unser Kochstudio in Aalen verbindet moderne Ausstattung mit familiärer Atmosphäre und schafft den perfekten Rahmen für unvergessliche Events, Kochabende und Feiern. Ob Firmenevent, Geburtstag, Teamabend oder private Feier – unsere Eventlocation bietet Platz für bis zu 50 Personen und lädt zum gemeinsamen Genießen und Erleben ein. Die helle, offene Raumgestaltung sorgt für eine einladende Atmosphäre, in der sich Gäste sofort wohlfühlen. Hochwertiges Küchenequipment von NEFF ermöglicht professionelle Kochkurse, Live-Cooking-Erlebnisse und kulinarische Events auf höchstem Niveau.",
   flyingBuffet:
-    "Besonders beliebt ist unser Flying Buffet: Statt eines klassischen Buffets werden kleine, frisch zubereitete Speisen direkt serviert und flexibel im Raum angeboten. So entsteht eine lockere, kommunikative Atmosph\u00e4re, in der sich Genuss und Austausch ganz nat\u00fcrlich verbinden.",
-  featuresIntro: "Unsere Eventlocation in Aalen eignet sich ideal f\u00fcr:",
+    "Besonders beliebt ist unser Flying Buffet: Statt eines klassischen Buffets werden kleine, frisch zubereitete Speisen direkt serviert und flexibel im Raum angeboten. So entsteht eine lockere, kommunikative Atmosphäre, in der sich Genuss und Austausch ganz natürlich verbinden.",
+  featuresIntro: "Unsere Eventlocation in Aalen eignet sich ideal für:",
   outro:
     "Mit viel Liebe zum Detail schaffen wir einen Ort, an dem gutes Essen, gemeinsame Erlebnisse und echte Gastfreundschaft im Mittelpunkt stehen.",
 };
@@ -376,85 +376,85 @@ export const CATERING_FEATURES: LocationFeature[] = [
 ];
 
 export const FEINKOST_PAGE = {
-  title: "Feinkost & Culina \u2013 Mediterraner Genuss in Premiumqualit\u00e4t",
+  title: "Feinkost & Culina – Mediterraner Genuss in Premiumqualität",
   description:
     "Hochwertige Antipasti, Feinkost und Delikatessen von ilcesto bei Culina in Aalen.",
   subtitle: "Hochwertige Antipasti, Feinkost und Delikatessen von ilcesto",
   intro:
-    "Bei Culina steht Genuss nicht nur beim gemeinsamen Kochen im Mittelpunkt, sondern auch bei ausgew\u00e4hlten Feinkost-Produkten mit echter Qualit\u00e4t. Deshalb arbeiten wir mit ilcesto zusammen \u2013 einer Bio-Manufaktur, die seit vielen Jahren f\u00fcr mediterrane Feinkost, frische Antipasti und hochwertige Delikatessen steht.",
+    "Bei Culina steht Genuss nicht nur beim gemeinsamen Kochen im Mittelpunkt, sondern auch bei ausgewählten Feinkost-Produkten mit echter Qualität. Deshalb arbeiten wir mit ilcesto zusammen – einer Bio-Manufaktur, die seit vielen Jahren für mediterrane Feinkost, frische Antipasti und hochwertige Delikatessen steht.",
   introSecond:
-    "Die Produkte von ilcesto \u00fcberzeugen durch frische Verarbeitung, hochwertige biologische Zutaten und echte Handwerkskunst. Viele Antipasti, Oliven, Artischocken, Peperoni, Pestos und Feinkost-Spezialit\u00e4ten werden w\u00f6chentlich frisch hergestellt und direkt verarbeitet \u2013 inspiriert von mediterraner Genusskultur und traditionellen Rezepturen.",
+    "Die Produkte von ilcesto überzeugen durch frische Verarbeitung, hochwertige biologische Zutaten und echte Handwerkskunst. Viele Antipasti, Oliven, Artischocken, Peperoni, Pestos und Feinkost-Spezialitäten werden wöchentlich frisch hergestellt und direkt verarbeitet – inspiriert von mediterraner Genusskultur und traditionellen Rezepturen.",
   highlightsIntro:
     "Bei unserer Feinkost in Aalen legen wir besonderen Wert auf:",
-  sectionTitle: "Mediterrane Feinkost mit Qualit\u00e4t und Herkunft",
+  sectionTitle: "Mediterrane Feinkost mit Qualität und Herkunft",
   sectionText:
-    "Die Philosophie von ilcesto passt perfekt zu Culina: ehrliche Lebensmittel, frische Verarbeitung, nachhaltiges Denken und echter Geschmack statt Massenproduktion. Verarbeitet werden ausschlie\u00dflich hochwertige Rohstoffe und ausgew\u00e4hlte Zutaten \u2013 mit viel Erfahrung, Fingerspitzengef\u00fchl und Leidenschaft f\u00fcr gutes Essen.",
+    "Die Philosophie von ilcesto passt perfekt zu Culina: ehrliche Lebensmittel, frische Verarbeitung, nachhaltiges Denken und echter Geschmack statt Massenproduktion. Verarbeitet werden ausschließlich hochwertige Rohstoffe und ausgewählte Zutaten – mit viel Erfahrung, Fingerspitzengefühl und Leidenschaft für gutes Essen.",
   quoteTitle:
-    "\u201eF\u00fcr mich z\u00e4hlt nicht nur die Feinkost selbst \u2013 sondern die Qualit\u00e4t bis ins kleinste Detail.\u201c",
+    '"Für mich zählt nicht nur die Feinkost selbst – sondern die Qualität bis ins kleinste Detail."',
   quoteText:
-    "\u201eIch arbeite mit ilcesto, weil man die Qualit\u00e4t einfach schmeckt. Nicht nur bei den Antipasti und Delikatessen selbst, sondern auch bei den \u00d6len, Gew\u00fcrzen und Zutaten, mit denen alles eingelegt und veredelt wird. Genau diese Liebe zum Produkt m\u00f6chte ich auch meinen G\u00e4sten in Aalen weitergeben.\u201c",
+    '"Ich arbeite mit ilcesto, weil man die Qualität einfach schmeckt. Nicht nur bei den Antipasti und Delikatessen selbst, sondern auch bei den Ölen, Gewürzen und Zutaten, mit denen alles eingelegt und veredelt wird. Genau diese Liebe zum Produkt möchte ich auch meinen Gästen in Aalen weitergeben."',
   quoteAuthor: "Fabry",
   transition:
-    "Ob mediterrane Antipasti, besondere Delikatessen, hochwertige \u00d6le, Essige oder kreative Feinkost-Geschenkideen \u2013 bei Culina findest du ausgew\u00e4hlte Produkte f\u00fcr echte Genussmomente zuhause.",
+    "Ob mediterrane Antipasti, besondere Delikatessen, hochwertige Öle, Essige oder kreative Feinkost-Geschenkideen – bei Culina findest du ausgewählte Produkte für echte Genussmomente zuhause.",
   usageIntro: "Unsere Feinkost-Produkte eignen sich perfekt:",
   outro:
-    "Mit unserer Feinkost von ilcesto m\u00f6chten wir Menschen f\u00fcr gute Lebensmittel, bewussten Genuss und mediterrane K\u00fcche begeistern.",
+    "Mit unserer Feinkost von ilcesto möchten wir Menschen für gute Lebensmittel, bewussten Genuss und mediterrane Küche begeistern.",
 };
 
 export const FEINKOST_HIGHLIGHTS: LocationFeature[] = [
-  { title: "Mediterrane Spezialit\u00e4ten" },
-  { title: "Hochwertige \u00d6le & Essige" },
+  { title: "Mediterrane Spezialitäten" },
+  { title: "Hochwertige Öle & Essige" },
   { title: "Frische Antipasti & Delikatessen" },
   { title: "Biologische Zutaten" },
   { title: "Traditionelle Herstellung" },
-  { title: "Kreative Genussmomente f\u00fcr zuhause" },
+  { title: "Kreative Genussmomente für zuhause" },
 ];
 
 export const FEINKOST_USAGE: LocationFeature[] = [
   { title: "Als Geschenkidee in Aalen" },
-  { title: "F\u00fcr Genie\u00dfer & Feinschmecker" },
-  { title: "F\u00fcr besondere Abende zuhause" },
-  { title: "Als Erg\u00e4nzung zu Kochkursen & Events" },
-  { title: "F\u00fcr mediterranen Genuss im Alltag" },
+  { title: "Für Genießer & Feinschmecker" },
+  { title: "Für besondere Abende zuhause" },
+  { title: "Als Ergänzung zu Kochkursen & Events" },
+  { title: "Für mediterranen Genuss im Alltag" },
 ];
 
 export const UEBER_MICH_PAGE = {
   title: "Nenn mich einfach Fabry",
-  metaTitle: "\u00dcber mich \u2013 Fabry",
+  metaTitle: "Über mich – Fabry",
   description:
-    "Kochen bedeutet f\u00fcr mich Gemeinschaft, Genuss und Menschen zusammenzubringen.",
+    "Kochen bedeutet für mich Gemeinschaft, Genuss und Menschen zusammenzubringen.",
   subtitle:
-    "Kochen bedeutet f\u00fcr mich Gemeinschaft, Genuss und Menschen zusammenzubringen",
+    "Kochen bedeutet für mich Gemeinschaft, Genuss und Menschen zusammenzubringen",
   section1Label: "Meine Geschichte",
-  section1Title: "Von Rum\u00e4nien nach Aalen",
+  section1Title: "Von Rumänien nach Aalen",
   section1Text1:
-    "Mein Name ist Razvan George Pamfile, aber Freunde, Familie und viele G\u00e4ste nennen mich einfach \u201eFabry\u201c. Geboren und aufgewachsen bin ich in Rum\u00e4nien \u2013 dort habe ich auch meine Leidenschaft f\u00fcrs Kochen entdeckt und meine ersten Erfahrungen in der K\u00fcche gesammelt. Besonders die s\u00fcdliche und mediterrane K\u00fcche begeistert mich bis heute: frische Zutaten, ehrliche Gerichte und gemeinsames Genie\u00dfen stehen f\u00fcr mich immer im Mittelpunkt.",
+    'Mein Name ist Razvan George Pamfile, aber Freunde, Familie und viele Gäste nennen mich einfach "Fabry". Geboren und aufgewachsen bin ich in Rumänien – dort habe ich auch meine Leidenschaft fürs Kochen entdeckt und meine ersten Erfahrungen in der Küche gesammelt. Besonders die südliche und mediterrane Küche begeistert mich bis heute: frische Zutaten, ehrliche Gerichte und gemeinsames Genießen stehen für mich immer im Mittelpunkt.',
   section1Text2:
-    "2017 kam ich nach Deutschland und habe meinen Weg in der Gastronomie Schritt f\u00fcr Schritt aufgebaut. Vom Tellerw\u00e4scher bis zum Koch durfte ich alle Stationen kennenlernen und wertvolle Erfahrungen sammeln. Gerade diese Zeit hat mich gepr\u00e4gt, denn ich habe gelernt, wie wichtig Teamgeist, Qualit\u00e4t und echte Gastfreundschaft sind.",
+    "2017 kam ich nach Deutschland und habe meinen Weg in der Gastronomie Schritt für Schritt aufgebaut. Vom Tellerwäscher bis zum Koch durfte ich alle Stationen kennenlernen und wertvolle Erfahrungen sammeln. Gerade diese Zeit hat mich geprägt, denn ich habe gelernt, wie wichtig Teamgeist, Qualität und echte Gastfreundschaft sind.",
   section1Image: "https://placehold.co/600x600?text=Fabry",
-  section1ImageAlt: "Fabry \u2013 Gr\u00fcnder von Culina",
+  section1ImageAlt: "Fabry – Gründer von Culina",
   section2Label: "Mein Weg",
   section2Title: "Erfahrung trifft Leidenschaft",
   section2Text1:
-    "Auch in Aalen konnte ich viele Erfahrungen sammeln \u2013 unter anderem bei Leib&Seele, in der Wilhelmsh\u00f6he und der Bierhalle. Sp\u00e4ter f\u00fchrte mich mein Weg nach Karlsruhe \u2013 erst ins Sternerestaurant \u201efine dining\u201c, und dann zu ilcesto, wo ich mein Wissen rund um Feinkost, hochwertige Lebensmittel und moderne Genusskonzepte weiter vertiefen konnte.",
+    'Auch in Aalen konnte ich viele Erfahrungen sammeln – unter anderem bei Leib&Seele, in der Wilhelmshöhe und der Bierhalle. Später führte mich mein Weg nach Karlsruhe – erst ins Sternerestaurant "fine dining", und dann zu ilcesto, wo ich mein Wissen rund um Feinkost, hochwertige Lebensmittel und moderne Genusskonzepte weiter vertiefen konnte.',
   section2Text2:
-    "Heute lebe ich mit meiner Familie und meinen zwei Kindern in Aalen und freue mich, mit Culina einen Ort zu schaffen, an dem Menschen zusammenkommen, gemeinsam kochen und sch\u00f6ne Momente erleben k\u00f6nnen.",
+    "Heute lebe ich mit meiner Familie und meinen zwei Kindern in Aalen und freue mich, mit Culina einen Ort zu schaffen, an dem Menschen zusammenkommen, gemeinsam kochen und schöne Momente erleben können.",
   section2Text3:
-    "Mir ist besonders wichtig, dass sich meine G\u00e4ste wohlf\u00fchlen, Spa\u00df haben und neben gutem Essen auch neue Ideen mit nach Hause nehmen. Ob kleine Tipps aus der Gastronomie, neue Rezeptideen oder besondere Geschmackserlebnisse \u2013 ich m\u00f6chte Menschen f\u00fcr gutes Essen begeistern und zeigen, wie viel Freude gemeinsames Kochen machen kann.",
+    "Mir ist besonders wichtig, dass sich meine Gäste wohlfühlen, Spaß haben und neben gutem Essen auch neue Ideen mit nach Hause nehmen. Ob kleine Tipps aus der Gastronomie, neue Rezeptideen oder besondere Geschmackserlebnisse – ich möchte Menschen für gutes Essen begeistern und zeigen, wie viel Freude gemeinsames Kochen machen kann.",
   section2Image: "https://placehold.co/600x600?text=Fabry+K%C3%BCche",
-  section2ImageAlt: "Fabry in der K\u00fcche bei Culina",
+  section2ImageAlt: "Fabry in der Küche bei Culina",
   quote:
-    "\u201eCulina soll ein Ort sein, an dem Genuss, Gemeinschaft und famili\u00e4re Atmosph\u00e4re im Mittelpunkt stehen.\u201c",
+    '"Culina soll ein Ort sein, an dem Genuss, Gemeinschaft und familiäre Atmosphäre im Mittelpunkt stehen."',
 };
 
 export const GUTSCHEINE_PAGE = {
-  title: "Kochkurs Gutscheine \u2013 Genuss verschenken",
+  title: "Kochkurs Gutscheine – Genuss verschenken",
   description:
-    "Die besondere Geschenkidee f\u00fcr Genie\u00dfer, Freunde und gemeinsame Erlebnisse",
+    "Die besondere Geschenkidee für Genießer, Freunde und gemeinsame Erlebnisse",
   subtitle:
-    "Die besondere Geschenkidee f\u00fcr Genie\u00dfer, Freunde und gemeinsame Erlebnisse",
+    "Die besondere Geschenkidee für Genießer, Freunde und gemeinsame Erlebnisse",
   intro:
-    "Du suchst nach einer besonderen Geschenkidee? Mit einem Gutschein f\u00fcr Culina verschenkst du gemeinsame Zeit, kulinarische Erlebnisse und unvergessliche Genussmomente. Verwendbar f\u00fcr Kochkurse in Aalen, Catering, kulinarisches Ereignisse oder Feinkostartikel \u2013 unsere Gutscheine sind das perfekte Geschenk f\u00fcr alle, die gutes Essen und besondere Erlebnisse lieben.",
+    "Du suchst nach einer besonderen Geschenkidee? Mit einem Gutschein für Culina verschenkst du gemeinsame Zeit, kulinarische Erlebnisse und unvergessliche Genussmomente. Verwendbar für Kochkurse in Aalen, Catering, kulinarisches Ereignisse oder Feinkostartikel – unsere Gutscheine sind das perfekte Geschenk für alle, die gutes Essen und besondere Erlebnisse lieben.",
   introSecond:
-    "Egal ob Geburtstag, Weihnachten, Jubil\u00e4um oder einfach als kleine Aufmerksamkeit: Ein Culina Gutschein verbindet Genuss, Gemeinschaft und echte Erinnerungen.",
+    "Egal ob Geburtstag, Weihnachten, Jubiläum oder einfach als kleine Aufmerksamkeit: Ein Culina Gutschein verbindet Genuss, Gemeinschaft und echte Erinnerungen.",
 };

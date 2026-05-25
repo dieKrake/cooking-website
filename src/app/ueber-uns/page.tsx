@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { UEBER_MICH_PAGE } from "@/lib/placeholder-data";
+import { UEBER_MICH_PAGE } from "@/lib/data";
 import { StorySection } from "@/components/organisms/story-section";
 
 export const metadata: Metadata = {
