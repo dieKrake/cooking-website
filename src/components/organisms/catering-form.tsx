@@ -62,6 +62,8 @@ export function CateringForm() {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   function handleChange(
     e: React.ChangeEvent<
@@ -75,14 +77,30 @@ export function CateringForm() {
     }
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const newErrors = validate(form);
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
-    setSubmitted(true);
+    setIsLoading(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "catering", ...form }),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setSubmitError(
+        "Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+      );
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   if (submitted) {
@@ -247,15 +265,21 @@ export function CateringForm() {
             rows={4}
           />
         </div>
-        <div className="sm:col-span-2">
-          <Button
-            type="submit"
-            size="lg"
-            variant="outline"
-            className="cursor-pointer"
-          >
-            Anfrage absenden
-          </Button>
+        <div className="flex flex-col gap-2 sm:col-span-2">
+          {submitError && (
+            <p className="text-destructive text-sm">{submitError}</p>
+          )}
+          <div>
+            <Button
+              type="submit"
+              size="lg"
+              variant="outline"
+              className="cursor-pointer"
+              disabled={isLoading}
+            >
+              {isLoading ? "Wird gesendet…" : "Anfrage absenden"}
+            </Button>
+          </div>
         </div>
       </form>
     </section>

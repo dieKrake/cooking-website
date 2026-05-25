@@ -40,6 +40,8 @@ export function ContactSection() {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -51,14 +53,30 @@ export function ContactSection() {
     }
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const newErrors = validate(form);
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
-    setSubmitted(true);
+    setIsLoading(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "contact", ...form }),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setSubmitError(
+        "Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+      );
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -208,13 +226,17 @@ export function ContactSection() {
                 </p>
               )}
             </div>
+            {submitError && (
+              <p className="text-destructive text-sm">{submitError}</p>
+            )}
             <Button
               type="submit"
               size="lg"
               className="cursor-pointer self-start"
               variant="outline"
+              disabled={isLoading}
             >
-              Nachricht senden
+              {isLoading ? "Wird gesendet…" : "Nachricht senden"}
             </Button>
           </form>
         )}
