@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import { UEBER_MICH_PAGE } from "@/lib/placeholder-data";
 import { StorySection } from "@/components/organisms/story-section";
 
 export const metadata: Metadata = {
-  title: "Über mich – Fabry",
-  description:
-    "Kochen bedeutet für mich Gemeinschaft, Genuss und Menschen zusammenzubringen.",
+  title: UEBER_MICH_PAGE.metaTitle,
+  description: UEBER_MICH_PAGE.description,
 };
 
 export default function UeberUnsPage() {
@@ -12,11 +12,10 @@ export default function UeberUnsPage() {
     <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mb-12">
         <h1 className="text-4xl font-bold tracking-tight">
-          Nenn mich einfach Fabry
+          {UEBER_MICH_PAGE.title}
         </h1>
         <h2 className="mt-3 text-2xl font-semibold tracking-tight">
-          Kochen bedeutet für mich Gemeinschaft, Genuss und Menschen
-          zusammenzubringen
+          {UEBER_MICH_PAGE.subtitle}
         </h2>
       </div>
       <StorySection />

@@ -418,6 +418,35 @@ export const FEINKOST_USAGE: LocationFeature[] = [
   { title: "F\u00fcr mediterranen Genuss im Alltag" },
 ];
 
+export const UEBER_MICH_PAGE = {
+  title: "Nenn mich einfach Fabry",
+  metaTitle: "\u00dcber mich \u2013 Fabry",
+  description:
+    "Kochen bedeutet f\u00fcr mich Gemeinschaft, Genuss und Menschen zusammenzubringen.",
+  subtitle:
+    "Kochen bedeutet f\u00fcr mich Gemeinschaft, Genuss und Menschen zusammenzubringen",
+  section1Label: "Meine Geschichte",
+  section1Title: "Von Rum\u00e4nien nach Aalen",
+  section1Text1:
+    "Mein Name ist Razvan George Pamfile, aber Freunde, Familie und viele G\u00e4ste nennen mich einfach \u201eFabry\u201c. Geboren und aufgewachsen bin ich in Rum\u00e4nien \u2013 dort habe ich auch meine Leidenschaft f\u00fcrs Kochen entdeckt und meine ersten Erfahrungen in der K\u00fcche gesammelt. Besonders die s\u00fcdliche und mediterrane K\u00fcche begeistert mich bis heute: frische Zutaten, ehrliche Gerichte und gemeinsames Genie\u00dfen stehen f\u00fcr mich immer im Mittelpunkt.",
+  section1Text2:
+    "2017 kam ich nach Deutschland und habe meinen Weg in der Gastronomie Schritt f\u00fcr Schritt aufgebaut. Vom Tellerw\u00e4scher bis zum Koch durfte ich alle Stationen kennenlernen und wertvolle Erfahrungen sammeln. Gerade diese Zeit hat mich gepr\u00e4gt, denn ich habe gelernt, wie wichtig Teamgeist, Qualit\u00e4t und echte Gastfreundschaft sind.",
+  section1Image: "https://placehold.co/600x600?text=Fabry",
+  section1ImageAlt: "Fabry \u2013 Gr\u00fcnder von Culina",
+  section2Label: "Mein Weg",
+  section2Title: "Erfahrung trifft Leidenschaft",
+  section2Text1:
+    "Auch in Aalen konnte ich viele Erfahrungen sammeln \u2013 unter anderem bei Leib&Seele, in der Wilhelmsh\u00f6he und der Bierhalle. Sp\u00e4ter f\u00fchrte mich mein Weg nach Karlsruhe \u2013 erst ins Sternerestaurant \u201efine dining\u201c, und dann zu ilcesto, wo ich mein Wissen rund um Feinkost, hochwertige Lebensmittel und moderne Genusskonzepte weiter vertiefen konnte.",
+  section2Text2:
+    "Heute lebe ich mit meiner Familie und meinen zwei Kindern in Aalen und freue mich, mit Culina einen Ort zu schaffen, an dem Menschen zusammenkommen, gemeinsam kochen und sch\u00f6ne Momente erleben k\u00f6nnen.",
+  section2Text3:
+    "Mir ist besonders wichtig, dass sich meine G\u00e4ste wohlf\u00fchlen, Spa\u00df haben und neben gutem Essen auch neue Ideen mit nach Hause nehmen. Ob kleine Tipps aus der Gastronomie, neue Rezeptideen oder besondere Geschmackserlebnisse \u2013 ich m\u00f6chte Menschen f\u00fcr gutes Essen begeistern und zeigen, wie viel Freude gemeinsames Kochen machen kann.",
+  section2Image: "https://placehold.co/600x600?text=Fabry+K%C3%BCche",
+  section2ImageAlt: "Fabry in der K\u00fcche bei Culina",
+  quote:
+    "\u201eCulina soll ein Ort sein, an dem Genuss, Gemeinschaft und famili\u00e4re Atmosph\u00e4re im Mittelpunkt stehen.\u201c",
+};
+
 export const GUTSCHEINE_PAGE = {
   title: "Kochkurs Gutscheine \u2013 Genuss verschenken",
   description:
