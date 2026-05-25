@@ -14,20 +14,50 @@ interface FormState {
   message: string;
 }
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+}
+
 const INITIAL_STATE: FormState = { name: "", email: "", message: "" };
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validate(form: FormState): FormErrors {
+  const errors: FormErrors = {};
+  if (!form.name.trim()) errors.name = "Bitte gib deinen Namen ein.";
+  if (!form.email.trim()) {
+    errors.email = "Bitte gib deine E-Mail-Adresse ein.";
+  } else if (!EMAIL_REGEX.test(form.email)) {
+    errors.email = "Bitte gib eine gültige E-Mail-Adresse ein.";
+  }
+  if (!form.message.trim())
+    errors.message = "Bitte schreib uns eine Nachricht.";
+  return errors;
+}
 
 export function ContactSection() {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const newErrors = validate(form);
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
     setSubmitted(true);
   }
 
@@ -112,7 +142,17 @@ export function ContactSection() {
                 onChange={handleChange}
                 placeholder="Dein Name"
                 required
+                aria-invalid={!!errors.name}
+                aria-describedby={
+                  errors.name ? "contact-name-error" : undefined
+                }
+                className={errors.name ? "border-destructive" : ""}
               />
+              {errors.name && (
+                <p id="contact-name-error" className="text-destructive text-sm">
+                  {errors.name}
+                </p>
+              )}
             </div>
             <div className="flex flex-col gap-1.5">
               <label htmlFor="contact-email" className="text-sm font-medium">
@@ -126,7 +166,20 @@ export function ContactSection() {
                 onChange={handleChange}
                 placeholder="deine@email.de"
                 required
+                aria-invalid={!!errors.email}
+                aria-describedby={
+                  errors.email ? "contact-email-error" : undefined
+                }
+                className={errors.email ? "border-destructive" : ""}
               />
+              {errors.email && (
+                <p
+                  id="contact-email-error"
+                  className="text-destructive text-sm"
+                >
+                  {errors.email}
+                </p>
+              )}
             </div>
             <div className="flex flex-col gap-1.5">
               <label htmlFor="contact-message" className="text-sm font-medium">
@@ -140,7 +193,20 @@ export function ContactSection() {
                 placeholder="Wie können wir dir helfen?"
                 rows={5}
                 required
+                aria-invalid={!!errors.message}
+                aria-describedby={
+                  errors.message ? "contact-message-error" : undefined
+                }
+                className={errors.message ? "border-destructive" : ""}
               />
+              {errors.message && (
+                <p
+                  id="contact-message-error"
+                  className="text-destructive text-sm"
+                >
+                  {errors.message}
+                </p>
+              )}
             </div>
             <Button
               type="submit"

@@ -32,8 +32,29 @@ const OCCASIONS = [
   "Sonstiges",
 ];
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  occasion?: string;
+}
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validate(form: FormState): FormErrors {
+  const errors: FormErrors = {};
+  if (!form.name.trim()) errors.name = "Bitte gib deinen Namen ein.";
+  if (!form.email.trim()) {
+    errors.email = "Bitte gib deine E-Mail-Adresse ein.";
+  } else if (!EMAIL_REGEX.test(form.email)) {
+    errors.email = "Bitte gib eine gültige E-Mail-Adresse ein.";
+  }
+  if (!form.occasion) errors.occasion = "Bitte wähle einen Anlass aus.";
+  return errors;
+}
+
 export function InquiryForm() {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
 
   function handleChange(
@@ -41,11 +62,20 @@ export function InquiryForm() {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >,
   ) {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const newErrors = validate(form);
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
     setSubmitted(true);
   }
 
@@ -86,7 +116,15 @@ export function InquiryForm() {
             onChange={handleChange}
             placeholder="Dein Name"
             required
+            aria-invalid={!!errors.name}
+            aria-describedby={errors.name ? "inquiry-name-error" : undefined}
+            className={errors.name ? "border-destructive" : ""}
           />
+          {errors.name && (
+            <p id="inquiry-name-error" className="text-destructive text-sm">
+              {errors.name}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="email" className="text-sm font-medium">
@@ -100,7 +138,15 @@ export function InquiryForm() {
             onChange={handleChange}
             placeholder="deine@email.de"
             required
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "inquiry-email-error" : undefined}
+            className={errors.email ? "border-destructive" : ""}
           />
+          {errors.email && (
+            <p id="inquiry-email-error" className="text-destructive text-sm">
+              {errors.email}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="occasion" className="text-sm font-medium">
@@ -112,7 +158,11 @@ export function InquiryForm() {
             value={form.occasion}
             onChange={handleChange}
             required
-            className="border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full rounded-lg border bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:ring-3"
+            aria-invalid={!!errors.occasion}
+            aria-describedby={
+              errors.occasion ? "inquiry-occasion-error" : undefined
+            }
+            className={`border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full rounded-lg border bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:ring-3${errors.occasion ? "border-destructive" : ""}`}
           >
             <option value="" disabled>
               Bitte wählen …
@@ -123,6 +173,11 @@ export function InquiryForm() {
               </option>
             ))}
           </select>
+          {errors.occasion && (
+            <p id="inquiry-occasion-error" className="text-destructive text-sm">
+              {errors.occasion}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="date" className="text-sm font-medium">

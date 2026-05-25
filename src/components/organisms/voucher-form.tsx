@@ -24,10 +24,30 @@ const INITIAL_STATE: FormState = {
   buyerEmail: "",
 };
 
-const AMOUNTS = ["50", "75", "100", "150"];
+interface FormErrors {
+  amount?: string;
+  buyerName?: string;
+  buyerEmail?: string;
+}
+
+const AMOUNTS = ["50", "100", "150"];
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validate(form: FormState): FormErrors {
+  const errors: FormErrors = {};
+  if (!form.amount) errors.amount = "Bitte wähle einen Betrag aus.";
+  if (!form.buyerName.trim()) errors.buyerName = "Bitte gib deinen Namen ein.";
+  if (!form.buyerEmail.trim()) {
+    errors.buyerEmail = "Bitte gib deine E-Mail-Adresse ein.";
+  } else if (!EMAIL_REGEX.test(form.buyerEmail)) {
+    errors.buyerEmail = "Bitte gib eine gültige E-Mail-Adresse ein.";
+  }
+  return errors;
+}
 
 export function VoucherForm() {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
 
   function handleChange(
@@ -35,11 +55,20 @@ export function VoucherForm() {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >,
   ) {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const newErrors = validate(form);
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
     setSubmitted(true);
   }
 
@@ -77,7 +106,9 @@ export function VoucherForm() {
             value={form.amount}
             onChange={handleChange}
             required
-            className="border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full rounded-lg border bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:ring-3"
+            aria-invalid={!!errors.amount}
+            aria-describedby={errors.amount ? "amount-error" : undefined}
+            className={`border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full rounded-lg border bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:ring-3${errors.amount ? "border-destructive" : ""}`}
           >
             <option value="" disabled>
               Bitte wählen …
@@ -88,6 +119,11 @@ export function VoucherForm() {
               </option>
             ))}
           </select>
+          {errors.amount && (
+            <p id="amount-error" className="text-destructive text-sm">
+              {errors.amount}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="format" className="text-sm font-medium">
@@ -143,7 +179,15 @@ export function VoucherForm() {
             onChange={handleChange}
             placeholder="Dein Name"
             required
+            aria-invalid={!!errors.buyerName}
+            aria-describedby={errors.buyerName ? "buyerName-error" : undefined}
+            className={errors.buyerName ? "border-destructive" : ""}
           />
+          {errors.buyerName && (
+            <p id="buyerName-error" className="text-destructive text-sm">
+              {errors.buyerName}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="buyerEmail" className="text-sm font-medium">
@@ -157,7 +201,17 @@ export function VoucherForm() {
             onChange={handleChange}
             placeholder="deine@email.de"
             required
+            aria-invalid={!!errors.buyerEmail}
+            aria-describedby={
+              errors.buyerEmail ? "buyerEmail-error" : undefined
+            }
+            className={errors.buyerEmail ? "border-destructive" : ""}
           />
+          {errors.buyerEmail && (
+            <p id="buyerEmail-error" className="text-destructive text-sm">
+              {errors.buyerEmail}
+            </p>
+          )}
         </div>
         <div className="sm:col-span-2">
           <Button

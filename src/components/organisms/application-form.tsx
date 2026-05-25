@@ -15,27 +15,59 @@ interface FormState {
 
 const INITIAL_STATE: FormState = { name: "", email: "", phone: "", idea: "" };
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  idea?: string;
+}
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validate(form: FormState): FormErrors {
+  const errors: FormErrors = {};
+  if (!form.name.trim()) errors.name = "Bitte gib deinen Namen ein.";
+  if (!form.email.trim()) {
+    errors.email = "Bitte gib deine E-Mail-Adresse ein.";
+  } else if (!EMAIL_REGEX.test(form.email)) {
+    errors.email = "Bitte gib eine gültige E-Mail-Adresse ein.";
+  }
+  if (!form.idea.trim()) errors.idea = "Bitte beschreibe deine Kursidee.";
+  return errors;
+}
+
 export function ApplicationForm() {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const newErrors = validate(form);
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
     setSubmitted(true);
   }
 
   if (submitted) {
     return (
       <section className="py-12">
-        <div className="rounded-xl border border-primary/20 bg-primary/5 px-6 py-10 text-center">
-          <p className="text-2xl font-semibold">Danke für deine Bewerbung! 🎉</p>
-          <p className="mt-2 text-foreground/60">
+        <div className="border-primary/20 bg-primary/5 rounded-xl border px-6 py-10 text-center">
+          <p className="text-2xl font-semibold">
+            Danke für deine Bewerbung! 🎉
+          </p>
+          <p className="text-foreground/60 mt-2">
             Wir melden uns so schnell wie möglich bei dir.
           </p>
         </div>
@@ -45,8 +77,15 @@ export function ApplicationForm() {
 
   return (
     <section className="py-12">
-      <SectionHeading title="Jetzt bewerben" subtitle="Erzähl uns von dir und deiner Idee." />
-      <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2" noValidate>
+      <SectionHeading
+        title="Jetzt bewerben"
+        subtitle="Erzähl uns von dir und deiner Idee."
+      />
+      <form
+        onSubmit={handleSubmit}
+        className="grid gap-5 sm:grid-cols-2"
+        noValidate
+      >
         <div className="flex flex-col gap-1.5">
           <label htmlFor="name" className="text-sm font-medium">
             Name <span aria-hidden="true">*</span>
@@ -58,7 +97,15 @@ export function ApplicationForm() {
             onChange={handleChange}
             placeholder="Dein Name"
             required
+            aria-invalid={!!errors.name}
+            aria-describedby={errors.name ? "app-name-error" : undefined}
+            className={errors.name ? "border-destructive" : ""}
           />
+          {errors.name && (
+            <p id="app-name-error" className="text-destructive text-sm">
+              {errors.name}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="email" className="text-sm font-medium">
@@ -72,7 +119,15 @@ export function ApplicationForm() {
             onChange={handleChange}
             placeholder="deine@email.de"
             required
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "app-email-error" : undefined}
+            className={errors.email ? "border-destructive" : ""}
           />
+          {errors.email && (
+            <p id="app-email-error" className="text-destructive text-sm">
+              {errors.email}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="phone" className="text-sm font-medium">
@@ -99,7 +154,15 @@ export function ApplicationForm() {
             placeholder="Beschreibe kurz, welche Art von Kurs du anbieten möchtest …"
             rows={5}
             required
+            aria-invalid={!!errors.idea}
+            aria-describedby={errors.idea ? "app-idea-error" : undefined}
+            className={errors.idea ? "border-destructive" : ""}
           />
+          {errors.idea && (
+            <p id="app-idea-error" className="text-destructive text-sm">
+              {errors.idea}
+            </p>
+          )}
         </div>
         <div className="sm:col-span-2">
           <Button type="submit" size="lg">
