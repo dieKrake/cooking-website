@@ -5,17 +5,11 @@ import type { LocationFeature } from "@/types";
 
 const mockFeature: LocationFeature = {
   title: "110 m² Fläche",
-  description: "Offenes, flexibel nutzbares Raumkonzept für bis zu 25 Personen.",
 };
 
 describe("LocationFeatureCard", () => {
   it("renders the title", () => {
     render(<LocationFeatureCard feature={mockFeature} />);
     expect(screen.getByText("110 m² Fläche")).toBeInTheDocument();
-  });
-
-  it("renders the description", () => {
-    render(<LocationFeatureCard feature={mockFeature} />);
-    expect(screen.getByText(/bis zu 25 Personen/)).toBeInTheDocument();
   });
 });

@@ -15,12 +15,12 @@ vi.mock("next/link", () => ({
 describe("Footer", () => {
   it("renders the site name", () => {
     render(<Footer />);
-    expect(screen.getByText("Kochatelier")).toBeInTheDocument();
+    expect(screen.getByText("Culina")).toBeInTheDocument();
   });
 
   it("renders the contact email", () => {
     render(<Footer />);
-    expect(screen.getByText("kontakt@kochatelier.de")).toBeInTheDocument();
+    expect(screen.getByText("kontakt@culina.de")).toBeInTheDocument();
   });
 
   it("renders all legal links", () => {
@@ -32,8 +32,6 @@ describe("Footer", () => {
 
   it("renders the copyright notice", () => {
     render(<Footer />);
-    expect(
-      screen.getByText(/Alle Rechte vorbehalten/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/Alle Rechte vorbehalten/i)).toBeInTheDocument();
   });
 });

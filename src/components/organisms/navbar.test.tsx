@@ -1,3 +1,4 @@
+import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, expect, vi } from "vitest";
@@ -23,10 +24,28 @@ vi.mock("next/navigation", () => ({
   usePathname: () => "/",
 }));
 
+vi.mock("framer-motion", () => ({
+  motion: new Proxy(
+    {},
+    {
+      get:
+        (_target, tag: string) =>
+        ({
+          children,
+          ...props
+        }: React.HTMLAttributes<HTMLElement> & {
+          children?: React.ReactNode;
+        }) =>
+          React.createElement(tag, props, children),
+    },
+  ),
+  AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
+}));
+
 describe("Navbar", () => {
   it("renders the site name", () => {
     render(<Navbar />);
-    expect(screen.getByText("Kochatelier")).toBeInTheDocument();
+    expect(screen.getByText("Culina")).toBeInTheDocument();
   });
 
   it("renders the desktop navigation links", () => {
@@ -72,7 +91,7 @@ describe("Navbar", () => {
     expect(
       screen.getByRole("navigation", { name: /Mobile Navigation/i }),
     ).toBeInTheDocument();
-    await user.click(screen.getByText("Kochatelier"));
+    await user.click(screen.getByText("Culina"));
     expect(
       screen.queryByRole("navigation", { name: /Mobile Navigation/i }),
     ).not.toBeInTheDocument();
@@ -90,29 +109,5 @@ describe("Navbar", () => {
     expect(
       screen.queryByRole("navigation", { name: /Mobile Navigation/i }),
     ).not.toBeInTheDocument();
-  });
-
-  it("opens dropdown on click", () => {
-    render(<Navbar />);
-    fireEvent.click(screen.getByRole("button", { name: /Kurse/i }));
-    expect(screen.getByRole("menu")).toBeInTheDocument();
-    expect(screen.getByText("Aktuelle Kurse")).toBeInTheDocument();
-  });
-
-  it("opens dropdown on mouse enter", async () => {
-    render(<Navbar />);
-    const kursButton = screen.getByRole("button", { name: /Kurse/i });
-    fireEvent.mouseEnter(kursButton);
-    expect(screen.getByRole("menu")).toBeInTheDocument();
-  });
-
-  it("closes dropdown on mouse leave", async () => {
-    render(<Navbar />);
-    const kursButton = screen.getByRole("button", { name: /Kurse/i });
-    fireEvent.mouseEnter(kursButton);
-    expect(screen.getByRole("menu")).toBeInTheDocument();
-    const dropdown = kursButton.closest(".relative")!;
-    fireEvent.mouseLeave(dropdown);
-    expect(screen.queryByRole("menu")).not.toBeInTheDocument();
   });
 });

@@ -22,6 +22,6 @@ describe("ImpressumPage", () => {
 
   it("renders the contact email", () => {
     render(<ImpressumPage />);
-    expect(screen.getByText(/kontakt@kochatelier\.de/)).toBeInTheDocument();
+    expect(screen.getByText(/kontakt@culina\.de/)).toBeInTheDocument();
   });
 });

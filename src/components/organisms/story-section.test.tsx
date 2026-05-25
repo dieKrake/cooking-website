@@ -9,27 +9,27 @@ vi.mock("next/image", () => ({
 }));
 
 describe("StorySection", () => {
-  it("renders the founder name", () => {
+  it("renders the first section heading", () => {
     render(<StorySection />);
-    expect(screen.getByText(/Hallo, ich bin Sandra/i)).toBeInTheDocument();
+    expect(screen.getByText("Von Rumänien nach Aalen")).toBeInTheDocument();
+  });
+
+  it("renders the second section heading", () => {
+    render(<StorySection />);
+    expect(
+      screen.getByText("Erfahrung trifft Leidenschaft"),
+    ).toBeInTheDocument();
   });
 
   it("renders the founder image", () => {
     render(<StorySection />);
     expect(
-      screen.getByRole("img", { name: /Gründerin/i }),
+      screen.getByRole("img", { name: /Gründer von Culina/i }),
     ).toBeInTheDocument();
   });
 
-  it("renders the values section heading", () => {
+  it("renders the closing quote", () => {
     render(<StorySection />);
-    expect(screen.getByText("Meine Werte")).toBeInTheDocument();
-  });
-
-  it("renders all three values", () => {
-    render(<StorySection />);
-    expect(screen.getByText("Leidenschaft")).toBeInTheDocument();
-    expect(screen.getByText("Nachhaltigkeit")).toBeInTheDocument();
-    expect(screen.getByText("Gemeinschaft")).toBeInTheDocument();
+    expect(screen.getByText(/Culina soll ein Ort sein/i)).toBeInTheDocument();
   });
 });

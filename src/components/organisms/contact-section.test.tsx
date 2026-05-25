@@ -11,9 +11,9 @@ describe("ContactSection", () => {
 
   it("renders contact info (email, phone, address)", () => {
     render(<ContactSection />);
-    expect(screen.getByText(/kontakt@kochatelier\.de/i)).toBeInTheDocument();
+    expect(screen.getByText(/kontakt@culina\.de/i)).toBeInTheDocument();
     expect(screen.getByText(/\+49/)).toBeInTheDocument();
-    expect(screen.getByText(/Wiesbaden/i)).toBeInTheDocument();
+    expect(screen.getByText(/Aalen/i)).toBeInTheDocument();
   });
 
   it("renders all form fields", () => {
@@ -39,13 +39,17 @@ describe("ContactSection", () => {
 
   it("shows success message after form submission", async () => {
     render(<ContactSection />);
-    await userEvent.click(screen.getByRole("button", { name: /Nachricht senden/i }));
+    await userEvent.click(
+      screen.getByRole("button", { name: /Nachricht senden/i }),
+    );
     expect(screen.getByText(/Nachricht gesendet/i)).toBeInTheDocument();
   });
 
   it("hides the form after successful submission", async () => {
     render(<ContactSection />);
-    await userEvent.click(screen.getByRole("button", { name: /Nachricht senden/i }));
+    await userEvent.click(
+      screen.getByRole("button", { name: /Nachricht senden/i }),
+    );
     expect(
       screen.queryByRole("button", { name: /Nachricht senden/i }),
     ).not.toBeInTheDocument();

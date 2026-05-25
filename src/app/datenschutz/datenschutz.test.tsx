@@ -28,6 +28,6 @@ describe("DatenschutzPage", () => {
 
   it("renders contact email for rights requests", () => {
     render(<DatenschutzPage />);
-    expect(screen.getAllByText(/kontakt@kochatelier\.de/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/kontakt@culina\.de/).length).toBeGreaterThan(0);
   });
 });
