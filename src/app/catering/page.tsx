@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import {
   PLACEHOLDER_CATERING_FEATURES,
   PLACEHOLDER_CATERING_STYLES,
-  PLACEHOLDER_LOCATION_FEATURES,
 } from "@/lib/placeholder-data";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { BenefitCard } from "@/components/molecules/benefit-card";

@@ -1,12 +1,10 @@
 import Link from "next/link";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { CourseCard } from "@/components/molecules/course-card";
-import { PLACEHOLDER_COURSES } from "@/lib/placeholder-data";
+import { COURSES } from "@/lib/placeholder-data";
 
 export function CourseSlider() {
-  const upcomingCourses = PLACEHOLDER_COURSES.filter(
-    (course) => course.hasFixedDate,
-  );
+  const upcomingCourses = COURSES.filter((course) => course.hasFixedDate);
 
   return (
     <section className="bg-muted/30 py-16 sm:py-20">

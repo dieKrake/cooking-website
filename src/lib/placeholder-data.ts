@@ -16,7 +16,7 @@ import type {
   LocationFeature,
 } from "@/types";
 
-export const PLACEHOLDER_COURSES: Course[] = [
+export const COURSES: Course[] = [
   {
     slug: "pizza-und-pasta",
     title: "Pizza & Pasta – Italiens Klassiker",
@@ -130,6 +130,13 @@ export const PLACEHOLDER_COURSES: Course[] = [
     category: "Drinks",
   },
 ];
+
+export const AKTUELLE_KURSE_PAGE = {
+  title: "Aktuelle Kurse",
+  description: "Alle aktuellen Kochkurse und Events im Culina Aalen.",
+  intro:
+    "Entdecke unsere Kochkurse – von internationaler Küche bis hin zu besonderen Themenabenden.",
+};
 
 export const PLACEHOLDER_TEAM: TeamMember[] = [
   {
