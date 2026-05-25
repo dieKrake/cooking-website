@@ -8,30 +8,30 @@ export const CONTACT_INFO: ContactInfo = {
   email: "kontakt@culina.de",
   phone: "+49 123 456 789",
   address: {
-    street: "Musterstraße 1",
-    zip: "65185",
-    city: "Wiesbaden",
+    street: "Bahnhofstraße 38",
+    zip: "73430",
+    city: "Aalen",
     country: "Deutschland",
   },
 };
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
-  {
-    label: "Kurse",
-    href: "/aktuelle-kurse",
-    children: [
-      { label: "Aktuelle Kurse", href: "/aktuelle-kurse" },
-      { label: "Unser Team", href: "/team" },
-      { label: "Werde Kursleiter!", href: "/kursleiter-werden" },
-    ],
-  },
+  // {
+  //   label: "Kurse",
+  //   href: "/aktuelle-kurse",
+  //   children: [
+  //     { label: "Aktuelle Kurse", href: "/aktuelle-kurse" },
+  //     { label: "Unser Team", href: "/team" },
+  //     { label: "Werde Kursleiter!", href: "/kursleiter-werden" },
+  //   ],
+  // },
   { label: "Eventlocation", href: "/eventlocation" },
   { label: "Catering", href: "/catering" },
   { label: "Feinkost", href: "/feinkost" },
   { label: "Gutscheine", href: "/gutscheine" },
-  { label: "Kontakt", href: "/#kontakt" },
   { label: "Über mich", href: "/ueber-uns" },
+  { label: "Kontakt", href: "/#kontakt" },
 ];
 
 export const FOOTER_LEGAL_LINKS = [
