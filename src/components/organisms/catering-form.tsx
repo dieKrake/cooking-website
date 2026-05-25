@@ -38,6 +38,8 @@ const CUISINES = [
 interface FormErrors {
   name?: string;
   email?: string;
+  date?: string;
+  guests?: string;
 }
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -50,6 +52,9 @@ function validate(form: FormState): FormErrors {
   } else if (!EMAIL_REGEX.test(form.email)) {
     errors.email = "Bitte gib eine gültige E-Mail-Adresse ein.";
   }
+  if (!form.date) errors.date = "Bitte gib ein Wunschdatum an.";
+  if (!form.guests || Number(form.guests) < 1)
+    errors.guests = "Bitte gib die Anzahl der Personen an.";
   return errors;
 }
 
@@ -185,7 +190,7 @@ export function CateringForm() {
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="date" className="text-sm font-medium">
-            Wunschdatum
+            Wunschdatum <span aria-hidden="true">*</span>
           </label>
           <Input
             id="date"
@@ -193,11 +198,20 @@ export function CateringForm() {
             type="date"
             value={form.date}
             onChange={handleChange}
+            required
+            aria-invalid={!!errors.date}
+            aria-describedby={errors.date ? "catering-date-error" : undefined}
+            className={errors.date ? "border-destructive" : ""}
           />
+          {errors.date && (
+            <p id="catering-date-error" className="text-destructive text-sm">
+              {errors.date}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="guests" className="text-sm font-medium">
-            Anzahl Personen
+            Anzahl Personen <span aria-hidden="true">*</span>
           </label>
           <Input
             id="guests"
@@ -207,7 +221,18 @@ export function CateringForm() {
             value={form.guests}
             onChange={handleChange}
             placeholder="z. B. 20"
+            required
+            aria-invalid={!!errors.guests}
+            aria-describedby={
+              errors.guests ? "catering-guests-error" : undefined
+            }
+            className={errors.guests ? "border-destructive" : ""}
           />
+          {errors.guests && (
+            <p id="catering-guests-error" className="text-destructive text-sm">
+              {errors.guests}
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-1.5 sm:col-span-2">
           <label htmlFor="message" className="text-sm font-medium">
