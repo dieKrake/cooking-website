@@ -417,3 +417,15 @@ export const FEINKOST_USAGE: LocationFeature[] = [
   { title: "Als Erg\u00e4nzung zu Kochkursen & Events" },
   { title: "F\u00fcr mediterranen Genuss im Alltag" },
 ];
+
+export const GUTSCHEINE_PAGE = {
+  title: "Kochkurs Gutscheine \u2013 Genuss verschenken",
+  description:
+    "Die besondere Geschenkidee f\u00fcr Genie\u00dfer, Freunde und gemeinsame Erlebnisse",
+  subtitle:
+    "Die besondere Geschenkidee f\u00fcr Genie\u00dfer, Freunde und gemeinsame Erlebnisse",
+  intro:
+    "Du suchst nach einer besonderen Geschenkidee? Mit einem Gutschein f\u00fcr Culina verschenkst du gemeinsame Zeit, kulinarische Erlebnisse und unvergessliche Genussmomente. Verwendbar f\u00fcr Kochkurse in Aalen, Catering, kulinarisches Ereignisse oder Feinkostartikel \u2013 unsere Gutscheine sind das perfekte Geschenk f\u00fcr alle, die gutes Essen und besondere Erlebnisse lieben.",
+  introSecond:
+    "Egal ob Geburtstag, Weihnachten, Jubil\u00e4um oder einfach als kleine Aufmerksamkeit: Ein Culina Gutschein verbindet Genuss, Gemeinschaft und echte Erinnerungen.",
+};
