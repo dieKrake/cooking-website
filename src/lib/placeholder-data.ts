@@ -290,7 +290,23 @@ export const CATERING_STYLES: Benefit[] = [
   },
 ];
 
-export const PLACEHOLDER_GALLERY_IMAGES: GalleryImage[] = [
+export const EVENTLOCATION_PAGE = {
+  title:
+    "Unsere Eventlocation mitten in Aalen \u2013 Genussvolle Events in besonderer Atmosph\u00e4re",
+  description:
+    "Modernes Kochstudio f\u00fcr Firmenfeiern, private Events und gemeinsame Genussmomente in Aalen.",
+  subtitle:
+    "Modernes Kochstudio f\u00fcr Firmenfeiern, private Events und gemeinsame Genussmomente",
+  intro:
+    "Unser Kochstudio in Aalen verbindet moderne Ausstattung mit famili\u00e4rer Atmosph\u00e4re und schafft den perfekten Rahmen f\u00fcr unvergessliche Events, Kochabende und Feiern. Ob Firmenevent, Geburtstag, Teamabend oder private Feier \u2013 unsere Eventlocation bietet Platz f\u00fcr bis zu 50 Personen und l\u00e4dt zum gemeinsamen Genie\u00dfen und Erleben ein. Die helle, offene Raumgestaltung sorgt f\u00fcr eine einladende Atmosph\u00e4re, in der sich G\u00e4ste sofort wohlf\u00fchlen. Hochwertiges K\u00fcchenequipment von NEFF erm\u00f6glicht professionelle Kochkurse, Live-Cooking-Erlebnisse und kulinarische Events auf h\u00f6chstem Niveau.",
+  flyingBuffet:
+    "Besonders beliebt ist unser Flying Buffet: Statt eines klassischen Buffets werden kleine, frisch zubereitete Speisen direkt serviert und flexibel im Raum angeboten. So entsteht eine lockere, kommunikative Atmosph\u00e4re, in der sich Genuss und Austausch ganz nat\u00fcrlich verbinden.",
+  featuresIntro: "Unsere Eventlocation in Aalen eignet sich ideal f\u00fcr:",
+  outro:
+    "Mit viel Liebe zum Detail schaffen wir einen Ort, an dem gutes Essen, gemeinsame Erlebnisse und echte Gastfreundschaft im Mittelpunkt stehen.",
+};
+
+export const GALLERY_IMAGES: GalleryImage[] = [
   {
     src: "https://placehold.co/800x600?text=Kochstudio+%C3%9Cbersicht",
     alt: "Blick in das offene Kochstudio mit moderner Ausstattung",
@@ -320,7 +336,7 @@ export const PLACEHOLDER_GALLERY_IMAGES: GalleryImage[] = [
   },
 ];
 
-export const PLACEHOLDER_LOCATION_FEATURES: LocationFeature[] = [
+export const LOCATION_FEATURES: LocationFeature[] = [
   {
     title: "Firmenfeiern & Teamevents",
   },
