@@ -231,7 +231,21 @@ export const PLACEHOLDER_OFFER_CARDS: OfferCard[] = [
   },
 ];
 
-export const PLACEHOLDER_CATERING_STYLES: Benefit[] = [
+export const CATERING_PAGE = {
+  title: "Catering in Aalen – Frisch, regional und mit Liebe zum Genuss",
+  description: "Catering in Aalen – Frisch, regional und mit Liebe zum Genuss",
+  subtitle:
+    "Kulinarisches Catering für Events, Firmenfeiern und besondere Anlässe",
+  intro:
+    "Mit unserem Catering bringen wir hochwertige, kreative und frisch zubereitete Küche direkt zu deinem Event. Ob Firmenfeier, Geburtstag, Business-Lunch oder private Veranstaltung – Culina bietet eine vielseitige Auswahl an Speisen, Snacks und Getränken für genussvolle Momente in besonderer Atmosphäre. Unsere Küche verbindet regionale Zutaten mit mediterranen Einflüssen, gutbürgerlichen Klassikern und modernen, kreativen Gerichten. Dabei legen wir besonderen Wert auf frische Produkte, hochwertige Qualität und eine abwechslungsreiche Auswahl für jeden Geschmack.",
+  sectionTitle: "Unsere Küchenwelten",
+  sectionSubtitle: "Für jeden Anlass die passende kulinarische Welt.",
+  featuresIntro: "Unsere Eventlocation in Aalen eignet sich ideal für:",
+  outro:
+    "Mit viel Leidenschaft fürs Kochen und einem Gespür für Gastfreundschaft schaffen wir Catering-Erlebnisse, die in Erinnerung bleiben.",
+};
+
+export const CATERING_STYLES: Benefit[] = [
   {
     title: "Mediterrane Küche",
     description:
@@ -324,7 +338,7 @@ export const PLACEHOLDER_LOCATION_FEATURES: LocationFeature[] = [
   },
 ];
 
-export const PLACEHOLDER_CATERING_FEATURES: LocationFeature[] = [
+export const CATERING_FEATURES: LocationFeature[] = [
   {
     title: "Firmenfeiern & Business-Events",
   },
