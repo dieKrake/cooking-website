@@ -17,15 +17,15 @@ export const CONTACT_INFO: ContactInfo = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
-  // {
-  //   label: "Kurse",
-  //   href: "/aktuelle-kurse",
-  //   children: [
-  //     { label: "Aktuelle Kurse", href: "/aktuelle-kurse" },
-  //     { label: "Unser Team", href: "/team" },
-  //     { label: "Werde Kursleiter!", href: "/kursleiter-werden" },
-  //   ],
-  // },
+  {
+    label: "Kurse",
+    href: "/aktuelle-kurse",
+    children: [
+      { label: "Aktuelle Kurse", href: "/aktuelle-kurse" },
+      { label: "Unser Team", href: "/team" },
+      { label: "Werde Kursleiter!", href: "/kursleiter-werden" },
+    ],
+  },
   { label: "Eventlocation", href: "/eventlocation" },
   { label: "Catering", href: "/catering" },
   { label: "Feinkost", href: "/feinkost" },

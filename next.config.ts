@@ -1,14 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      { source: "/aktuelle-kurse", destination: "/", permanent: false },
-      { source: "/kurse/:slug*", destination: "/", permanent: false },
-      { source: "/team", destination: "/", permanent: false },
-      { source: "/kursleiter-werden", destination: "/", permanent: false },
-    ];
-  },
   experimental: {
     optimizeCss: true,
   },
