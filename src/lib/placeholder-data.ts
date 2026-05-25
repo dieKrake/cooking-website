@@ -374,3 +374,46 @@ export const CATERING_FEATURES: LocationFeature[] = [
     title: "Individuelle Eventkonzepte",
   },
 ];
+
+export const FEINKOST_PAGE = {
+  title: "Feinkost & Culina \u2013 Mediterraner Genuss in Premiumqualit\u00e4t",
+  description:
+    "Hochwertige Antipasti, Feinkost und Delikatessen von ilcesto bei Culina in Aalen.",
+  subtitle: "Hochwertige Antipasti, Feinkost und Delikatessen von ilcesto",
+  intro:
+    "Bei Culina steht Genuss nicht nur beim gemeinsamen Kochen im Mittelpunkt, sondern auch bei ausgew\u00e4hlten Feinkost-Produkten mit echter Qualit\u00e4t. Deshalb arbeiten wir mit ilcesto zusammen \u2013 einer Bio-Manufaktur, die seit vielen Jahren f\u00fcr mediterrane Feinkost, frische Antipasti und hochwertige Delikatessen steht.",
+  introSecond:
+    "Die Produkte von ilcesto \u00fcberzeugen durch frische Verarbeitung, hochwertige biologische Zutaten und echte Handwerkskunst. Viele Antipasti, Oliven, Artischocken, Peperoni, Pestos und Feinkost-Spezialit\u00e4ten werden w\u00f6chentlich frisch hergestellt und direkt verarbeitet \u2013 inspiriert von mediterraner Genusskultur und traditionellen Rezepturen.",
+  highlightsIntro:
+    "Bei unserer Feinkost in Aalen legen wir besonderen Wert auf:",
+  sectionTitle: "Mediterrane Feinkost mit Qualit\u00e4t und Herkunft",
+  sectionText:
+    "Die Philosophie von ilcesto passt perfekt zu Culina: ehrliche Lebensmittel, frische Verarbeitung, nachhaltiges Denken und echter Geschmack statt Massenproduktion. Verarbeitet werden ausschlie\u00dflich hochwertige Rohstoffe und ausgew\u00e4hlte Zutaten \u2013 mit viel Erfahrung, Fingerspitzengef\u00fchl und Leidenschaft f\u00fcr gutes Essen.",
+  quoteTitle:
+    "\u201eF\u00fcr mich z\u00e4hlt nicht nur die Feinkost selbst \u2013 sondern die Qualit\u00e4t bis ins kleinste Detail.\u201c",
+  quoteText:
+    "\u201eIch arbeite mit ilcesto, weil man die Qualit\u00e4t einfach schmeckt. Nicht nur bei den Antipasti und Delikatessen selbst, sondern auch bei den \u00d6len, Gew\u00fcrzen und Zutaten, mit denen alles eingelegt und veredelt wird. Genau diese Liebe zum Produkt m\u00f6chte ich auch meinen G\u00e4sten in Aalen weitergeben.\u201c",
+  quoteAuthor: "Fabry",
+  transition:
+    "Ob mediterrane Antipasti, besondere Delikatessen, hochwertige \u00d6le, Essige oder kreative Feinkost-Geschenkideen \u2013 bei Culina findest du ausgew\u00e4hlte Produkte f\u00fcr echte Genussmomente zuhause.",
+  usageIntro: "Unsere Feinkost-Produkte eignen sich perfekt:",
+  outro:
+    "Mit unserer Feinkost von ilcesto m\u00f6chten wir Menschen f\u00fcr gute Lebensmittel, bewussten Genuss und mediterrane K\u00fcche begeistern.",
+};
+
+export const FEINKOST_HIGHLIGHTS: LocationFeature[] = [
+  { title: "Mediterrane Spezialit\u00e4ten" },
+  { title: "Hochwertige \u00d6le & Essige" },
+  { title: "Frische Antipasti & Delikatessen" },
+  { title: "Biologische Zutaten" },
+  { title: "Traditionelle Herstellung" },
+  { title: "Kreative Genussmomente f\u00fcr zuhause" },
+];
+
+export const FEINKOST_USAGE: LocationFeature[] = [
+  { title: "Als Geschenkidee in Aalen" },
+  { title: "F\u00fcr Genie\u00dfer & Feinschmecker" },
+  { title: "F\u00fcr besondere Abende zuhause" },
+  { title: "Als Erg\u00e4nzung zu Kochkursen & Events" },
+  { title: "F\u00fcr mediterranen Genuss im Alltag" },
+];
