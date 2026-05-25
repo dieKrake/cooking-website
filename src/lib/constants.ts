@@ -28,6 +28,7 @@ export const NAV_ITEMS: NavItem[] = [
   },
   { label: "Eventlocation", href: "/eventlocation" },
   { label: "Catering", href: "/catering" },
+  { label: "Feinkost", href: "/feinkost" },
   { label: "Gutscheine", href: "/gutscheine" },
   { label: "Kontakt", href: "/#kontakt" },
   { label: "Über mich", href: "/ueber-uns" },
