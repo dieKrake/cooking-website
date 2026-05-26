@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { CateringForm } from "./catering-form";
 
 describe("CateringForm", () => {
@@ -77,5 +77,90 @@ describe("CateringForm", () => {
     expect(
       screen.queryByRole("button", { name: /Anfrage absenden/i }),
     ).not.toBeInTheDocument();
+  });
+
+  it("shows validation error for empty name", async () => {
+    render(<CateringForm />);
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "max@test.de");
+    fireEvent.change(screen.getByLabelText(/Wunschdatum/i), {
+      target: { value: "2026-12-01" },
+    });
+    fireEvent.change(screen.getByLabelText(/Anzahl Personen/i), {
+      target: { value: "20" },
+    });
+    await userEvent.click(
+      screen.getByRole("button", { name: /Anfrage absenden/i }),
+    );
+    expect(screen.getByText(/Bitte gib deinen Namen ein/i)).toBeInTheDocument();
+  });
+
+  it("shows validation error for invalid email", async () => {
+    render(<CateringForm />);
+    await userEvent.type(screen.getByLabelText(/Name/i), "Max");
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "invalid");
+    fireEvent.change(screen.getByLabelText(/Wunschdatum/i), {
+      target: { value: "2026-12-01" },
+    });
+    fireEvent.change(screen.getByLabelText(/Anzahl Personen/i), {
+      target: { value: "20" },
+    });
+    await userEvent.click(
+      screen.getByRole("button", { name: /Anfrage absenden/i }),
+    );
+    expect(
+      screen.getByText(/Bitte gib eine gültige E-Mail-Adresse ein/i),
+    ).toBeInTheDocument();
+  });
+
+  it("shows validation error for missing date", async () => {
+    render(<CateringForm />);
+    await userEvent.type(screen.getByLabelText(/Name/i), "Max");
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "max@test.de");
+    fireEvent.change(screen.getByLabelText(/Anzahl Personen/i), {
+      target: { value: "20" },
+    });
+    await userEvent.click(
+      screen.getByRole("button", { name: /Anfrage absenden/i }),
+    );
+    expect(
+      screen.getByText(/Bitte gib ein Wunschdatum an/i),
+    ).toBeInTheDocument();
+  });
+
+  it("shows validation error for missing guests", async () => {
+    render(<CateringForm />);
+    await userEvent.type(screen.getByLabelText(/Name/i), "Max");
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "max@test.de");
+    fireEvent.change(screen.getByLabelText(/Wunschdatum/i), {
+      target: { value: "2026-12-01" },
+    });
+    await userEvent.click(
+      screen.getByRole("button", { name: /Anfrage absenden/i }),
+    );
+    expect(
+      screen.getByText(/Bitte gib die Anzahl der Personen an/i),
+    ).toBeInTheDocument();
+  });
+
+  it("shows error message when fetch fails", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockRejectedValueOnce(new Error("Network error")),
+    );
+    render(<CateringForm />);
+    await userEvent.type(screen.getByLabelText(/Name/i), "Max");
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "max@test.de");
+    fireEvent.change(screen.getByLabelText(/Wunschdatum/i), {
+      target: { value: "2026-12-01" },
+    });
+    fireEvent.change(screen.getByLabelText(/Anzahl Personen/i), {
+      target: { value: "20" },
+    });
+    await userEvent.click(
+      screen.getByRole("button", { name: /Anfrage absenden/i }),
+    );
+    expect(
+      await screen.findByText(/Beim Senden ist ein Fehler aufgetreten/i),
+    ).toBeInTheDocument();
   });
 });
