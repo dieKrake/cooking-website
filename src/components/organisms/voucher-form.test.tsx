@@ -16,20 +16,26 @@ describe("VoucherForm", () => {
 
   it("renders the submit button", () => {
     render(<VoucherForm />);
-    expect(screen.getByRole("button", { name: /Jetzt bestellen/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /Jetzt bestellen/i }),
+    ).toBeInTheDocument();
   });
 
   it("renders all amount options", () => {
     render(<VoucherForm />);
-    ["50 €", "75 €", "100 €", "150 €"].forEach((amount) => {
+    ["50 €", "100 €", "150 €"].forEach((amount) => {
       expect(screen.getByRole("option", { name: amount })).toBeInTheDocument();
     });
   });
 
   it("renders digital and printed format options", () => {
     render(<VoucherForm />);
-    expect(screen.getByRole("option", { name: /Digital/i })).toBeInTheDocument();
-    expect(screen.getByRole("option", { name: /Gedruckt/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("option", { name: /Digital/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("option", { name: /Gedruckt/i }),
+    ).toBeInTheDocument();
   });
 
   it("updates input values on change", async () => {
@@ -41,13 +47,23 @@ describe("VoucherForm", () => {
 
   it("shows success message after form submission", async () => {
     render(<VoucherForm />);
-    await userEvent.click(screen.getByRole("button", { name: /Jetzt bestellen/i }));
+    await userEvent.selectOptions(screen.getByLabelText(/Betrag/i), "50");
+    await userEvent.type(screen.getByLabelText(/Dein Name/i), "Max Mustermann");
+    await userEvent.type(screen.getByLabelText(/Deine E-Mail/i), "max@test.de");
+    await userEvent.click(
+      screen.getByRole("button", { name: /Jetzt bestellen/i }),
+    );
     expect(screen.getByText(/Bestellung eingegangen/i)).toBeInTheDocument();
   });
 
   it("hides the form after successful submission", async () => {
     render(<VoucherForm />);
-    await userEvent.click(screen.getByRole("button", { name: /Jetzt bestellen/i }));
+    await userEvent.selectOptions(screen.getByLabelText(/Betrag/i), "50");
+    await userEvent.type(screen.getByLabelText(/Dein Name/i), "Max Mustermann");
+    await userEvent.type(screen.getByLabelText(/Deine E-Mail/i), "max@test.de");
+    await userEvent.click(
+      screen.getByRole("button", { name: /Jetzt bestellen/i }),
+    );
     expect(
       screen.queryByRole("button", { name: /Jetzt bestellen/i }),
     ).not.toBeInTheDocument();

@@ -39,6 +39,9 @@ describe("ContactSection", () => {
 
   it("shows success message after form submission", async () => {
     render(<ContactSection />);
+    await userEvent.type(screen.getByLabelText(/Name/i), "Max Mustermann");
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "max@test.de");
+    await userEvent.type(screen.getByLabelText(/Nachricht/i), "Hallo!");
     await userEvent.click(
       screen.getByRole("button", { name: /Nachricht senden/i }),
     );
@@ -47,6 +50,9 @@ describe("ContactSection", () => {
 
   it("hides the form after successful submission", async () => {
     render(<ContactSection />);
+    await userEvent.type(screen.getByLabelText(/Name/i), "Max Mustermann");
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "max@test.de");
+    await userEvent.type(screen.getByLabelText(/Nachricht/i), "Hallo!");
     await userEvent.click(
       screen.getByRole("button", { name: /Nachricht senden/i }),
     );

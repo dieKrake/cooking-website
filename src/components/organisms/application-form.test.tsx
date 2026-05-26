@@ -30,14 +30,27 @@ describe("ApplicationForm", () => {
     render(<ApplicationForm />);
     await userEvent.type(screen.getByLabelText(/Name/i), "Max");
     await userEvent.type(screen.getByLabelText(/E-Mail/i), "max@example.com");
-    await userEvent.type(screen.getByLabelText(/Kursidee/i), "Ich möchte einen Backkurs anbieten.");
-    await userEvent.click(screen.getByRole("button", { name: /Bewerbung absenden/i }));
+    await userEvent.type(
+      screen.getByLabelText(/Kursidee/i),
+      "Ich möchte einen Backkurs anbieten.",
+    );
+    await userEvent.click(
+      screen.getByRole("button", { name: /Bewerbung absenden/i }),
+    );
     expect(screen.getByText(/Danke für deine Bewerbung/i)).toBeInTheDocument();
   });
 
   it("hides the form after successful submission", async () => {
     render(<ApplicationForm />);
-    await userEvent.click(screen.getByRole("button", { name: /Bewerbung absenden/i }));
+    await userEvent.type(screen.getByLabelText(/Name/i), "Max");
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "max@example.com");
+    await userEvent.type(
+      screen.getByLabelText(/Kursidee/i),
+      "Ich möchte einen Backkurs anbieten.",
+    );
+    await userEvent.click(
+      screen.getByRole("button", { name: /Bewerbung absenden/i }),
+    );
     expect(
       screen.queryByRole("button", { name: /Bewerbung absenden/i }),
     ).not.toBeInTheDocument();

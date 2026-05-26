@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, expect } from "vitest";
 import { InquiryForm } from "./inquiry-form";
@@ -34,20 +34,52 @@ describe("InquiryForm", () => {
     expect(select).toBeInTheDocument();
     ["Geburtstag", "Teamevent", "Hochzeit", "Firmenfeier", "Sonstiges"].forEach(
       (option) => {
-        expect(screen.getByRole("option", { name: option })).toBeInTheDocument();
+        expect(
+          screen.getByRole("option", { name: option }),
+        ).toBeInTheDocument();
       },
     );
   });
 
   it("shows success message after form submission", async () => {
     render(<InquiryForm />);
-    await userEvent.click(screen.getByRole("button", { name: /Anfrage absenden/i }));
-    expect(screen.getByText(/Vielen Dank für deine Anfrage/i)).toBeInTheDocument();
+    await userEvent.type(screen.getByLabelText(/Name/i), "Anna Müller");
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "anna@test.de");
+    await userEvent.selectOptions(
+      screen.getByLabelText(/Anlass/i),
+      "Geburtstag",
+    );
+    fireEvent.change(screen.getByLabelText(/Wunschdatum/i), {
+      target: { value: "2026-12-01" },
+    });
+    fireEvent.change(screen.getByLabelText(/Anzahl Personen/i), {
+      target: { value: "10" },
+    });
+    await userEvent.click(
+      screen.getByRole("button", { name: /Anfrage absenden/i }),
+    );
+    expect(
+      screen.getByText(/Vielen Dank für deine Anfrage/i),
+    ).toBeInTheDocument();
   });
 
   it("hides the form after successful submission", async () => {
     render(<InquiryForm />);
-    await userEvent.click(screen.getByRole("button", { name: /Anfrage absenden/i }));
+    await userEvent.type(screen.getByLabelText(/Name/i), "Anna Müller");
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "anna@test.de");
+    await userEvent.selectOptions(
+      screen.getByLabelText(/Anlass/i),
+      "Geburtstag",
+    );
+    fireEvent.change(screen.getByLabelText(/Wunschdatum/i), {
+      target: { value: "2026-12-01" },
+    });
+    fireEvent.change(screen.getByLabelText(/Anzahl Personen/i), {
+      target: { value: "10" },
+    });
+    await userEvent.click(
+      screen.getByRole("button", { name: /Anfrage absenden/i }),
+    );
     expect(
       screen.queryByRole("button", { name: /Anfrage absenden/i }),
     ).not.toBeInTheDocument();
