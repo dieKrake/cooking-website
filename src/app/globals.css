@@ -5,13 +5,27 @@ html {
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: rgb(249, 249, 248);
+  --foreground: rgb(29, 29, 27);
+
+  /* Brand Colors */
+  --pure-white: rgb(249, 249, 248);
+  --deep-black: rgb(29, 29, 27);
+  --pasta-gelb: rgb(242, 232, 164);
+  --butterweiss: rgb(245, 240, 224);
+  --eisblau: rgb(183, 198, 217);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-pure-white: var(--pure-white);
+  --color-deep-black: var(--deep-black);
+  --color-pasta-gelb: var(--pasta-gelb);
+  --color-butterweiss: var(--butterweiss);
+  --color-eisblau: var(--eisblau);
+
   --font-sans: var(--font-body);
   --font-heading: var(--font-heading);
 }
