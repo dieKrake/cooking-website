@@ -18,9 +18,9 @@ describe("Footer", () => {
     expect(screen.getByAltText("Culina")).toBeInTheDocument();
   });
 
-  it("renders the contact email", () => {
+  it("renders navigation links", () => {
     render(<Footer />);
-    expect(screen.getByText("kontakt@culina.de")).toBeInTheDocument();
+    expect(screen.getByText("Home")).toBeInTheDocument();
   });
 
   it("renders all legal links", () => {

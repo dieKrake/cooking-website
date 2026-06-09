@@ -1,62 +1,78 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SITE_NAME, CONTACT_INFO, FOOTER_LEGAL_LINKS } from "@/lib/constants";
+import {
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  NAV_ITEMS,
+  FOOTER_LEGAL_LINKS,
+} from "@/lib/constants";
 
 export function Footer() {
   return (
     <footer className="bg-background mt-auto border-t">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <Link href="/" className="mb-4 inline-block">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="grid gap-12 md:grid-cols-3">
+          {/* Brand */}
+          <div className="flex flex-col items-start">
+            <Link href="/" className="inline-block">
               <Image
                 src="/images/Culina-Logo.png"
                 alt={SITE_NAME}
-                width={120}
-                height={40}
-                className="h-10 w-auto object-contain"
-                style={{ height: "auto" }}
+                width={200}
+                height={80}
+                className="h-auto w-60 object-contain md:w-72 lg:w-80"
               />
             </Link>
-            <p className="text-muted-foreground mt-1 text-sm">
-              {CONTACT_INFO.address.street}
+            <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
+              {SITE_DESCRIPTION}
             </p>
-            <p className="text-muted-foreground text-sm">
-              {CONTACT_INFO.address.zip} {CONTACT_INFO.address.city}
-            </p>
-            <a
-              href={`mailto:${CONTACT_INFO.email}`}
-              className="text-muted-foreground hover:text-foreground mt-2 block text-sm"
-            >
-              {CONTACT_INFO.email}
-            </a>
-            <a
-              href={`tel:${CONTACT_INFO.phone}`}
-              className="text-muted-foreground hover:text-foreground block text-sm"
-            >
-              {CONTACT_INFO.phone}
-            </a>
           </div>
 
-          <nav aria-label="Rechtliche Links">
-            <ul className="flex flex-wrap gap-4">
-              {FOOTER_LEGAL_LINKS.map((link) => (
-                <li key={link.href}>
+          {/* Navigation */}
+          <div>
+            <p className="text-foreground text-sm font-semibold tracking-wider uppercase">
+              Navigation
+            </p>
+            <ul className="mt-4 grid grid-cols-2 gap-x-8 gap-y-3">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.href}>
                   <Link
-                    href={link.href}
-                    className="text-muted-foreground hover:text-foreground text-sm"
+                    href={item.href}
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                   >
-                    {link.label}
+                    {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </nav>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <p className="text-foreground text-sm font-semibold tracking-wider uppercase">
+              Rechtliches
+            </p>
+            <ul className="mt-4 flex flex-col gap-3">
+              {FOOTER_LEGAL_LINKS.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <p className="text-muted-foreground mt-8 text-xs">
-          © {new Date().getFullYear()} {SITE_NAME}. Alle Rechte vorbehalten.
-        </p>
+        <div className="border-border mt-16 border-t pt-8">
+          <p className="text-muted-foreground text-center text-xs">
+            &copy; {new Date().getFullYear()} {SITE_NAME}. Alle Rechte
+            vorbehalten.
+          </p>
+        </div>
       </div>
     </footer>
   );
