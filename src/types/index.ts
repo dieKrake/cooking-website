@@ -38,6 +38,8 @@ export interface OfferCard {
   description: string;
   ctaLabel: string;
   ctaHref: string;
+  image: string;
+  imageAlt?: string;
 }
 
 export interface PartnerLogo {

@@ -12,7 +12,11 @@ vi.mock("next/link", () => ({
     children: React.ReactNode;
     href: string;
     className?: string;
-  }) => <a href={href} className={className}>{children}</a>,
+  }) => (
+    <a href={href} className={className}>
+      {children}
+    </a>
+  ),
 }));
 
 const mockOffer: OfferCardType = {
@@ -20,6 +24,7 @@ const mockOffer: OfferCardType = {
   description: "Entdecke die Welt der Aromen in kleinen, individuellen Kursen.",
   ctaLabel: "Zu den Kursen",
   ctaHref: "/aktuelle-kurse",
+  image: "https://placehold.co/800x600?text=Test",
 };
 
 describe("OfferCard", () => {

@@ -11,7 +11,7 @@ export function OfferGrid() {
           subtitle="Kochkurse, Catering und hochwertige Feinkostartikel direkt aus Aalen und der Region"
           centered
         />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {PLACEHOLDER_OFFER_CARDS.map((offer) => (
             <OfferCard key={offer.title} offer={offer} />
           ))}
