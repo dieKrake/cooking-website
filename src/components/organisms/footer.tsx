@@ -15,12 +15,23 @@ export function Footer() {
           {/* Brand */}
           <div className="flex flex-col items-start">
             <Link href="/" className="inline-block pb-4 md:pb-2 lg:pb-4">
+              {/* Full SVG logo for lg and larger (desktop) */}
               <Image
-                src="/images/Culina-Logo.png"
+                src="/images/Culina-Logo.svg"
                 alt={SITE_NAME}
                 width={200}
                 height={80}
-                className="h-auto w-72 object-contain md:w-40 lg:w-68"
+                className="hidden h-auto w-80 object-contain lg:block"
+                style={{ height: "auto" }}
+              />
+              {/* Cropped PNG logo for smaller screens (under lg) */}
+              <Image
+                src="/images/Culina-Logo-cut.png"
+                alt={`${SITE_NAME} Logo`}
+                width={150}
+                height={50}
+                className="h-auto w-40 object-contain md:w-32 lg:hidden"
+                style={{ height: "auto" }}
               />
             </Link>
             <p className="text-muted-foreground mt-3 text-sm leading-relaxed">

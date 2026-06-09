@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
 import { CtaButton } from "@/components/atoms/cta-button";
 
 interface HeroSectionProps {
-  title: string;
+  title: ReactNode;
   subtitle: string;
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
