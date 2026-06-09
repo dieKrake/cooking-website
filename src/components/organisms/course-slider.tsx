@@ -7,7 +7,7 @@ export function CourseSlider() {
   const upcomingCourses = COURSES.filter((course) => course.hasFixedDate);
 
   return (
-    <section className="bg-muted/30 py-16 sm:py-20">
+    <section className="bg-pure-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between">
           <SectionHeading

@@ -9,7 +9,7 @@ import {
 
 export function Footer() {
   return (
-    <footer className="bg-background mt-auto border-t">
+    <footer className="bg-deep-black border-pure-white/10 mt-auto border-t">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
@@ -34,14 +34,14 @@ export function Footer() {
                 style={{ height: "auto" }}
               />
             </Link>
-            <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
+            <p className="text-pure-white/70 mt-3 text-sm leading-relaxed">
               {SITE_DESCRIPTION}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <p className="text-foreground text-sm font-semibold tracking-wider uppercase">
+            <p className="text-pure-white text-sm font-semibold tracking-wider uppercase">
               Navigation
             </p>
             <ul className="mt-4 grid grid-cols-2 gap-x-8 gap-y-3">
@@ -49,7 +49,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                    className="text-pure-white/70 hover:text-pasta-gelb text-sm transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -60,7 +60,7 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <p className="text-foreground text-sm font-semibold tracking-wider uppercase">
+            <p className="text-pure-white text-sm font-semibold tracking-wider uppercase">
               Rechtliches
             </p>
             <ul className="mt-4 flex flex-col gap-3">
@@ -68,7 +68,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                    className="text-pure-white/70 hover:text-pasta-gelb text-sm transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -78,8 +78,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-border mt-16 border-t pt-8">
-          <p className="text-muted-foreground text-center text-xs">
+        <div className="border-pure-white/10 mt-16 border-t pt-8">
+          <p className="text-pure-white/70 text-center text-xs">
             &copy; {new Date().getFullYear()} {SITE_NAME}. Alle Rechte
             vorbehalten.
           </p>

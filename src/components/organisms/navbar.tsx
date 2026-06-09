@@ -22,7 +22,7 @@ function NavDropdown({ item }: NavDropdownProps) {
     <div className="relative" onMouseLeave={() => setOpen(false)}>
       <button
         className={cn(
-          "hover:text-foreground/80 flex items-center gap-1 rounded-md px-3 py-2 text-base font-medium transition-colors lg:text-lg",
+          "hover:text-deep-black flex items-center gap-1 rounded-md px-3 py-2 text-base font-medium transition-colors lg:text-lg",
           pathname.startsWith(item.href)
             ? "text-foreground"
             : "text-foreground/60",
@@ -50,13 +50,13 @@ function NavDropdown({ item }: NavDropdownProps) {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.15, ease: "easeInOut" }}
           >
-            <div className="bg-background min-w-44 overflow-hidden rounded-md border shadow-md">
+            <div className="bg-pure-white border-butterweiss min-w-44 overflow-hidden rounded-md border shadow-md">
               <ul role="menu">
                 {item.children?.map((child) => (
                   <li key={child.href} role="menuitem">
                     <Link
                       href={child.href}
-                      className="hover:bg-muted block px-4 py-2.5 text-base transition-colors"
+                      className="hover:bg-eisblau/10 hover:text-deep-black block px-4 py-2.5 text-base transition-colors"
                       onClick={() => setOpen(false)}
                     >
                       {child.label}
@@ -77,7 +77,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-background sticky top-0 z-40 w-full border-b">
+    <header className="bg-pure-white border-butterweiss sticky top-0 z-40 w-full border-b">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-8">
         <Link
           href="/"
@@ -107,7 +107,7 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "hover:text-foreground/80 rounded-md px-3 py-2 text-base font-medium transition-colors lg:text-lg",
+                  "hover:text-deep-black rounded-md px-3 py-2 text-base font-medium transition-colors lg:text-lg",
                   pathname === item.href
                     ? "text-foreground"
                     : "text-foreground/60",
@@ -151,7 +151,7 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "hover:text-foreground/80 block py-2 text-lg font-medium transition-colors",
+                      "hover:text-deep-black block py-2 text-lg font-medium transition-colors",
                       pathname === item.href
                         ? "text-foreground"
                         : "text-foreground/60",
@@ -167,7 +167,7 @@ export function Navbar() {
                           <Link
                             href={child.href}
                             className={cn(
-                              "hover:text-foreground/80 block py-1.5 text-base transition-colors",
+                              "hover:text-deep-black block py-1.5 text-base transition-colors",
                               pathname === child.href
                                 ? "text-foreground"
                                 : "text-foreground/60",

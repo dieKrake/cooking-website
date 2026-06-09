@@ -17,7 +17,10 @@ export function CtaButton({
   className,
 }: CtaButtonProps) {
   return (
-    <Link href={href} className={cn(buttonVariants({ variant, size }), className)}>
+    <Link
+      href={href}
+      className={cn(buttonVariants({ variant, size }), className)}
+    >
       {label}
     </Link>
   );

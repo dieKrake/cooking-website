@@ -15,14 +15,19 @@ interface OfferCardProps {
 
 export function OfferCard({ offer }: OfferCardProps) {
   return (
-    <Card className="flex flex-col">
+    <Card className="bg-butterweiss border-pasta-gelb/20 flex flex-col">
       <CardHeader>
         <CardTitle>{offer.title}</CardTitle>
         <CardDescription>{offer.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-1" />
       <CardFooter>
-        <CtaButton href={offer.ctaHref} label={offer.ctaLabel} variant="outline" size="sm" />
+        <CtaButton
+          href={offer.ctaHref}
+          label={offer.ctaLabel}
+          variant="outline"
+          size="sm"
+        />
       </CardFooter>
     </Card>
   );

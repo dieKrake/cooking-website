@@ -15,7 +15,7 @@ export function HeroSection({
   secondaryCta,
 }: HeroSectionProps) {
   return (
-    <section className="bg-background py-20 sm:py-28">
+    <section className="bg-butterweiss py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
@@ -29,13 +29,13 @@ export function HeroSection({
               href={primaryCta.href}
               label={primaryCta.label}
               size="lg"
-              variant="outline"
+              variant="brand"
             />
             {secondaryCta && (
               <CtaButton
                 href={secondaryCta.href}
                 label={secondaryCta.label}
-                variant="outline"
+                variant="brandSecondary"
                 size="lg"
               />
             )}

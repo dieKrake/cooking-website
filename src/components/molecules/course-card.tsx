@@ -18,7 +18,7 @@ interface CourseCardProps {
 
 export function CourseCard({ course }: CourseCardProps) {
   return (
-    <Card className="flex h-full flex-col">
+    <Card className="bg-butterweiss flex h-full flex-col">
       <div className="relative h-64 w-full overflow-hidden">
         <Image
           src={course.image}
@@ -31,7 +31,7 @@ export function CourseCard({ course }: CourseCardProps) {
       <CardHeader>
         <div className="flex items-start justify-between gap-2">
           <CardTitle className="text-base">{course.title}</CardTitle>
-          <Badge variant="secondary" className="shrink-0">
+          <Badge variant="brand" className="shrink-0">
             {course.category}
           </Badge>
         </div>
