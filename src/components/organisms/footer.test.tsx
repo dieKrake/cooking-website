@@ -15,7 +15,7 @@ vi.mock("next/link", () => ({
 describe("Footer", () => {
   it("renders the site name", () => {
     render(<Footer />);
-    expect(screen.getByText("Culina")).toBeInTheDocument();
+    expect(screen.getByAltText("Culina")).toBeInTheDocument();
   });
 
   it("renders the contact email", () => {

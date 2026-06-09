@@ -45,7 +45,7 @@ vi.mock("framer-motion", () => ({
 describe("Navbar", () => {
   it("renders the site name", () => {
     render(<Navbar />);
-    expect(screen.getByText("Culina")).toBeInTheDocument();
+    expect(screen.getByAltText("Culina")).toBeInTheDocument();
   });
 
   it("renders the desktop navigation links", () => {
@@ -91,7 +91,7 @@ describe("Navbar", () => {
     expect(
       screen.getByRole("navigation", { name: /Mobile Navigation/i }),
     ).toBeInTheDocument();
-    await user.click(screen.getByText("Culina"));
+    await user.click(screen.getByAltText("Culina"));
     expect(
       screen.queryByRole("navigation", { name: /Mobile Navigation/i }),
     ).not.toBeInTheDocument();
