@@ -96,7 +96,7 @@ export function Navbar() {
         </Link>
 
         <nav
-          className="hidden items-center gap-1 md:flex"
+          className="hidden items-center gap-1 lg:flex"
           aria-label="Hauptnavigation"
         >
           {NAV_ITEMS.map((item) =>
@@ -120,7 +120,7 @@ export function Navbar() {
         </nav>
 
         <button
-          className="flex items-center justify-center rounded-md p-2 md:hidden"
+          className="flex items-center justify-center rounded-md p-2 lg:hidden"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={mobileOpen}
@@ -138,7 +138,7 @@ export function Navbar() {
         {mobileOpen && (
           <motion.nav
             id="mobile-menu"
-            className="bg-background absolute top-full left-0 w-full border-t shadow-lg md:hidden"
+            className="bg-background absolute top-full left-0 w-full border-t shadow-lg lg:hidden"
             aria-label="Mobile Navigation"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
