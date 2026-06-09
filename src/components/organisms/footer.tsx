@@ -15,6 +15,7 @@ export function Footer() {
                 width={120}
                 height={40}
                 className="h-10 w-auto object-contain"
+                style={{ height: "auto" }}
               />
             </Link>
             <p className="text-muted-foreground mt-1 text-sm">
