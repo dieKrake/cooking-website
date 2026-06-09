@@ -30,7 +30,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Catering", href: "/catering" },
   { label: "Feinkost", href: "/feinkost" },
   { label: "Gutscheine", href: "/gutscheine" },
-  { label: "Über mich", href: "/ueber-uns" },
+  { label: "Über mich", href: "/ueber-mich" },
   { label: "Kontakt", href: "/#kontakt" },
 ];
 

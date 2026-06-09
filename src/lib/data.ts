@@ -431,7 +431,7 @@ export const UEBER_MICH_PAGE = {
     'Mein Name ist Razvan George Pamfile, aber Freunde, Familie und viele Gäste nennen mich einfach "Fabry". Geboren und aufgewachsen bin ich in Rumänien – dort habe ich auch meine Leidenschaft fürs Kochen entdeckt und meine ersten Erfahrungen in der Küche gesammelt. Besonders die südliche und mediterrane Küche begeistert mich bis heute: frische Zutaten, ehrliche Gerichte und gemeinsames Genießen stehen für mich immer im Mittelpunkt.',
   section1Text2:
     "2017 kam ich nach Deutschland und habe meinen Weg in der Gastronomie Schritt für Schritt aufgebaut. Vom Tellerwäscher bis zum Koch durfte ich alle Stationen kennenlernen und wertvolle Erfahrungen sammeln. Gerade diese Zeit hat mich geprägt, denn ich habe gelernt, wie wichtig Teamgeist, Qualität und echte Gastfreundschaft sind.",
-  section1Image: "https://placehold.co/600x600?text=Fabry",
+  section1Image: "/images/der-fabry.webp",
   section1ImageAlt: "Fabry – Gründer von Culina",
   section2Label: "Mein Weg",
   section2Title: "Erfahrung trifft Leidenschaft",
@@ -441,7 +441,7 @@ export const UEBER_MICH_PAGE = {
     "Heute lebe ich mit meiner Familie und meinen zwei Kindern in Aalen und freue mich, mit Culina einen Ort zu schaffen, an dem Menschen zusammenkommen, gemeinsam kochen und schöne Momente erleben können.",
   section2Text3:
     "Mir ist besonders wichtig, dass sich meine Gäste wohlfühlen, Spaß haben und neben gutem Essen auch neue Ideen mit nach Hause nehmen. Ob kleine Tipps aus der Gastronomie, neue Rezeptideen oder besondere Geschmackserlebnisse – ich möchte Menschen für gutes Essen begeistern und zeigen, wie viel Freude gemeinsames Kochen machen kann.",
-  section2Image: "https://placehold.co/600x600?text=Fabry+K%C3%BCche",
+  section2Image: "/images/der-fabry-2.webp",
   section2ImageAlt: "Fabry in der Küche bei Culina",
   quote:
     '"Culina soll ein Ort sein, an dem Genuss, Gemeinschaft und familiäre Atmosphäre im Mittelpunkt stehen."',
