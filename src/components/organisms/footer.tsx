@@ -14,13 +14,13 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div className="flex flex-col items-start">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block pb-4 md:pb-2 lg:pb-4">
               <Image
                 src="/images/Culina-Logo.png"
                 alt={SITE_NAME}
                 width={200}
                 height={80}
-                className="h-auto w-60 object-contain md:w-72 lg:w-80"
+                className="h-auto w-72 object-contain md:w-40 lg:w-68"
               />
             </Link>
             <p className="text-muted-foreground mt-3 text-sm leading-relaxed">

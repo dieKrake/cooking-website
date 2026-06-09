@@ -85,11 +85,11 @@ export function Navbar() {
           onClick={() => setMobileOpen(false)}
         >
           <Image
-            src="/images/Culina-Logo.png"
+            src="/images/Culina-Logo-cut.png"
             alt={SITE_NAME}
             width={120}
             height={40}
-            className="h-10 w-auto object-contain"
+            className="h-4 w-auto object-contain lg:h-10"
             style={{ height: "auto" }}
             priority
           />
