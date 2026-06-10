@@ -1,4 +1,4 @@
-# Kochatelier – Website
+# Culina – Website
 
 Website for a cooking studio offering cooking classes, event location rental, and catering services.
 
