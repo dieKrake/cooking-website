@@ -22,11 +22,11 @@ export function CourseSlider() {
             Alle Kurse →
           </Link>
         </div>
-        <div className="flex gap-5 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-3">
+        <div className="-mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:px-0 lg:gap-8">
           {upcomingCourses.map((course) => (
             <div
               key={course.slug}
-              className="w-72 shrink-0 sm:h-full sm:w-auto"
+              className="aspect-4/5 w-72 shrink-0 snap-start sm:w-80 lg:w-88"
             >
               <CourseCard course={course} />
             </div>
