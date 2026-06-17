@@ -185,7 +185,7 @@ export function InquiryForm() {
             aria-describedby={
               errors.occasion ? "inquiry-occasion-error" : undefined
             }
-            className={`border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full rounded-lg border bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:ring-3${errors.occasion ? "border-destructive" : ""}`}
+            className={`border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full rounded-lg border bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:ring-3 ${errors.occasion ? "border-destructive" : ""}`}
           >
             <option value="" disabled>
               Bitte wählen …

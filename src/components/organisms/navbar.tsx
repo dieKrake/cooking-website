@@ -89,7 +89,7 @@ export function Navbar() {
             alt={SITE_NAME}
             width={120}
             height={40}
-            className="h-4 w-auto object-contain lg:h-10"
+            className="h-6 w-auto object-contain sm:h-8 lg:h-10"
             style={{ height: "auto" }}
             priority
           />

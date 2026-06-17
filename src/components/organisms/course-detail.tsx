@@ -45,12 +45,13 @@ function MetaItem({ icon: Icon, label, value }: MetaItemProps) {
 export function CourseDetail({ course }: CourseDetailProps) {
   const dateLabel =
     course.hasFixedDate && course.date
-      ? new Date(course.date).toLocaleDateString("de-DE", {
+      ? new Intl.DateTimeFormat("de-DE", {
           weekday: "long",
           year: "numeric",
           month: "long",
           day: "numeric",
-        })
+          timeZone: "UTC",
+        }).format(new Date(course.date))
       : "Datum wird noch bekannt gegeben";
 
   const timeLabel = course.time ?? "–";

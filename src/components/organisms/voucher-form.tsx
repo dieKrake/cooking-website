@@ -126,7 +126,7 @@ export function VoucherForm() {
             required
             aria-invalid={!!errors.amount}
             aria-describedby={errors.amount ? "amount-error" : undefined}
-            className={`border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full rounded-lg border bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:ring-3${errors.amount ? "border-destructive" : ""}`}
+            className={`border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full rounded-lg border bg-transparent px-2.5 py-1 text-sm outline-none focus-visible:ring-3 ${errors.amount ? "border-destructive" : ""}`}
           >
             <option value="" disabled>
               Bitte wählen …
