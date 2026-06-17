@@ -16,7 +16,7 @@ interface OfferCardProps {
 
 export function OfferCard({ offer }: OfferCardProps) {
   return (
-    <Card className="border-pasta-gelb/20 group flex h-full flex-col overflow-hidden">
+    <Card className="group bg-eisblau flex h-full flex-col overflow-hidden py-0 shadow-lg">
       <div className="relative aspect-video w-full overflow-hidden">
         <Image
           src={offer.image}

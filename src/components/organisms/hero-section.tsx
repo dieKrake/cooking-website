@@ -28,7 +28,7 @@ export function HeroSection({
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-black/0" />
         </div>
       )}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
