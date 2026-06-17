@@ -78,7 +78,7 @@ export function Navbar() {
 
   return (
     <header className="bg-pure-white border-butterweiss sticky top-0 z-40 w-full border-b">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-24 lg:px-8">
         <Link
           href="/"
           className="flex items-center gap-2"
@@ -89,8 +89,8 @@ export function Navbar() {
             alt={SITE_NAME}
             width={120}
             height={40}
-            className="h-6 w-auto object-contain sm:h-8 lg:h-10"
-            style={{ height: "auto" }}
+            className="h-9 w-auto object-contain sm:h-10 lg:h-12"
+            style={{ width: "auto" }}
             priority
           />
         </Link>
