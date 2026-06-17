@@ -21,9 +21,10 @@ export default function HomePage() {
             />
           </span>
         }
-        subtitle="Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente (ehemals Koch Klub am Kocher)"
+        subtitle="Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente"
         primaryCta={{ label: "Zu den Kursen", href: "/aktuelle-kurse" }}
         secondaryCta={{ label: "Location ansehen", href: "/eventlocation" }}
+        backgroundImage="/images/Tomate-Culina.webp"
       />
       <OfferGrid />
       <CourseSlider />

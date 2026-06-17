@@ -18,7 +18,7 @@ interface CourseCardProps {
 
 export function CourseCard({ course }: CourseCardProps) {
   return (
-    <Card className="bg-butterweiss flex h-full flex-col">
+    <Card className="flex h-full flex-col">
       <div className="relative h-64 w-full overflow-hidden">
         <Image
           src={course.image}
