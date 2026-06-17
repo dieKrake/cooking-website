@@ -11,8 +11,8 @@ export function CourseSlider() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between">
           <SectionHeading
-            title="Aktuelle Kurse"
-            subtitle="Nächste Termine auf einen Blick."
+            title="Kurse"
+            subtitle="Unsere Kurse im Überblick"
             className="mb-0"
           />
           <Link
