@@ -32,7 +32,7 @@ export function CourseSlider() {
   }, [checkScroll]);
 
   return (
-    <section className="py-16 sm:py-20">
+    <section className="px-4 py-16 sm:py-20 lg:px-4">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
           <SectionHeading
@@ -65,12 +65,12 @@ export function CourseSlider() {
           {/* Rand-Fades: ein-/ausblenden je nach Scroll-Position */}
           <div
             aria-hidden
-            className="from-butterweiss pointer-events-none absolute inset-y-0 left-0 w-6 bg-linear-to-r to-transparent transition-opacity duration-700 ease-in-out sm:w-12 lg:w-16"
+            className="from-butterweiss to-butterweiss/0 pointer-events-none absolute inset-y-0 left-0 w-6 bg-linear-to-r transition-opacity duration-700 ease-in-out sm:w-12 lg:w-16"
             style={{ opacity: canScrollLeft ? 1 : 0 }}
           />
           <div
             aria-hidden
-            className="from-butterweiss pointer-events-none absolute inset-y-0 right-0 w-6 bg-linear-to-l to-transparent transition-opacity duration-700 ease-in-out sm:w-12 lg:w-16"
+            className="from-butterweiss to-butterweiss/0 pointer-events-none absolute inset-y-0 right-0 w-6 bg-linear-to-l transition-opacity duration-700 ease-in-out sm:w-12 lg:w-16"
             style={{ opacity: canScrollRight ? 1 : 0 }}
           />
         </div>
