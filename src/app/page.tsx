@@ -15,7 +15,7 @@ export default function HomePage() {
               alt="Culina"
               width={200}
               height={60}
-              className="h-auto w-[600px] object-contain sm:w-[700px] lg:w-[800px]"
+              className="h-auto w-[600px] object-contain invert sm:w-[700px] lg:w-[800px]"
               style={{ height: "auto" }}
               priority
             />

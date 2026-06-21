@@ -5,8 +5,8 @@ html {
 }
 
 :root {
-  --background: rgb(249, 249, 248);
-  --foreground: rgb(29, 29, 27);
+  --background: rgb(29, 29, 27);
+  --foreground: rgb(249, 249, 248);
 
   /* Brand Colors */
   --pure-white: rgb(249, 249, 248);

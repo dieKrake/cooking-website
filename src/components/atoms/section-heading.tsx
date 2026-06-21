@@ -16,9 +16,7 @@ export function SectionHeading({
   return (
     <div className={cn("mb-10", centered && "text-center", className)}>
       <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
-      {subtitle && (
-        <p className="text-foreground/60 mt-2 text-lg">{subtitle}</p>
-      )}
+      {subtitle && <p className="mt-2 text-lg opacity-60">{subtitle}</p>}
     </div>
   );
 }
