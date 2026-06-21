@@ -84,8 +84,8 @@ export const COURSES: Course[] = [
 ];
 
 export const AKTUELLE_KURSE_PAGE = {
-  title: "Aktuelle Kurse",
-  description: "Alle aktuellen Kochkurse und Events im Culina Aalen.",
+  title: "Unsere Kurse",
+  description: "Alle unseren Kochkurse im Culina Aalen.",
   intro:
     "Entdecke unsere Kochkurse – von internationaler Küche bis hin zu besonderen Themenabenden.",
 };

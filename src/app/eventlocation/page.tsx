@@ -6,7 +6,8 @@ import {
 } from "@/lib/data";
 import { LocationGallery } from "@/components/molecules/location-gallery";
 import { LocationFeaturesGrid } from "@/components/organisms/location-features-grid";
-import { InquiryForm } from "@/components/organisms/inquiry-form";
+import { ContactForm } from "@/components/organisms/contact-form";
+import { INQUIRY_FORM } from "@/lib/form-configs";
 import { CtaButton } from "@/components/atoms/cta-button";
 
 export const metadata: Metadata = {
@@ -53,7 +54,7 @@ export default function EventlocationPage() {
           size="lg"
         />
       </div>
-      <InquiryForm />
+      <ContactForm config={INQUIRY_FORM} />
     </main>
   );
 }

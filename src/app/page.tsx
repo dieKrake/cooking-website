@@ -2,7 +2,8 @@ import Image from "next/image";
 import { HeroSection } from "@/components/organisms/hero-section";
 import { OfferGrid } from "@/components/organisms/offer-grid";
 import { CourseSlider } from "@/components/organisms/course-slider";
-import { ContactSection } from "@/components/organisms/contact-section";
+import { ContactForm } from "@/components/organisms/contact-form";
+import { CONTACT_FORM } from "@/lib/form-configs";
 
 export default function HomePage() {
   return (
@@ -28,7 +29,7 @@ export default function HomePage() {
       />
       <OfferGrid />
       <CourseSlider />
-      <ContactSection />
+      <ContactForm config={CONTACT_FORM} id="kontakt" />
     </>
   );
 }

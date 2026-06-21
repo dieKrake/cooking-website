@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { GUTSCHEINE_PAGE } from "@/lib/data";
 import { VoucherOptions } from "@/components/organisms/voucher-options";
 import { VoucherIdeas } from "@/components/organisms/voucher-ideas";
-import { VoucherForm } from "@/components/organisms/voucher-form";
+import { ContactForm } from "@/components/organisms/contact-form";
+import { VOUCHER_FORM } from "@/lib/form-configs";
 
 export const metadata: Metadata = {
   title: GUTSCHEINE_PAGE.title,
@@ -28,7 +29,7 @@ export default function GutscheinePage() {
       </div>
       <VoucherOptions />
       <VoucherIdeas />
-      <VoucherForm />
+      <ContactForm config={VOUCHER_FORM} />
     </main>
   );
 }

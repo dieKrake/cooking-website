@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { PLACEHOLDER_BENEFITS } from "@/lib/data";
 import { BenefitsGrid } from "@/components/organisms/benefits-grid";
-import { ApplicationForm } from "@/components/organisms/application-form";
+import { ContactForm } from "@/components/organisms/contact-form";
+import { APPLICATION_FORM } from "@/lib/form-configs";
 
 export const metadata: Metadata = {
   title: "Werde Kursleiter",
@@ -23,7 +24,7 @@ export default function KursleiterWerdenPage() {
         </p>
       </div>
       <BenefitsGrid benefits={PLACEHOLDER_BENEFITS} />
-      <ApplicationForm />
+      <ContactForm config={APPLICATION_FORM} />
     </main>
   );
 }

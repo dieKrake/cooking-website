@@ -1,0 +1,307 @@
+import type { ContactFormConfig, FormSelectOption } from "@/types";
+
+const OCCASIONS: FormSelectOption[] = [
+  "Geburtstag",
+  "Teamevent",
+  "Hochzeit",
+  "Firmenfeier",
+  "Sonstiges",
+].map((value) => ({ label: value, value }));
+
+const CUISINES: FormSelectOption[] = [
+  "Orientalisch",
+  "Asiatisch",
+  "Mediterran",
+  "Gesunde Küche",
+  "Gemischt",
+  "Sonstiges",
+].map((value) => ({ label: value, value }));
+
+const AMOUNTS: FormSelectOption[] = ["50", "100", "150"].map((value) => ({
+  label: `${value} €`,
+  value,
+}));
+
+const VOUCHER_FORMATS: FormSelectOption[] = [
+  { label: "Digital (PDF per E-Mail)", value: "digital" },
+  { label: "Gedruckt (per Post)", value: "gedruckt" },
+];
+
+export const CONTACT_FORM: ContactFormConfig = {
+  type: "contact",
+  title: "Kontakt",
+  subtitle: "Schreib uns oder ruf einfach an – wir melden uns schnell.",
+  submitLabel: "Nachricht senden",
+  successTitle: "Nachricht gesendet!",
+  successText: "Wir melden uns so schnell wie möglich bei dir.",
+  accentEyebrow: "Sag Hallo",
+  accentImage: "/images/Culina_afterwork.webp",
+  showContactInfo: true,
+  fields: [
+    {
+      name: "name",
+      label: "Name",
+      type: "text",
+      required: true,
+      placeholder: "Dein Name",
+      requiredMessage: "Bitte gib deinen Namen ein.",
+    },
+    {
+      name: "email",
+      label: "E-Mail",
+      type: "email",
+      required: true,
+      placeholder: "deine@email.de",
+      requiredMessage: "Bitte gib deine E-Mail-Adresse ein.",
+    },
+    {
+      name: "message",
+      label: "Nachricht",
+      type: "textarea",
+      required: true,
+      rows: 5,
+      colSpan: 2,
+      placeholder: "Wie können wir dir helfen?",
+      requiredMessage: "Bitte schreib uns eine Nachricht.",
+    },
+  ],
+};
+
+export const INQUIRY_FORM: ContactFormConfig = {
+  type: "inquiry",
+  title: "Location anfragen",
+  subtitle: "Schreib uns – wir erstellen dir ein individuelles Angebot.",
+  submitLabel: "Anfrage absenden",
+  successTitle: "Vielen Dank für deine Anfrage!",
+  successText: "Wir melden uns innerhalb von 24 Stunden bei dir.",
+  accentEyebrow: "Eventlocation",
+  accentImage: "/images/Eventlocation-Culina.webp",
+  fields: [
+    {
+      name: "name",
+      label: "Name",
+      type: "text",
+      required: true,
+      placeholder: "Dein Name",
+      requiredMessage: "Bitte gib deinen Namen ein.",
+    },
+    {
+      name: "email",
+      label: "E-Mail",
+      type: "email",
+      required: true,
+      placeholder: "deine@email.de",
+      requiredMessage: "Bitte gib deine E-Mail-Adresse ein.",
+    },
+    {
+      name: "occasion",
+      label: "Anlass",
+      type: "select",
+      required: true,
+      placeholder: "Bitte wählen …",
+      options: OCCASIONS,
+      requiredMessage: "Bitte wähle einen Anlass aus.",
+    },
+    {
+      name: "date",
+      label: "Wunschdatum",
+      type: "date",
+      required: true,
+      requiredMessage: "Bitte gib ein Wunschdatum an.",
+    },
+    {
+      name: "guests",
+      label: "Anzahl Personen",
+      type: "number",
+      required: true,
+      min: 1,
+      max: 25,
+      placeholder: "z. B. 12",
+      requiredMessage: "Bitte gib die Anzahl der Personen an.",
+    },
+    {
+      name: "message",
+      label: "Nachricht",
+      type: "textarea",
+      rows: 4,
+      colSpan: 2,
+      placeholder: "Besondere Wünsche oder Fragen …",
+    },
+  ],
+};
+
+export const CATERING_FORM: ContactFormConfig = {
+  type: "catering",
+  title: "Catering anfragen",
+  subtitle: "Beschreib uns dein Event – wir erstellen dir ein passendes Angebot.",
+  submitLabel: "Anfrage absenden",
+  successTitle: "Vielen Dank für deine Anfrage!",
+  successText: "Wir melden uns innerhalb von 24 Stunden bei dir.",
+  accentEyebrow: "Catering",
+  accentImage: "/images/kochkurs-gericht.webp",
+  fields: [
+    {
+      name: "name",
+      label: "Name",
+      type: "text",
+      required: true,
+      placeholder: "Dein Name",
+      requiredMessage: "Bitte gib deinen Namen ein.",
+    },
+    {
+      name: "email",
+      label: "E-Mail",
+      type: "email",
+      required: true,
+      placeholder: "deine@email.de",
+      requiredMessage: "Bitte gib deine E-Mail-Adresse ein.",
+    },
+    {
+      name: "phone",
+      label: "Telefon",
+      type: "tel",
+      optional: true,
+      placeholder: "+49 ...",
+    },
+    {
+      name: "cuisine",
+      label: "Gewünschte Küche",
+      type: "select",
+      placeholder: "Bitte wählen …",
+      options: CUISINES,
+    },
+    {
+      name: "date",
+      label: "Wunschdatum",
+      type: "date",
+      required: true,
+      requiredMessage: "Bitte gib ein Wunschdatum an.",
+    },
+    {
+      name: "guests",
+      label: "Anzahl Personen",
+      type: "number",
+      required: true,
+      min: 1,
+      placeholder: "z. B. 20",
+      requiredMessage: "Bitte gib die Anzahl der Personen an.",
+    },
+    {
+      name: "message",
+      label: "Nachricht",
+      type: "textarea",
+      rows: 4,
+      colSpan: 2,
+      placeholder: "Allergien, besondere Wünsche oder weitere Infos …",
+    },
+  ],
+};
+
+export const APPLICATION_FORM: ContactFormConfig = {
+  type: "application",
+  title: "Jetzt bewerben",
+  subtitle: "Erzähl uns von dir und deiner Idee.",
+  submitLabel: "Bewerbung absenden",
+  successTitle: "Danke für deine Bewerbung!",
+  successText: "Wir melden uns so schnell wie möglich bei dir.",
+  accentEyebrow: "Werde Kursleiter",
+  accentImage: "/images/kochkurs-tisch.webp",
+  fields: [
+    {
+      name: "name",
+      label: "Name",
+      type: "text",
+      required: true,
+      placeholder: "Dein Name",
+      requiredMessage: "Bitte gib deinen Namen ein.",
+    },
+    {
+      name: "email",
+      label: "E-Mail",
+      type: "email",
+      required: true,
+      placeholder: "deine@email.de",
+      requiredMessage: "Bitte gib deine E-Mail-Adresse ein.",
+    },
+    {
+      name: "phone",
+      label: "Telefon",
+      type: "tel",
+      optional: true,
+      placeholder: "+49 ...",
+    },
+    {
+      name: "idea",
+      label: "Deine Kursidee",
+      type: "textarea",
+      required: true,
+      rows: 5,
+      colSpan: 2,
+      placeholder:
+        "Beschreibe kurz, welche Art von Kurs du anbieten möchtest …",
+      requiredMessage: "Bitte beschreibe deine Kursidee.",
+    },
+  ],
+};
+
+export const VOUCHER_FORM: ContactFormConfig = {
+  type: "voucher",
+  title: "Gutschein bestellen",
+  subtitle: "Füll das Formular aus – wir kümmern uns um den Rest.",
+  submitLabel: "Jetzt bestellen",
+  successTitle: "Bestellung eingegangen!",
+  successText: "Wir senden dir den Gutschein so schnell wie möglich zu.",
+  accentEyebrow: "Gutscheine",
+  accentImage: "/images/kochkurs-dessert.webp",
+  fields: [
+    {
+      name: "amount",
+      label: "Betrag",
+      type: "select",
+      required: true,
+      placeholder: "Bitte wählen …",
+      options: AMOUNTS,
+      requiredMessage: "Bitte wähle einen Betrag aus.",
+    },
+    {
+      name: "format",
+      label: "Format",
+      type: "select",
+      required: true,
+      defaultValue: "digital",
+      options: VOUCHER_FORMATS,
+    },
+    {
+      name: "recipientName",
+      label: "Name der beschenkten Person",
+      type: "text",
+      optional: true,
+      placeholder: "z. B. Maria",
+    },
+    {
+      name: "message",
+      label: "Persönliche Nachricht",
+      type: "textarea",
+      optional: true,
+      rows: 3,
+      colSpan: 2,
+      placeholder: "Eine kleine Widmung für den Gutschein …",
+    },
+    {
+      name: "buyerName",
+      label: "Dein Name",
+      type: "text",
+      required: true,
+      placeholder: "Dein Name",
+      requiredMessage: "Bitte gib deinen Namen ein.",
+    },
+    {
+      name: "buyerEmail",
+      label: "Deine E-Mail",
+      type: "email",
+      required: true,
+      placeholder: "deine@email.de",
+      requiredMessage: "Bitte gib deine E-Mail-Adresse ein.",
+    },
+  ],
+};

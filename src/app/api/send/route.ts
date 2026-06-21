@@ -40,73 +40,62 @@ export async function POST(request: Request) {
 
     const resend = new Resend(apiKey);
     const body = await request.json();
-    const { type, ...data } = body;
+    const { type, title, ...data } = body;
 
-    let subject = "";
-    let html = "";
+    // Der variable Titel (z. B. "Location anfragen") bestimmt Betreff & Überschrift.
+    const heading = title ?? "Neue Anfrage";
+    const sender = data.name ?? data.buyerName ?? "";
+    const subject = sender ? `${heading} – von ${sender}` : heading;
+
+    let rows = "";
+    let extra: string | undefined;
 
     switch (type) {
       case "contact":
-        subject = `Neue Kontaktanfrage von ${data.name}`;
-        html = emailHtml(
-          "Neue Kontaktanfrage",
-          row("Name", data.name) + row("E-Mail", data.email),
-          data.message,
-        );
+        rows = row("Name", data.name) + row("E-Mail", data.email);
+        extra = data.message;
         break;
 
       case "voucher":
-        subject = `Gutschein-Bestellung von ${data.buyerName}`;
-        html = emailHtml(
-          "Neue Gutschein-Bestellung",
-          row("Betrag", `${data.amount} €`) +
-            row(
-              "Format",
-              data.format === "digital" ? "Digital (PDF)" : "Gedruckt",
-            ) +
-            row("Empfänger", data.recipientName) +
-            row("Käufer", data.buyerName) +
-            row("E-Mail", data.buyerEmail),
-          data.message,
-        );
+        rows =
+          row("Betrag", data.amount ? `${data.amount} €` : undefined) +
+          row(
+            "Format",
+            data.format === "digital" ? "Digital (PDF)" : "Gedruckt",
+          ) +
+          row("Empfänger", data.recipientName) +
+          row("Käufer", data.buyerName) +
+          row("E-Mail", data.buyerEmail);
+        extra = data.message;
         break;
 
       case "catering":
-        subject = `Catering-Anfrage von ${data.name}`;
-        html = emailHtml(
-          "Neue Catering-Anfrage",
+        rows =
           row("Name", data.name) +
-            row("E-Mail", data.email) +
-            row("Telefon", data.phone) +
-            row("Küche", data.cuisine) +
-            row("Datum", data.date) +
-            row("Personen", data.guests),
-          data.message,
-        );
+          row("E-Mail", data.email) +
+          row("Telefon", data.phone) +
+          row("Küche", data.cuisine) +
+          row("Datum", data.date) +
+          row("Personen", data.guests);
+        extra = data.message;
         break;
 
       case "inquiry":
-        subject = `Location-Anfrage von ${data.name}`;
-        html = emailHtml(
-          "Neue Location-Anfrage",
+        rows =
           row("Name", data.name) +
-            row("E-Mail", data.email) +
-            row("Anlass", data.occasion) +
-            row("Datum", data.date) +
-            row("Personen", data.guests),
-          data.message,
-        );
+          row("E-Mail", data.email) +
+          row("Anlass", data.occasion) +
+          row("Datum", data.date) +
+          row("Personen", data.guests);
+        extra = data.message;
         break;
 
       case "application":
-        subject = `Kursleiter-Bewerbung von ${data.name}`;
-        html = emailHtml(
-          "Neue Kursleiter-Bewerbung",
+        rows =
           row("Name", data.name) +
-            row("E-Mail", data.email) +
-            row("Telefon", data.phone),
-          data.idea,
-        );
+          row("E-Mail", data.email) +
+          row("Telefon", data.phone);
+        extra = data.idea;
         break;
 
       default:
@@ -115,6 +104,8 @@ export async function POST(request: Request) {
           { status: 400 },
         );
     }
+
+    const html = emailHtml(heading, rows, extra);
 
     await resend.emails.send({ from: FROM, to: RECIPIENT, subject, html });
     return NextResponse.json({ success: true });

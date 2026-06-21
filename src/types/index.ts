@@ -67,3 +67,47 @@ export interface ContactInfo {
     country: string;
   };
 }
+
+export type FormFieldType =
+  | "text"
+  | "email"
+  | "tel"
+  | "number"
+  | "date"
+  | "textarea"
+  | "select";
+
+export interface FormSelectOption {
+  label: string;
+  value: string;
+}
+
+export interface FormFieldConfig {
+  name: string;
+  label: string;
+  type: FormFieldType;
+  required?: boolean;
+  optional?: boolean;
+  placeholder?: string;
+  options?: FormSelectOption[];
+  min?: number;
+  max?: number;
+  rows?: number;
+  colSpan?: 1 | 2;
+  defaultValue?: string;
+  requiredMessage?: string;
+}
+
+export interface ContactFormConfig {
+  type: string;
+  title: string;
+  subtitle?: string;
+  submitLabel?: string;
+  successTitle?: string;
+  successText?: string;
+  fields: FormFieldConfig[];
+  showContactInfo?: boolean;
+  accentImage?: string;
+  accentImageAlt?: string;
+  accentEyebrow?: string;
+}

@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import {
-  CATERING_PAGE,
-  CATERING_FEATURES,
-  CATERING_STYLES,
-} from "@/lib/data";
+import { CATERING_PAGE, CATERING_FEATURES, CATERING_STYLES } from "@/lib/data";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { BenefitCard } from "@/components/molecules/benefit-card";
-import { CateringForm } from "@/components/organisms/catering-form";
+import { ContactForm } from "@/components/organisms/contact-form";
+import { CATERING_FORM } from "@/lib/form-configs";
 import { LocationFeaturesGrid } from "@/components/organisms/location-features-grid";
 import { CtaButton } from "@/components/atoms/cta-button";
 
@@ -57,7 +54,7 @@ export default function CateringPage() {
           size="lg"
         />
       </div>
-      <CateringForm />
+      <ContactForm config={CATERING_FORM} />
     </main>
   );
 }
