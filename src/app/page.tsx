@@ -24,7 +24,7 @@ export default function HomePage() {
         subtitle="Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente"
         primaryCta={{ label: "Zu den Kursen", href: "/aktuelle-kurse" }}
         secondaryCta={{ label: "Location ansehen", href: "/eventlocation" }}
-        backgroundImage="/images/Tomate-Culina.webp"
+        backgroundImage="/images/Zubereitung-Brot-Culina.webp"
       />
       <OfferGrid />
       <CourseSlider />

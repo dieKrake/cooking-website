@@ -5,8 +5,8 @@ html {
 }
 
 :root {
-  --background: rgb(29, 29, 27);
-  --foreground: rgb(249, 249, 248);
+  --background: rgb(245, 240, 224);
+  --foreground: rgb(29, 29, 27);
 
   /* Brand Colors */
   --pure-white: rgb(249, 249, 248);
@@ -15,23 +15,23 @@ html {
   --butterweiss: rgb(245, 240, 224);
   --eisblau: rgb(183, 198, 217);
 
-  /* Semantic Tokens (Dark Theme) */
-  --card: rgb(38, 38, 36);
-  --card-foreground: rgb(249, 249, 248);
-  --popover: rgb(38, 38, 36);
-  --popover-foreground: rgb(249, 249, 248);
+  /* Semantic Tokens (Light Theme) */
+  --card: rgb(249, 249, 248);
+  --card-foreground: rgb(29, 29, 27);
+  --popover: rgb(249, 249, 248);
+  --popover-foreground: rgb(29, 29, 27);
   --primary: rgb(242, 232, 164);
   --primary-foreground: rgb(29, 29, 27);
-  --secondary: rgb(48, 48, 45);
-  --secondary-foreground: rgb(249, 249, 248);
-  --muted: rgb(45, 45, 42);
-  --muted-foreground: rgba(249, 249, 248, 0.6);
-  --accent: rgb(48, 48, 45);
-  --accent-foreground: rgb(249, 249, 248);
-  --destructive: rgb(232, 116, 116);
-  --destructive-foreground: rgb(29, 29, 27);
-  --border: rgba(249, 249, 248, 0.12);
-  --input: rgba(249, 249, 248, 0.18);
+  --secondary: rgb(240, 238, 228);
+  --secondary-foreground: rgb(29, 29, 27);
+  --muted: rgb(240, 238, 228);
+  --muted-foreground: rgba(29, 29, 27, 0.6);
+  --accent: rgb(240, 238, 228);
+  --accent-foreground: rgb(29, 29, 27);
+  --destructive: rgb(200, 60, 60);
+  --destructive-foreground: rgb(249, 249, 248);
+  --border: rgba(29, 29, 27, 0.12);
+  --input: rgba(29, 29, 27, 0.18);
   --ring: rgb(242, 232, 164);
 }
 

@@ -77,7 +77,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-pure-white text-deep-black border-butterweiss sticky top-0 z-40 w-full border-b">
+    <header className="bg-pasta-gelb text-deep-black border-butterweiss sticky top-0 z-40 w-full border-b">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-24 lg:px-8">
         <Link
           href="/"
