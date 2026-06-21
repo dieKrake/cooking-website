@@ -185,7 +185,7 @@ export function ContactForm({ config, id, className }: ContactFormProps) {
         </div>
 
         {/* Formularspalte */}
-        <div className="bg-card p-8 sm:p-10">
+        <div className="bg-pure-white p-8 sm:p-10">
           {submitted ? (
             <div className="flex h-full min-h-64 flex-col items-center justify-center text-center">
               <p className="font-heading text-2xl font-semibold">

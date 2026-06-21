@@ -2,7 +2,7 @@ import type { NavItem, ContactInfo } from "@/types";
 
 export const SITE_NAME = "Culina";
 export const SITE_DESCRIPTION =
-  "Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente (ehemals Koch Klub am Kocher)";
+  "Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente";
 
 export const CONTACT_INFO: ContactInfo = {
   email: "kontakt@culina.de",

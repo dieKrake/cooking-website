@@ -16,18 +16,6 @@ import type {
   LocationFeature,
 } from "@/types";
 
-export const DATA: {
-  adress: string;
-  phone: string;
-  email: string;
-}[] = [
-  {
-    adress: "adresse",
-    phone: "telefon",
-    email: "email",
-  },
-];
-
 export const COURSES: Course[] = [
   {
     slug: "pasta",

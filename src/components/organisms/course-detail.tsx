@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import type { Course } from "@/types";
-import { DATA } from "@/lib/data";
+import { CONTACT_INFO } from "@/lib/constants";
 
 interface CourseDetailProps {
   course: Course;
@@ -99,7 +99,11 @@ export function CourseDetail({ course }: CourseDetailProps) {
           {course.hasFixedDate && (
             <MetaItem icon={Clock} label="Uhrzeit" value={timeLabel} />
           )}
-          <MetaItem icon={MapPin} label="Ort" value={DATA[0].adress} />
+          <MetaItem
+            icon={MapPin}
+            label="Ort"
+            value={CONTACT_INFO.address.street}
+          />
           {course.instructor && (
             <MetaItem
               icon={User}
