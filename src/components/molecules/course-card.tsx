@@ -16,8 +16,8 @@ export function CourseCard({ course }: CourseCardProps) {
     <article
       className={cn(
         "group text-pure-white relative flex h-full flex-col justify-end overflow-hidden rounded-2xl",
-        "shadow-[0_10px_40px_-12px_rgba(29,29,27,0.45)] ring-1 ring-white/10",
-        "transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_28px_60px_-18px_rgba(29,29,27,0.6)]",
+        "shadow-md ring-1 ring-white/10",
+        "transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg",
       )}
     >
       {/* Bild als kulinarische Bühne */}

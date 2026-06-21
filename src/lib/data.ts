@@ -63,10 +63,23 @@ export const COURSES: Course[] = [
     date: "",
     time: "",
     price: 85,
-    image: "/images/Zubereitung-Brot-Culina.webp",
+    image: "/images/Zubereitung-Auberginen-Culina.webp",
     instructor: "",
     hasFixedDate: true,
-    category: "Deutsch",
+    category: "Italienisch",
+  },
+  {
+    slug: "vegane-kueche",
+    title: "Vegane Küche – Frische und Vielfalt",
+    description:
+      "Entdecke die vielfältige vegane Küche mit frischen Zutaten, aromatischen Gewürzen und gesunden Rezepten.",
+    date: "",
+    time: "",
+    price: 85,
+    image: "/images/Zubereitung-Tomaten-Culina.webp",
+    instructor: "",
+    hasFixedDate: true,
+    category: "Italienisch",
   },
 ];
 

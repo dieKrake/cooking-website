@@ -9,11 +9,12 @@ export function CourseSlider() {
   return (
     <section className="py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between">
+        <div className="flex flex-col items-center text-center">
           <SectionHeading
             title="Kurse"
             subtitle="Unsere Kurse im Überblick"
-            className="mb-0"
+            centered
+            className="mb-4"
           />
           <Link
             href="/aktuelle-kurse"
@@ -22,7 +23,7 @@ export function CourseSlider() {
             Alle Kurse →
           </Link>
         </div>
-        <div className="-mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-12 sm:mx-0 sm:px-0 lg:gap-8">
+        <div className="-mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:px-0 lg:gap-8">
           {upcomingCourses.map((course) => (
             <div
               key={course.slug}
