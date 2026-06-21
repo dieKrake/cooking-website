@@ -28,10 +28,10 @@ vi.mock("next/link", () => ({
 const mockCourse: Course = {
   slug: "pizza-und-pasta",
   title: "Pizza & Pasta – Italiens Klassiker",
-  description: "Lerne, wie echter Pizzateig und frische Pasta zubereitet werden.",
+  description:
+    "Lerne, wie echter Pizzateig und frische Pasta zubereitet werden.",
   date: "2026-05-10",
   time: "18:00 – 21:00",
-  location: "Kochatelier, Musterstraße 1, 65185 Wiesbaden",
   price: 89,
   image: "https://placehold.co/600x400",
   instructor: "Luca M.",
@@ -78,11 +78,6 @@ describe("CourseDetail", () => {
     expect(screen.getByText(/89 € pro Person/)).toBeInTheDocument();
   });
 
-  it("renders the location", () => {
-    render(<CourseDetail course={mockCourse} />);
-    expect(screen.getByText(/Wiesbaden/)).toBeInTheDocument();
-  });
-
   it("renders the category badge", () => {
     render(<CourseDetail course={mockCourse} />);
     expect(screen.getAllByText("Italienisch").length).toBeGreaterThan(0);
@@ -95,7 +90,9 @@ describe("CourseDetail", () => {
 
   it("renders 'Datum wird noch bekannt gegeben' for courses without date", () => {
     render(<CourseDetail course={mockCourseNoDate} />);
-    expect(screen.getByText(/Datum wird noch bekannt gegeben/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Datum wird noch bekannt gegeben/i),
+    ).toBeInTheDocument();
   });
 
   it("does not render time row for courses without date", () => {
@@ -112,8 +109,9 @@ describe("CourseDetail", () => {
 
   it("renders a back link to /aktuelle-kurse", () => {
     render(<CourseDetail course={mockCourse} />);
-    expect(
-      screen.getByRole("link", { name: /Alle Kurse/i }),
-    ).toHaveAttribute("href", "/aktuelle-kurse");
+    expect(screen.getByRole("link", { name: /Alle Kurse/i })).toHaveAttribute(
+      "href",
+      "/aktuelle-kurse",
+    );
   });
 });
