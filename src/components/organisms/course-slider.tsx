@@ -22,7 +22,7 @@ export function CourseSlider() {
             Alle Kurse →
           </Link>
         </div>
-        <div className="-mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:px-0 lg:gap-8">
+        <div className="-mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-12 sm:mx-0 sm:px-0 lg:gap-8">
           {upcomingCourses.map((course) => (
             <div
               key={course.slug}

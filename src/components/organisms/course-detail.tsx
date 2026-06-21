@@ -30,7 +30,7 @@ function MetaItem({ icon: Icon, label, value }: MetaItemProps) {
   return (
     <div className="flex items-start gap-3">
       <Icon
-        className="text-primary mt-0.5 h-5 w-5 shrink-0"
+        className="text-deep-black mt-0.5 h-5 w-5 shrink-0"
         aria-hidden="true"
       />
       <div>
