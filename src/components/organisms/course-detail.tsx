@@ -99,7 +99,13 @@ export function CourseDetail({ course }: CourseDetailProps) {
             <MetaItem icon={Clock} label="Uhrzeit" value={timeLabel} />
           )}
           <MetaItem icon={MapPin} label="Ort" value={course.location} />
-          <MetaItem icon={User} label="Kursleiter" value={course.instructor} />
+          {course.instructor && (
+            <MetaItem
+              icon={User}
+              label="Kursleiter"
+              value={course.instructor}
+            />
+          )}
           <MetaItem icon={Euro} label="Preis" value={priceLabel} />
           <MetaItem icon={Tag} label="Kategorie" value={course.category} />
 

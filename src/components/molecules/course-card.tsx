@@ -51,10 +51,15 @@ export function CourseCard({ course }: CourseCardProps) {
         </h3>
 
         <div className="text-pure-white/75 flex flex-col gap-1.5 text-sm">
-          {course.date && (
+          {course.date ? (
             <div className="flex items-center gap-1.5">
               <CalendarDays className="h-4 w-4 shrink-0" />
               <span>{formatDate(course.date)}</span>
+            </div>
+          ) : (
+            <div className="flex items-center gap-1.5">
+              <CalendarDays className="h-4 w-4 shrink-0" />
+              <span>Auf Anfrage</span>
             </div>
           )}
           {course.time && (
@@ -63,10 +68,12 @@ export function CourseCard({ course }: CourseCardProps) {
               <span>{course.time}</span>
             </div>
           )}
-          <div className="flex items-center gap-1.5">
-            <User className="h-4 w-4 shrink-0" />
-            <span>{course.instructor}</span>
-          </div>
+          {course.instructor && (
+            <div className="flex items-center gap-1.5">
+              <User className="h-4 w-4 shrink-0" />
+              <span>{course.instructor}</span>
+            </div>
+          )}
         </div>
 
         <div className="mt-2 flex items-center justify-between gap-3 border-t border-white/15 pt-4">

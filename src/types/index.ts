@@ -7,7 +7,7 @@ export interface Course {
   location: string;
   price: number | null;
   image: string;
-  instructor: string;
+  instructor: string | null;
   hasFixedDate: boolean;
   category: string;
 }
