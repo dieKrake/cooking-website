@@ -4,7 +4,6 @@ export interface Course {
   description: string;
   date: string | null;
   time: string | null;
-  location: string;
   price: number | null;
   image: string;
   instructor: string | null;

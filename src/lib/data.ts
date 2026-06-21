@@ -16,6 +16,18 @@ import type {
   LocationFeature,
 } from "@/types";
 
+export const DATA: {
+  adress: string;
+  phone: string;
+  email: string;
+}[] = [
+  {
+    adress: "adresse",
+    phone: "telefon",
+    email: "email",
+  },
+];
+
 export const COURSES: Course[] = [
   {
     slug: "pasta",
@@ -24,7 +36,6 @@ export const COURSES: Course[] = [
       "Lerne, wie frische Pasta von Grund auf zubereitet wird. Mit hochwertigen Zutaten und viel Spaß.",
     date: "",
     time: "",
-    location: "Culina, Musterstraße 1, 65185 Wiesbaden",
     price: 89,
     image: "/images/Zubereitung-Gurken-Culina.webp",
     instructor: "",
@@ -38,7 +49,6 @@ export const COURSES: Course[] = [
       "Von Maultaschen bis zu Brezeln: Entdecke die herzliche Küche Schwabens – mit Geschichte, Geschmack und viel Herz.",
     date: "",
     time: "",
-    location: "Culina, Musterstraße 1, 65185 Wiesbaden",
     price: 85,
     image: "/images/Zubereitung-Brot-Culina.webp",
     instructor: "",
@@ -46,74 +56,17 @@ export const COURSES: Course[] = [
     category: "Deutsch",
   },
   {
-    slug: "fermentieren",
-    title: "Fermentieren & Sprudeln – Gemüse noch gesünder machen",
+    slug: "mediterane-kueche",
+    title: "Mediterane Küche – Frische und Vielfalt",
     description:
-      "Lerne die uralte Kunst des Fermentierens: Kimchi, Sauerkraut, Kombucha und mehr – einfach, gesund und köstlich.",
-    date: "2026-06-07",
-    time: "11:00 – 14:00",
-    location: "Culina, Musterstraße 1, 65185 Wiesbaden",
-    price: 79,
-    image: "https://placehold.co/600x400?text=Fermentieren",
-    instructor: "Bettina F.",
+      "Entdecke die vielfältige mediterrane Küche mit frischen Zutaten, aromatischen Gewürzen und gesunden Rezepten.",
+    date: "",
+    time: "",
+    price: 85,
+    image: "/images/Zubereitung-Brot-Culina.webp",
+    instructor: "",
     hasFixedDate: true,
-    category: "Gesunde Küche",
-  },
-  {
-    slug: "sauerteig-brot",
-    title: "Sauerteig & Sonntagsbrunch – Brot backen mit Zeit & Gefühl",
-    description:
-      "Erlebe, wie echter Sauerteig entsteht und wie du daraus das perfekte Brot backst – mit anschließendem Brunch.",
-    date: null,
-    time: null,
-    location: "Culina, Musterstraße 1, 65185 Wiesbaden",
-    price: 89,
-    image: "https://placehold.co/600x400?text=Sauerteig+Brot",
-    instructor: "Arthur S.",
-    hasFixedDate: false,
-    category: "Backen",
-  },
-  {
-    slug: "persische-kueche",
-    title: "Persische Küche – Granatapfel, Safran & Seele",
-    description:
-      "Entdecke die bunte Vielfalt der iranischen Küche – würzig, aromatisch und voller Geschichten.",
-    date: null,
-    time: null,
-    location: "Culina, Musterstraße 1, 65185 Wiesbaden",
-    price: 95,
-    image: "https://placehold.co/600x400?text=Persische+K%C3%BCche",
-    instructor: "Zohre S.",
-    hasFixedDate: false,
-    category: "Persisch",
-  },
-  {
-    slug: "wildkraeuter",
-    title: "Frühlingserwachen in der Wildkräuterküche",
-    description:
-      "Vom Wegesrand auf den Teller: Wir sammeln und verarbeiten heimische Wildkräuter zu überraschend leckeren Gerichten.",
-    date: "2026-06-14",
-    time: "10:00 – 16:00",
-    location: "Treffpunkt: Kurpark Wiesbaden",
-    price: 110,
-    image: "https://placehold.co/600x400?text=Wildkr%C3%A4uter",
-    instructor: "Esther E.",
-    hasFixedDate: true,
-    category: "Natur & Küche",
-  },
-  {
-    slug: "cocktail-kurs",
-    title: "Cocktail Kurs – Shaken, Rühren & Mixen",
-    description:
-      "Ob mit oder ohne Alkohol – hier wird gemixt, probiert und gelacht. Dein perfekter Einstieg in die Welt der Cocktails.",
-    date: "2026-05-31",
-    time: "18:00 – 20:00",
-    location: "Culina, Musterstraße 1, 65185 Wiesbaden",
-    price: 79,
-    image: "https://placehold.co/600x400?text=Cocktail+Kurs",
-    instructor: "Marco T.",
-    hasFixedDate: true,
-    category: "Drinks",
+    category: "Deutsch",
   },
 ];
 

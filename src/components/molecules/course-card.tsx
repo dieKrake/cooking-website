@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import type { Course } from "@/types";
+import { DATA } from "@/lib/data";
 
 interface CourseCardProps {
   course: Course;
