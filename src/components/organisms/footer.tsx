@@ -9,7 +9,7 @@ import {
 
 export function Footer() {
   return (
-    <footer className="bg-deep-black border-pure-white/10 mt-auto border-t">
+    <footer className="border-pure-white/10 bg-deep-black mt-auto border-t">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
@@ -21,7 +21,7 @@ export function Footer() {
                 alt={SITE_NAME}
                 width={200}
                 height={80}
-                className="hidden h-auto w-80 object-contain lg:block"
+                className="hidden h-auto w-80 object-contain brightness-0 invert lg:block"
                 style={{ height: "auto" }}
               />
               {/* Cropped PNG logo for smaller screens (under lg) */}
@@ -30,7 +30,7 @@ export function Footer() {
                 alt={`${SITE_NAME} Logo`}
                 width={150}
                 height={50}
-                className="h-auto w-40 object-contain md:w-32 lg:hidden"
+                className="h-auto w-40 object-contain brightness-0 invert md:w-32 lg:hidden"
                 style={{ height: "auto" }}
               />
             </Link>
