@@ -15,7 +15,7 @@ export function OfferCard({ offer, index = 0 }: OfferCardProps) {
   return (
     <article
       className={cn(
-        "group text-pure-white relative flex aspect-4/5 flex-col justify-end overflow-hidden rounded-2xl",
+        "group text-pure-white relative flex aspect-4/5 max-w-[500px] flex-col justify-end overflow-hidden rounded-2xl",
         "shadow-[0_10px_40px_-12px_rgba(29,29,27,0.45)] ring-1 ring-white/10",
         "transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_28px_60px_-18px_rgba(29,29,27,0.6)]",
       )}
