@@ -24,8 +24,8 @@ function NavDropdown({ item }: NavDropdownProps) {
         className={cn(
           "hover:text-deep-black flex items-center gap-1 rounded-md px-3 py-2 text-base font-medium transition-colors lg:text-lg",
           pathname.startsWith(item.href)
-            ? "text-foreground"
-            : "text-foreground/60",
+            ? "text-deep-black"
+            : "text-deep-black/60",
         )}
         onMouseEnter={() => setOpen(true)}
         onClick={() => setOpen((v) => !v)}
@@ -56,7 +56,7 @@ function NavDropdown({ item }: NavDropdownProps) {
                   <li key={child.href} role="menuitem">
                     <Link
                       href={child.href}
-                      className="hover:bg-eisblau/10 hover:text-deep-black block px-4 py-2.5 text-base transition-colors"
+                      className="text-deep-black/70 hover:bg-eisblau/10 hover:text-deep-black block px-4 py-2.5 text-base transition-colors"
                       onClick={() => setOpen(false)}
                     >
                       {child.label}
@@ -77,7 +77,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-pure-white border-butterweiss sticky top-0 z-40 w-full border-b">
+    <header className="bg-pure-white text-deep-black border-butterweiss sticky top-0 z-40 w-full border-b">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-24 lg:px-8">
         <Link
           href="/"
@@ -109,8 +109,8 @@ export function Navbar() {
                 className={cn(
                   "hover:text-deep-black rounded-md px-3 py-2 text-base font-medium transition-colors lg:text-lg",
                   pathname === item.href
-                    ? "text-foreground"
-                    : "text-foreground/60",
+                    ? "text-deep-black"
+                    : "text-deep-black/60",
                 )}
               >
                 {item.label}
@@ -138,7 +138,7 @@ export function Navbar() {
         {mobileOpen && (
           <motion.nav
             id="mobile-menu"
-            className="bg-background absolute top-full left-0 w-full border-t shadow-lg lg:hidden"
+            className="bg-pure-white border-butterweiss absolute top-full left-0 w-full border-t shadow-lg lg:hidden"
             aria-label="Mobile Navigation"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -153,8 +153,8 @@ export function Navbar() {
                     className={cn(
                       "hover:text-deep-black block py-2 text-lg font-medium transition-colors",
                       pathname === item.href
-                        ? "text-foreground"
-                        : "text-foreground/60",
+                        ? "text-deep-black"
+                        : "text-deep-black/60",
                     )}
                     onClick={() => setMobileOpen(false)}
                   >
@@ -169,8 +169,8 @@ export function Navbar() {
                             className={cn(
                               "hover:text-deep-black block py-1.5 text-base transition-colors",
                               pathname === child.href
-                                ? "text-foreground"
-                                : "text-foreground/60",
+                                ? "text-deep-black"
+                                : "text-deep-black/60",
                             )}
                             onClick={() => setMobileOpen(false)}
                           >

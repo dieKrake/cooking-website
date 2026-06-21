@@ -14,6 +14,25 @@ html {
   --pasta-gelb: rgb(242, 232, 164);
   --butterweiss: rgb(245, 240, 224);
   --eisblau: rgb(183, 198, 217);
+
+  /* Semantic Tokens (Dark Theme) */
+  --card: rgb(38, 38, 36);
+  --card-foreground: rgb(249, 249, 248);
+  --popover: rgb(38, 38, 36);
+  --popover-foreground: rgb(249, 249, 248);
+  --primary: rgb(242, 232, 164);
+  --primary-foreground: rgb(29, 29, 27);
+  --secondary: rgb(48, 48, 45);
+  --secondary-foreground: rgb(249, 249, 248);
+  --muted: rgb(45, 45, 42);
+  --muted-foreground: rgba(249, 249, 248, 0.6);
+  --accent: rgb(48, 48, 45);
+  --accent-foreground: rgb(249, 249, 248);
+  --destructive: rgb(232, 116, 116);
+  --destructive-foreground: rgb(29, 29, 27);
+  --border: rgba(249, 249, 248, 0.12);
+  --input: rgba(249, 249, 248, 0.18);
+  --ring: rgb(242, 232, 164);
 }
 
 @theme inline {
@@ -25,6 +44,24 @@ html {
   --color-pasta-gelb: var(--pasta-gelb);
   --color-butterweiss: var(--butterweiss);
   --color-eisblau: var(--eisblau);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
   --font-sans: var(--font-body);
   --font-heading: var(--font-heading);

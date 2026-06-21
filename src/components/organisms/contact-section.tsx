@@ -92,10 +92,10 @@ export function ContactSection() {
         <div className="space-y-6">
           <a
             href={`mailto:${CONTACT_INFO.email}`}
-            className="hover:bg-butterweiss flex items-start gap-4 rounded-lg border p-4 transition-colors"
+            className="flex items-start gap-4 rounded-lg border p-4 transition-colors hover:bg-white/5"
           >
             <Mail
-              className="text-deep-black mt-0.5 h-5 w-5 shrink-0"
+              className="text-pasta-gelb mt-0.5 h-5 w-5 shrink-0"
               aria-hidden="true"
             />
             <div>
@@ -105,10 +105,10 @@ export function ContactSection() {
           </a>
           <a
             href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
-            className="hover:bg-butterweiss flex items-start gap-4 rounded-lg border p-4 transition-colors"
+            className="flex items-start gap-4 rounded-lg border p-4 transition-colors hover:bg-white/5"
           >
             <Phone
-              className="text-deep-black mt-0.5 h-5 w-5 shrink-0"
+              className="text-pasta-gelb mt-0.5 h-5 w-5 shrink-0"
               aria-hidden="true"
             />
             <div>
@@ -118,7 +118,7 @@ export function ContactSection() {
           </a>
           <div className="flex items-start gap-4 rounded-lg border p-4">
             <MapPin
-              className="text-deep-black mt-0.5 h-5 w-5 shrink-0"
+              className="text-pasta-gelb mt-0.5 h-5 w-5 shrink-0"
               aria-hidden="true"
             />
             <div>
@@ -135,7 +135,7 @@ export function ContactSection() {
         </div>
 
         {submitted ? (
-          <div className="border-deep-black/30 bg-butterweiss flex items-center justify-center rounded-xl border px-6 py-10 text-center">
+          <div className="border-border bg-card flex items-center justify-center rounded-xl border px-6 py-10 text-center">
             <div>
               <p className="text-2xl font-semibold">Nachricht gesendet! ✉️</p>
               <p className="text-foreground/60 mt-2">
@@ -233,7 +233,7 @@ export function ContactSection() {
               type="submit"
               size="lg"
               className="cursor-pointer self-start"
-              variant="brand"
+              variant="brandSecondary"
               disabled={isLoading}
             >
               {isLoading ? "Wird gesendet…" : "Nachricht senden"}
