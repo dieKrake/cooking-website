@@ -26,7 +26,10 @@ export function CourseCard({ course }: CourseCardProps) {
         alt={course.title}
         fill
         className="object-cover transition-transform duration-1200 ease-out group-hover:scale-110"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        sizes="(max-width: 768px) 320px, (max-width: 1024px) 320px, 360px"
+        quality={60}
+        loading="lazy"
+        decoding="async"
       />
 
       {/* Verlauf für Lesbarkeit & Stimmung */}

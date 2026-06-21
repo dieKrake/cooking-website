@@ -27,6 +27,9 @@ export function HeroSection({
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
+            quality={60}
           />
           <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-black/0" />
         </div>

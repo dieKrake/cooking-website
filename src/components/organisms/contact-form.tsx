@@ -90,7 +90,11 @@ export function ContactForm({ config, id, className }: ContactFormProps) {
       const res = await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: config.type, title: config.title, ...form }),
+        body: JSON.stringify({
+          type: config.type,
+          title: config.title,
+          ...form,
+        }),
       });
       if (!res.ok) throw new Error();
       setSubmitted(true);
@@ -108,7 +112,7 @@ export function ContactForm({ config, id, className }: ContactFormProps) {
       id={id}
       className={cn("mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8", className)}
     >
-      <div className="grid overflow-hidden rounded-3xl ring-1 shadow-[0_24px_60px_-28px_rgba(29,29,27,0.5)] ring-black/5 lg:grid-cols-[0.85fr_1.15fr]">
+      <div className="grid overflow-hidden rounded-3xl shadow-[0_24px_60px_-28px_rgba(29,29,27,0.5)] ring-1 ring-black/5 lg:grid-cols-[0.85fr_1.15fr]">
         {/* Akzentspalte */}
         <div className="text-pure-white relative flex flex-col justify-between overflow-hidden p-8 sm:p-10">
           {config.accentImage ? (
@@ -118,7 +122,10 @@ export function ContactForm({ config, id, className }: ContactFormProps) {
               fill
               aria-hidden={!config.accentImageAlt}
               className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 40vw, 500px"
+              quality={60}
+              loading="lazy"
+              decoding="async"
             />
           ) : (
             <div aria-hidden className="bg-deep-black absolute inset-0" />
@@ -133,10 +140,7 @@ export function ContactForm({ config, id, className }: ContactFormProps) {
                 {config.accentEyebrow}
               </span>
             )}
-            <span
-              aria-hidden
-              className="bg-pasta-gelb mt-4 block h-px w-10"
-            />
+            <span aria-hidden className="bg-pasta-gelb mt-4 block h-px w-10" />
             <h2 className="font-heading mt-4 text-3xl leading-tight tracking-tight sm:text-4xl">
               {config.title}
             </h2>

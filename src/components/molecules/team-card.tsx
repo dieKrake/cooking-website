@@ -1,6 +1,13 @@
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import type { TeamMember } from "@/types";
 
 interface TeamCardProps {
@@ -16,14 +23,17 @@ export function TeamCard({ member }: TeamCardProps) {
           alt={member.name}
           fill
           className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 400px"
+          quality={60}
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <CardHeader>
         <CardTitle>{member.name}</CardTitle>
         <CardDescription>{member.role}</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 text-sm text-foreground/70">
+      <CardContent className="text-foreground/70 flex-1 text-sm">
         {member.bio}
       </CardContent>
       {member.externalUrl && (

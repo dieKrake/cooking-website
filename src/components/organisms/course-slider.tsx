@@ -15,8 +15,8 @@ export function CourseSlider() {
   const checkScroll = useCallback(() => {
     const el = scrollRef.current;
     if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 2);
-    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 2);
+    setCanScrollLeft(el.scrollLeft > 50);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 50);
   }, []);
 
   useEffect(() => {
@@ -48,10 +48,10 @@ export function CourseSlider() {
             Alle Kurse →
           </Link>
         </div>
-        <div className="relative">
+        <div className="relative -mx-4 overflow-hidden sm:-mx-6 lg:-mx-8">
           <div
             ref={scrollRef}
-            className="-mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:px-0 lg:gap-8"
+            className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:px-6 lg:gap-8 lg:px-8"
           >
             {upcomingCourses.map((course) => (
               <div
@@ -65,12 +65,12 @@ export function CourseSlider() {
           {/* Rand-Fades: ein-/ausblenden je nach Scroll-Position */}
           <div
             aria-hidden
-            className="from-butterweiss pointer-events-none absolute inset-y-0 left-0 w-6 bg-linear-to-r to-transparent transition-opacity duration-700 ease-in-out sm:w-10"
+            className="from-butterweiss pointer-events-none absolute inset-y-0 left-0 w-6 bg-linear-to-r to-transparent transition-opacity duration-700 ease-in-out sm:w-12 lg:w-16"
             style={{ opacity: canScrollLeft ? 1 : 0 }}
           />
           <div
             aria-hidden
-            className="from-butterweiss pointer-events-none absolute inset-y-0 right-0 w-6 bg-linear-to-l to-transparent transition-opacity duration-700 ease-in-out sm:w-10"
+            className="from-butterweiss pointer-events-none absolute inset-y-0 right-0 w-6 bg-linear-to-l to-transparent transition-opacity duration-700 ease-in-out sm:w-12 lg:w-16"
             style={{ opacity: canScrollRight ? 1 : 0 }}
           />
         </div>

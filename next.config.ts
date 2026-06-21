@@ -4,7 +4,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
   images: {
+    minimumCacheTTL: 31536000,
+    formats: ["image/webp"],
     remotePatterns: [
       {
         protocol: "https",
