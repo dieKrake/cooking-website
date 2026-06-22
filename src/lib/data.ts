@@ -262,30 +262,30 @@ export const EVENTLOCATION_PAGE = {
 
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
-    src: "https://placehold.co/800x600?text=Kochstudio+%C3%9Cbersicht",
+    src: "/images/kochkurs-tisch.webp",
     alt: "Blick in das offene Kochstudio mit moderner Ausstattung",
     span: "wide",
   },
   {
-    src: "https://placehold.co/600x800?text=K%C3%BCchenzeile",
+    src: "/images/kochlurs-zubereitung.webp",
     alt: "Professionelle Küchenzeile mit NEFF-Equipment",
     span: "tall",
   },
   {
-    src: "https://placehold.co/600x400?text=Essbereich",
+    src: "/images/kochkurse-gerichte.webp",
     alt: "Gemütlicher Essbereich für gemeinsame Genussmomente",
   },
   {
-    src: "https://placehold.co/600x400?text=Kochinseln",
+    src: "/images/kochkurs-pfannen.webp",
     alt: "Kochinseln für interaktive Kochkurse und Events",
   },
   {
-    src: "https://placehold.co/800x600?text=Event+Atmosph%C3%A4re",
+    src: "/images/Kochkurs-essen.webp",
     alt: "Stimmungsvolle Atmosphäre bei einem Abend-Event",
     span: "wide",
   },
   {
-    src: "https://placehold.co/600x400?text=Eingangsbereich",
+    src: "/images/Kochkurs-1.webp",
     alt: "Einladender Eingangsbereich der Eventlocation",
   },
 ];

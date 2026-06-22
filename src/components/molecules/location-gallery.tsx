@@ -1,57 +1,28 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import type { GalleryImage } from "@/types";
 
 interface LocationGalleryProps {
   images: GalleryImage[];
 }
 
-const spanClasses: Record<string, string> = {
-  wide: "md:col-span-2",
-  tall: "md:row-span-2",
-  default: "",
-};
-
 export function LocationGallery({ images }: LocationGalleryProps) {
   return (
     <section className="py-12">
-      {/* Mobile: horizontal scroll */}
-      <div className="flex gap-4 overflow-x-auto pb-4 md:hidden">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
         {images.map((image) => (
           <div
             key={image.alt}
-            className="relative aspect-4/3 w-72 shrink-0 overflow-hidden rounded-xl"
+            className="group bg-muted relative aspect-2/3 overflow-hidden rounded-2xl shadow-xs transition-all duration-300 hover:shadow-md"
           >
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover"
-              sizes="288px"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 17vw"
             />
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop: Bento Grid */}
-      <div className="hidden gap-3 md:grid md:auto-rows-[220px] md:grid-cols-3">
-        {images.map((image) => (
-          <div
-            key={image.alt}
-            className={cn(
-              "group relative overflow-hidden rounded-xl",
-              spanClasses[image.span ?? "default"],
-            )}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 1280px) 33vw, 400px"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <p className="absolute bottom-0 left-0 w-full translate-y-2 px-4 pb-4 text-sm font-medium text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <p className="pointer-events-none absolute bottom-0 left-0 line-clamp-2 w-full translate-y-2 px-3 pb-3 text-xs font-semibold text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
               {image.alt}
             </p>
           </div>
