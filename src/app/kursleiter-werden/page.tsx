@@ -224,7 +224,7 @@ export default function KursleiterWerdenPage() {
       </section>
 
       <section className="mt-20 grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
-        <div className="border-border/50 bg-muted/30 rounded-3xl border p-6 sm:p-8">
+        <div className="border-border/50 bg-pure-white rounded-3xl border p-6 sm:p-8">
           <p className="text-foreground/60 text-sm tracking-[0.35em] uppercase">
             Vorbereitung
           </p>
@@ -235,7 +235,7 @@ export default function KursleiterWerdenPage() {
             {PRE_FORM_POINTS.map((point) => (
               <li key={point} className="flex gap-3">
                 <Sparkles
-                  className="text-pasta-gelb mt-0.5 size-4"
+                  className="text-deep-black mt-0.5 size-4"
                   aria-hidden="true"
                 />
                 {point}

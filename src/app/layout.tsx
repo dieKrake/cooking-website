@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/organisms/navbar";
 import { Footer } from "@/components/organisms/footer";
+import { ScrollToTop } from "@/components/atoms/scroll-to-top";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
       className={`${fontHeading.variable} ${fontBody.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <ScrollToTop />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
