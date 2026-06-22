@@ -75,7 +75,7 @@ export const COURSES: Course[] = [
     image: "/images/Zubereitung-Tomaten-Culina.webp",
     instructor: "",
     hasFixedDate: true,
-    category: "Italienisch",
+    category: "Vegan",
   },
 ];
 

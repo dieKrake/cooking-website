@@ -37,7 +37,7 @@ describe("TeamGrid", () => {
   it("renders the external link for members with externalUrl", () => {
     render(<TeamGrid members={mockMembers} />);
     expect(
-      screen.getByRole("link", { name: /Website besuchen/i }),
+      screen.getByRole("link", { name: /Profil ansehen/i }),
     ).toHaveAttribute("href", "https://example.com");
   });
 });

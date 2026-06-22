@@ -51,7 +51,7 @@ describe("TeamCard", () => {
         member={{ ...mockMember, externalUrl: "https://example.com" }}
       />,
     );
-    const link = screen.getByRole("link", { name: /Website besuchen/i });
+    const link = screen.getByRole("link", { name: /Profil ansehen/i });
     expect(link).toHaveAttribute("href", "https://example.com");
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", "noopener noreferrer");
