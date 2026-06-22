@@ -1,3 +1,4 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { HeroSection } from "./hero-section";
@@ -11,7 +12,29 @@ vi.mock("next/link", () => ({
     children: React.ReactNode;
     href: string;
     className?: string;
-  }) => <a href={href} className={className}>{children}</a>,
+  }) => (
+    <a href={href} className={className}>
+      {children}
+    </a>
+  ),
+}));
+
+vi.mock("framer-motion", () => ({
+  motion: {
+    div: ({ children, style, className }: any) => (
+      <div style={style} className={className}>
+        {children}
+      </div>
+    ),
+  },
+  useScroll: () => ({
+    scrollY: {
+      get: () => 0,
+      onChange: vi.fn(),
+      destroy: vi.fn(),
+    },
+  }),
+  useTransform: () => 0,
 }));
 
 describe("HeroSection", () => {
@@ -48,10 +71,9 @@ describe("HeroSection", () => {
         secondaryCta={{ label: "Location ansehen", href: "/eventlocation" }}
       />,
     );
-    expect(screen.getByRole("link", { name: "Location ansehen" })).toHaveAttribute(
-      "href",
-      "/eventlocation",
-    );
+    expect(
+      screen.getByRole("link", { name: "Location ansehen" }),
+    ).toHaveAttribute("href", "/eventlocation");
   });
 
   it("does not render secondary CTA when omitted", () => {

@@ -1,5 +1,8 @@
-import { ReactNode } from "react";
+"use client";
+
+import { ReactNode, useRef } from "react";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { CtaButton } from "@/components/atoms/cta-button";
 import { cn } from "@/lib/utils";
 
@@ -18,10 +21,31 @@ export function HeroSection({
   secondaryCta,
   backgroundImage,
 }: HeroSectionProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Track scroll within the hero section itself
+  const { scrollY } = useScroll();
+
+  // Create smooth parallax offsets
+  // Background moves down (positive Y) slightly slower as we scroll down to offset normal movement
+  const yBg = useTransform(scrollY, [0, 800], [0, 160]);
+
+  // Text container moves down slightly to create a layered depth effect
+  const yText = useTransform(scrollY, [0, 800], [0, 40]);
+
+  // Text fades out dezent as you scroll down
+  const opacityText = useTransform(scrollY, [0, 600], [1, 0.5]);
+
   return (
-    <section className="relative overflow-hidden py-16 sm:py-24">
+    <section
+      ref={containerRef}
+      className="relative overflow-hidden py-16 sm:py-24"
+    >
       {backgroundImage && (
-        <div className="absolute inset-0 z-0">
+        <motion.div
+          className="absolute inset-0 z-0 scale-110"
+          style={{ y: yBg }}
+        >
           <Image
             src={backgroundImage}
             alt="Hero Background"
@@ -33,10 +57,11 @@ export function HeroSection({
             quality={60}
           />
           <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/25 to-black/60" />
-        </div>
+        </motion.div>
       )}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div
+        <motion.div
+          style={{ y: yText, opacity: opacityText }}
           className={cn(
             "mx-auto max-w-3xl text-center text-white transition-all duration-500",
             backgroundImage &&
@@ -58,13 +83,13 @@ export function HeroSection({
               <CtaButton
                 href={secondaryCta.href}
                 label={secondaryCta.label}
-                variant="outline"
+                variant="ghost"
                 size="lg"
-                className="border-white/25 text-white hover:border-white hover:bg-white/10 hover:text-white"
+                className="bg-eisblau text-deep-black hover:bg-eisblau/80! hover:text-deep-black! border-white/25"
               />
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
