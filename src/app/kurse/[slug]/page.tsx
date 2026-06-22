@@ -17,7 +17,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const course = COURSES.find((c) => c.slug === slug);
   if (!course) return {};
-  return { title: course.title, description: course.description };
+  return { title: course.title, description: course.longDescription };
 }
 
 export default async function CourseDetailPage({

@@ -90,7 +90,7 @@ export function CourseDetail({ course }: CourseDetailProps) {
             {course.title}
           </h1>
           <p className="text-foreground/70 mt-4 text-base leading-relaxed">
-            {course.description}
+            {course.longDescription}
           </p>
         </div>
 

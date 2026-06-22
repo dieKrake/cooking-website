@@ -1,7 +1,8 @@
 export interface Course {
   slug: string;
   title: string;
-  description: string;
+  shortDescription: string;
+  longDescription: string;
   date: string | null;
   time: string | null;
   price: number | null;

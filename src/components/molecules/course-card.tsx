@@ -8,15 +8,18 @@ import type { Course } from "@/types";
 
 interface CourseCardProps {
   course: Course;
+  variant?: "default" | "wide";
 }
 
-export function CourseCard({ course }: CourseCardProps) {
+export function CourseCard({ course, variant = "default" }: CourseCardProps) {
+  const isWide = variant === "wide";
   return (
     <article
       className={cn(
         "group text-pure-white relative flex h-full flex-col justify-end overflow-hidden rounded-2xl",
         "shadow-md ring-1 ring-white/10",
         "transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg",
+        isWide && "min-h-[520px] sm:min-h-[560px] lg:min-h-[600px]",
       )}
     >
       {/* Bild als kulinarische Bühne */}
@@ -43,7 +46,12 @@ export function CourseCard({ course }: CourseCardProps) {
       </Badge>
 
       {/* Inhalt */}
-      <div className="relative z-10 flex flex-col gap-3 p-6 sm:p-7">
+      <div
+        className={cn(
+          "relative z-10 flex flex-col gap-3 p-6 sm:p-7",
+          isWide && "md:p-8",
+        )}
+      >
         <span
           aria-hidden
           className="bg-pasta-gelb h-px w-10 origin-left transition-all duration-500 group-hover:w-16"
@@ -52,6 +60,12 @@ export function CourseCard({ course }: CourseCardProps) {
         <h3 className="font-heading text-xl leading-tight tracking-tight sm:text-2xl">
           {course.title}
         </h3>
+
+        {isWide && (
+          <p className="text-pure-white/80 text-sm leading-relaxed">
+            {course.shortDescription}
+          </p>
+        )}
 
         <div className="text-pure-white/75 flex flex-col gap-1.5 text-sm">
           {course.date ? (

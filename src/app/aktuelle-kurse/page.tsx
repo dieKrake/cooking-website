@@ -18,7 +18,7 @@ export default function AktuelleKursePage() {
           {AKTUELLE_KURSE_PAGE.intro}
         </p>
       </div>
-      <CoursesGrid courses={COURSES} />
+      <CoursesGrid courses={COURSES} layout="wide" />
     </main>
   );
 }

@@ -20,8 +20,10 @@ export const COURSES: Course[] = [
   {
     slug: "pasta",
     title: "Pasta – Italiens Klassiker",
-    description:
-      "Lerne, wie frische Pasta von Grund auf zubereitet wird. Mit hochwertigen Zutaten und viel Spaß.",
+    shortDescription:
+      "Frische Pasta, perfekte Saucen und italienische Techniken – alles, was du für den Pastateller zuhause brauchst.",
+    longDescription:
+      "Lerne, wie frische Pasta von Grund auf zubereitet wird – vom Teigkneten bis zum Formen. Mit hochwertigen Zutaten und vielen Tipps für echte italienische Genussmomente.",
     date: "",
     time: "",
     price: 89,
@@ -33,8 +35,10 @@ export const COURSES: Course[] = [
   {
     slug: "schwaebische-kueche",
     title: "Schwäbische Küche – Tradition und Wärme",
-    description:
-      "Von Maultaschen bis zu Brezeln: Entdecke die herzliche Küche Schwabens – mit Geschichte, Geschmack und viel Herz.",
+    shortDescription:
+      "Maultaschen, Spätzle & Co. neu entdecken – herzhaft, bodenständig und mit viel schwäbischer Gastlichkeit.",
+    longDescription:
+      "Von Maultaschen bis Brezeln: Entdecke die herzliche Küche Schwabens mit Geschichte, Geschmack und viel Herz. Wir kochen Klassiker step-by-step und zeigen, wie sie modern interpretiert werden.",
     date: "",
     time: "",
     price: 85,
@@ -46,8 +50,10 @@ export const COURSES: Course[] = [
   {
     slug: "mediterane-kueche",
     title: "Mediterane Küche – Frische und Vielfalt",
-    description:
-      "Entdecke die vielfältige mediterrane Küche mit frischen Zutaten, aromatischen Gewürzen und gesunden Rezepten.",
+    shortDescription:
+      "Leichte mediterrane Gerichte mit viel Gemüse, Olivenöl und Kräutern – bereit für deinen Sommerabend zuhause.",
+    longDescription:
+      "Entdecke die vielfältige mediterrane Küche mit frischen Zutaten, aromatischen Gewürzen und gesunden Rezepten. Wir verbinden Mezze, Pasta & Fischgerichte zu einem genussvollen Menü.",
     date: "",
     time: "",
     price: 85,
@@ -59,8 +65,10 @@ export const COURSES: Course[] = [
   {
     slug: "vegane-kueche",
     title: "Vegane Küche – Frische und Vielfalt",
-    description:
-      "Entdecke die vielfältige vegane Küche mit frischen Zutaten, aromatischen Gewürzen und gesunden Rezepten.",
+    shortDescription:
+      "Pflanzliche Küche ohne Verzicht – bunt, saisonal und überraschend aromatisch.",
+    longDescription:
+      "Entdecke die vielfältige vegane Küche mit frischen Zutaten, aromatischen Gewürzen und gesunden Rezepten. Wir zeigen Texturen, Marinaden und moderne Teller, die auch Nicht-Veganer begeistern.",
     date: "",
     time: "",
     price: 85,

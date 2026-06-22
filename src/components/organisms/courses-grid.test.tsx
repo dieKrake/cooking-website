@@ -13,7 +13,11 @@ vi.mock("next/link", () => ({
     children: React.ReactNode;
     href: string;
     className?: string;
-  }) => <a href={href} className={className}>{children}</a>,
+  }) => (
+    <a href={href} className={className}>
+      {children}
+    </a>
+  ),
 }));
 
 vi.mock("next/image", () => ({
@@ -26,10 +30,10 @@ const mockCourses: Course[] = [
   {
     slug: "pizza",
     title: "Pizza & Pasta",
-    description: "Lecker.",
+    shortDescription: "Kurzbeschreibung Pizza",
+    longDescription: "Lange Beschreibung Pizza",
     date: "2026-05-10",
     time: "18:00",
-    location: "Kochatelier",
     price: 89,
     image: "https://placehold.co/600x400",
     instructor: "Luca M.",
@@ -39,10 +43,10 @@ const mockCourses: Course[] = [
   {
     slug: "sushi",
     title: "Sushi-Kurs",
-    description: "Japanisch.",
+    shortDescription: "Kurzbeschreibung Sushi",
+    longDescription: "Lange Beschreibung Sushi",
     date: "2026-05-17",
     time: "17:00",
-    location: "Kochatelier",
     price: 95,
     image: "https://placehold.co/600x400",
     instructor: "Vivian K.",

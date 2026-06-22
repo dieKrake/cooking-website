@@ -28,7 +28,8 @@ vi.mock("next/link", () => ({
 const mockCourse: Course = {
   slug: "pizza-und-pasta",
   title: "Pizza & Pasta – Italiens Klassiker",
-  description:
+  shortDescription: "Perfekte Pasta und Pizza in einem Abend.",
+  longDescription:
     "Lerne, wie echter Pizzateig und frische Pasta zubereitet werden.",
   date: "2026-05-10",
   time: "18:00 – 21:00",
