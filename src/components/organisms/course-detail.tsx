@@ -30,14 +30,14 @@ function MetaItem({ icon: Icon, label, value }: MetaItemProps) {
   return (
     <div className="flex items-start gap-3">
       <Icon
-        className="text-deep-black mt-0.5 h-5 w-5 shrink-0"
+        className="text-pasta-gelb mt-0.5 h-5 w-5 shrink-0"
         aria-hidden="true"
       />
       <div>
-        <p className="text-foreground/50 text-xs font-medium tracking-wider uppercase">
+        <p className="text-pure-white/60 text-[0.7rem] font-semibold tracking-[0.35em] uppercase">
           {label}
         </p>
-        <p className="mt-0.5 text-sm font-medium">{value}</p>
+        <p className="text-pure-white mt-1 text-sm leading-tight">{value}</p>
       </div>
     </div>
   );
@@ -94,38 +94,58 @@ export function CourseDetail({ course }: CourseDetailProps) {
           </p>
         </div>
 
-        <aside className="flex flex-col gap-5 rounded-2xl border p-6">
-          <MetaItem icon={Calendar} label="Datum" value={dateLabel} />
-          {course.hasFixedDate && (
-            <MetaItem icon={Clock} label="Uhrzeit" value={timeLabel} />
-          )}
-          <MetaItem
-            icon={MapPin}
-            label="Ort"
-            value={CONTACT_INFO.address.street}
+        <aside className="group bg-deep-black text-pure-white relative overflow-hidden rounded-[32px] p-6 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.8)] ring-1 ring-white/10 sm:p-8">
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-[radial-gradient(75%_100%_at_0%_0%,rgba(255,255,255,0.08),transparent)] opacity-80 transition-opacity duration-500 group-hover:opacity-100"
           />
-          {course.instructor && (
-            <MetaItem
-              icon={User}
-              label="Kursleiter"
-              value={course.instructor}
-            />
-          )}
-          <MetaItem icon={Euro} label="Preis" value={priceLabel} />
-          <MetaItem icon={Tag} label="Kategorie" value={course.category} />
+          <div className="relative z-10 flex flex-col gap-5">
+            <div>
+              <p className="text-pure-white/70 text-xs font-semibold tracking-[0.35em] uppercase">
+                Kursinfos
+              </p>
+              <h2 className="font-heading mt-3 text-2xl leading-tight tracking-tight">
+                Dein Abend auf einen Blick
+              </h2>
+              <span className="bg-pasta-gelb/80 mt-4 block h-px w-12" />
+            </div>
 
-          <hr className="border-border" />
+            <div className="space-y-4">
+              <MetaItem icon={Calendar} label="Datum" value={dateLabel} />
+              {course.hasFixedDate && (
+                <MetaItem icon={Clock} label="Uhrzeit" value={timeLabel} />
+              )}
+              <MetaItem
+                icon={MapPin}
+                label="Ort"
+                value={CONTACT_INFO.address.street}
+              />
+              {course.instructor && (
+                <MetaItem
+                  icon={User}
+                  label="Kursleiter"
+                  value={course.instructor}
+                />
+              )}
+              <MetaItem icon={Euro} label="Preis" value={priceLabel} />
+              <MetaItem icon={Tag} label="Kategorie" value={course.category} />
+            </div>
 
-          <div className="space-y-3">
-            <Link
-              href="/#kontakt"
-              className={buttonVariants({ size: "lg", className: "w-full" })}
-            >
-              Jetzt anfragen
-            </Link>
-            <p className="text-foreground/50 text-center text-xs">
-              Verbindliche Anmeldung per E-Mail oder Kontaktformular
-            </p>
+            <div className="mt-4 border-t border-white/15 pt-5">
+              <Link
+                href="/#kontakt"
+                className={buttonVariants({
+                  variant: "brandSecondary",
+                  size: "lg",
+                  className: "w-full text-base",
+                })}
+              >
+                Jetzt anfragen
+              </Link>
+              <p className="text-pure-white/65 mt-3 text-center text-xs leading-relaxed">
+                Verbindliche Anmeldung per E-Mail oder Kontaktformular
+              </p>
+            </div>
           </div>
         </aside>
       </div>
