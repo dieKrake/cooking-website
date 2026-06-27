@@ -25,7 +25,7 @@ export function LoginForm() {
       <div className="border-border bg-background w-full max-w-md space-y-8 rounded-2xl border p-8 shadow-sm">
         <div className="flex flex-col items-center text-center">
           <div className="bg-primary/10 text-primary flex h-12 w-12 items-center justify-center rounded-full">
-            <Lock className="h-6 w-6" />
+            <Lock className="text-deep-black h-6 w-6" />
           </div>
           <h2 className="text-foreground mt-6 text-3xl font-bold tracking-tight">
             Admin-Bereich

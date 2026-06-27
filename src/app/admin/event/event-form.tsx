@@ -1,12 +1,20 @@
 "use client";
 
 import { useState, useActionState, startTransition } from "react";
+import { format, parse } from "date-fns";
+import { de } from "date-fns/locale";
 import { updateEvent, logout } from "./actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import {
-  Calendar,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Calendar as CalendarIcon,
   Image as ImageIcon,
   CheckCircle2,
   LogOut,
@@ -30,6 +38,28 @@ export function EventForm({ initialData }: EventFormProps) {
     initialData.imagePath,
   );
   const [isSuccess, setIsSuccess] = useState(false);
+
+  // Parse initial date or default to today
+  const [date, setDate] = useState<Date | undefined>(() => {
+    try {
+      // Try parsing the "dd. MMMM yyyy" format used in the teaser
+      return parse(initialData.date, "d. MMMM yyyy", new Date(), {
+        locale: de,
+      });
+    } catch {
+      return new Date();
+    }
+  });
+
+  const [dateInputValue, setDateInputValue] = useState(initialData.date);
+
+  const handleDateSelect = (selectedDate: Date | undefined) => {
+    if (selectedDate) {
+      setDate(selectedDate);
+      const formatted = format(selectedDate, "d. MMMM yyyy", { locale: de });
+      setDateInputValue(formatted);
+    }
+  };
 
   const [state, formAction, isPending] = useActionState(
     async (_prevState: unknown, formData: FormData) => {
@@ -77,7 +107,7 @@ export function EventForm({ initialData }: EventFormProps) {
               Die neuen Daten und das Bild wurden erfolgreich in dein
               GitHub-Repository committet.
             </p>
-            <p className="text-primary font-medium">
+            <p className="font-medium">
               Vercel baut die Website jetzt im Hintergrund neu.
             </p>
             <p className="text-foreground/50 text-xs">
@@ -94,17 +124,6 @@ export function EventForm({ initialData }: EventFormProps) {
               <ArrowLeft className="h-4 w-4" />
               Zur Startseite
             </Link>
-            <Button
-              onClick={() => {
-                setImagePreview(initialData.imagePath);
-                setIsSuccess(false);
-                window.location.reload();
-              }}
-              variant="brand"
-              className="cursor-pointer px-5 py-2.5 text-sm font-semibold"
-            >
-              Weiteres Event bearbeiten
-            </Button>
           </div>
         </div>
       </div>
@@ -161,16 +180,28 @@ export function EventForm({ initialData }: EventFormProps) {
               Datum <span className="text-primary">*</span>
             </label>
             <div className="relative">
-              <Input
-                id="date"
-                name="date"
-                type="text"
-                required
-                defaultValue={initialData.date}
-                placeholder="z.B. 15. Juli 2026"
-                className="w-full pl-10"
-              />
-              <Calendar className="text-foreground/40 absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
+              <Popover>
+                <PopoverTrigger className="relative cursor-pointer">
+                  <Input
+                    id="date"
+                    name="date"
+                    type="text"
+                    required
+                    value={dateInputValue}
+                    onChange={(e) => setDateInputValue(e.target.value)}
+                    placeholder="z.B. 15. Juli 2026"
+                    className="w-full cursor-pointer pl-10"
+                  />
+                  <CalendarIcon className="text-foreground/40 absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <CalendarComponent
+                    mode="single"
+                    selected={date}
+                    onSelect={handleDateSelect}
+                  />
+                </PopoverContent>
+              </Popover>
             </div>
           </div>
 
@@ -208,10 +239,10 @@ export function EventForm({ initialData }: EventFormProps) {
               {isPending ? (
                 <>
                   <Loader2 className="h-5 w-5 animate-spin" />
-                  Wird gepusht...
+                  Wird gespeichert...
                 </>
               ) : (
-                "Änderungen pushen"
+                "Änderungen speichern"
               )}
             </Button>
             <Link
