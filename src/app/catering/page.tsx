@@ -45,14 +45,15 @@ export default function CateringPage() {
         <CtaButton
           href="/aktuelle-kurse"
           label="Zu den Kochkursen"
-          variant="outline"
+          variant="brandSecondary"
           size="lg"
         />
         <CtaButton
           href="/gutscheine"
           label="Zu den Gutscheinen"
-          variant="outline"
+          variant="ghost"
           size="lg"
+          className="bg-eisblau text-deep-black hover:bg-eisblau/80! hover:text-deep-black! border-white/25"
         />
       </div>
       <ContactForm config={CATERING_FORM} />

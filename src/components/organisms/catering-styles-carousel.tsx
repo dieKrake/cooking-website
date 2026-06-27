@@ -34,12 +34,12 @@ export function CateringStylesCarousel() {
     <div className="relative -mx-4 overflow-hidden sm:-mx-6">
       <div
         ref={scrollRef}
-        className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4"
+        className="ml-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4"
       >
         {CATERING_STYLES.map((style) => (
           <div
             key={style.title}
-            className="w-72 shrink-0 snap-start pl-4 sm:w-80"
+            className="w-72 shrink-0 snap-start sm:w-80"
             aria-label={style.title}
           >
             <BenefitCard benefit={style} className="h-full" />
