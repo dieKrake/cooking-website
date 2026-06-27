@@ -127,7 +127,7 @@ export default function KursleiterWerdenPage() {
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 45vw, 560px"
-            quality={60}
+            quality={75}
             loading="lazy"
             decoding="async"
           />
@@ -161,7 +161,7 @@ export default function KursleiterWerdenPage() {
             fill
             className="object-cover opacity-40"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 45vw, 420px"
-            quality={60}
+            quality={75}
             loading="lazy"
             decoding="async"
           />

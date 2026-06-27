@@ -132,11 +132,7 @@ export function EventForm({ initialData }: EventFormProps) {
         </Button>
       </div>
 
-      <form
-        action={formAction}
-        encType="multipart/form-data"
-        className="mt-8 grid gap-8 md:grid-cols-3"
-      >
+      <form action={formAction} className="mt-8 grid gap-8 md:grid-cols-3">
         {/* Left column: Form Fields */}
         <div className="space-y-6 md:col-span-2">
           <div className="space-y-2">
@@ -242,6 +238,7 @@ export function EventForm({ initialData }: EventFormProps) {
                   alt="Event Vorschau"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 300px"
                   unoptimized={imagePreview.startsWith("blob:")}
                 />
               ) : (

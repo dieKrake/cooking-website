@@ -123,7 +123,7 @@ export function ContactForm({ config, id, className }: ContactFormProps) {
               aria-hidden={!config.accentImageAlt}
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 40vw, 500px"
-              quality={60}
+              quality={75}
               loading="lazy"
               decoding="async"
             />

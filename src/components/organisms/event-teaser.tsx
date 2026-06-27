@@ -17,7 +17,7 @@ export function EventTeaser() {
         centered
       />
 
-      <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-border bg-background shadow-sm transition-all duration-300 hover:shadow-md">
+      <div className="border-border bg-background mx-auto max-w-5xl overflow-hidden rounded-2xl border shadow-sm transition-all duration-300 hover:shadow-md">
         <div className="grid gap-0 md:grid-cols-2">
           {/* Image Column */}
           <div className="relative min-h-[300px] sm:min-h-[400px] md:min-h-full">
@@ -26,38 +26,39 @@ export function EventTeaser() {
               alt={eventData.title}
               fill
               priority
+              loading="eager"
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             {/* Overlay Date Badge on Mobile/Desktop */}
-            <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-background/90 px-4 py-2 text-sm font-semibold text-foreground backdrop-blur-sm shadow-sm">
-              <Calendar className="h-4 w-4 text-primary" />
+            <div className="bg-background/90 text-foreground absolute top-4 left-4 flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold shadow-sm backdrop-blur-sm">
+              <Calendar className="text-primary h-4 w-4" />
               <span>{eventData.date}</span>
             </div>
           </div>
 
           {/* Content Column */}
           <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-12">
-            <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+            <span className="text-primary text-xs font-semibold tracking-wider uppercase">
               Nächstes Highlight
             </span>
-            <h3 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h3 className="text-foreground mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
               {eventData.title}
             </h3>
-            
-            <p className="mt-4 text-base leading-relaxed text-foreground/70">
+
+            <p className="text-foreground/70 mt-4 text-base leading-relaxed">
               {eventData.description}
             </p>
 
-            <div className="mt-8 pt-6 border-t border-border flex flex-wrap gap-4 items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-foreground/60">
-                <Calendar className="h-4 w-4 text-primary" />
+            <div className="border-border mt-8 flex flex-wrap items-center justify-between gap-4 border-t pt-6">
+              <div className="text-foreground/60 flex items-center gap-2 text-sm">
+                <Calendar className="text-primary h-4 w-4" />
                 <span>Termin: {eventData.date}</span>
               </div>
-              
+
               <Link
                 href="/kontakt?subject=Anfrage%20Event"
-                className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
+                className="group bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold shadow-sm transition-colors"
               >
                 Jetzt anfragen
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

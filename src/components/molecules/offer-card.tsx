@@ -27,7 +27,7 @@ export function OfferCard({ offer, index = 0 }: OfferCardProps) {
         fill
         className="object-cover transition-transform duration-1200 ease-out group-hover:scale-110"
         sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 400px"
-        quality={60}
+        quality={75}
         loading="lazy"
         decoding="async"
       />

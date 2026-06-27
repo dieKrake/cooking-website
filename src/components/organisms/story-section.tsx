@@ -12,7 +12,7 @@ export function StorySection() {
             fill
             className="scale-110 object-cover object-[center_100%]"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            quality={60}
+            quality={75}
             loading="lazy"
             decoding="async"
           />
@@ -52,7 +52,7 @@ export function StorySection() {
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            quality={60}
+            quality={75}
             loading="lazy"
             decoding="async"
           />
