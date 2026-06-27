@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { CATERING_PAGE, CATERING_FEATURES, CATERING_STYLES } from "@/lib/data";
+import { CtaButton } from "@/components/atoms/cta-button";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { BenefitCard } from "@/components/molecules/benefit-card";
 import { ContactForm } from "@/components/organisms/contact-form";
-import { CATERING_FORM } from "@/lib/form-configs";
+import { CateringStylesCarousel } from "@/components/organisms/catering-styles-carousel";
 import { LocationFeaturesGrid } from "@/components/organisms/location-features-grid";
-import { CtaButton } from "@/components/atoms/cta-button";
+import { CATERING_FORM } from "@/lib/form-configs";
 
 export const metadata: Metadata = {
   title: CATERING_PAGE.title,
@@ -25,11 +26,11 @@ export default function CateringPage() {
         <p className="text-foreground/60 mt-3 text-lg">{CATERING_PAGE.intro}</p>
       </div>
       <section className="py-12">
-        <SectionHeading
-          title={CATERING_PAGE.sectionTitle}
-          subtitle={CATERING_PAGE.sectionSubtitle}
-        />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionHeading title={CATERING_PAGE.sectionTitle} />
+        <div className="sm:hidden">
+          <CateringStylesCarousel />
+        </div>
+        <div className="hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-4">
           {CATERING_STYLES.map((style) => (
             <BenefitCard key={style.title} benefit={style} />
           ))}

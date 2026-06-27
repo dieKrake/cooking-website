@@ -1,15 +1,22 @@
 import { CheckCircle2 } from "lucide-react";
+import { cn } from "@/lib/utils";
 import type { Benefit } from "@/types";
 
 interface BenefitCardProps {
   benefit: Benefit;
+  className?: string;
 }
 
-export function BenefitCard({ benefit }: BenefitCardProps) {
+export function BenefitCard({ benefit, className }: BenefitCardProps) {
   const Icon = benefit.icon ?? CheckCircle2;
 
   return (
-    <article className="group text-pure-white bg-deep-black relative overflow-hidden rounded-2xl p-6 shadow-md ring-1 ring-white/5 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_24px_45px_-24px_rgba(0,0,0,0.8)] sm:p-7">
+    <article
+      className={cn(
+        "group text-pure-white bg-deep-black relative overflow-hidden rounded-2xl p-6 shadow-md ring-1 ring-white/5 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_24px_45px_-24px_rgba(0,0,0,0.8)] sm:p-7",
+        className,
+      )}
+    >
       <div
         aria-hidden
         className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,224,170,0.08),transparent_55%)] opacity-80 transition-opacity group-hover:opacity-100"
