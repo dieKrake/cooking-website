@@ -27,19 +27,23 @@ export default function CateringPage() {
       </div>
       <section className="py-12">
         <SectionHeading title={CATERING_PAGE.sectionTitle} />
-        <div className="sm:hidden">
+        <div className="lg:hidden">
           <CateringStylesCarousel />
         </div>
-        <div className="hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-4">
+        <div className="hidden gap-4 lg:grid lg:grid-cols-4">
           {CATERING_STYLES.map((style) => (
             <BenefitCard key={style.title} benefit={style} />
           ))}
         </div>
       </section>
-      <p className="text-foreground/60 mt-3 text-lg">
-        {CATERING_PAGE.featuresIntro}
-      </p>
-      <LocationFeaturesGrid features={CATERING_FEATURES} />
+      <section className="mt-4 space-y-3">
+        <p className="text-foreground/60 text-lg">
+          {CATERING_PAGE.featuresIntro}
+        </p>
+        <div className="border-border/40 max-h-[380px] overflow-y-auto rounded-2xl border p-4 lg:max-h-none lg:border-0 lg:p-0">
+          <LocationFeaturesGrid features={CATERING_FEATURES} className="py-0" />
+        </div>
+      </section>
       <p className="text-foreground/60 mt-3 text-lg">{CATERING_PAGE.outro}</p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <CtaButton
