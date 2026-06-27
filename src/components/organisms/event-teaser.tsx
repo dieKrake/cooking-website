@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import eventData from "@/lib/latest-event.json";
 
