@@ -59,7 +59,7 @@ export function StorySection() {
         </div>
       </section>
 
-      <section className="text-center">
+      <section className="text-left">
         <p className="text-foreground/70 mx-auto max-w-3xl text-lg italic">
           {UEBER_MICH_PAGE.quote}
         </p>
