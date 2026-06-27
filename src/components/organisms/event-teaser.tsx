@@ -14,27 +14,28 @@ export function EventTeaser() {
       <SectionHeading title="Aktuelles Event" centered />
 
       <div className="border-border bg-background mx-auto max-w-5xl overflow-hidden rounded-2xl border shadow-sm transition-all duration-300 hover:shadow-md">
-        <div className="grid gap-0 md:grid-cols-2">
+        <div className="flex flex-col lg:flex-row">
           {/* Image Column */}
-          <div className="relative min-h-[300px] sm:min-h-[400px] md:min-h-full">
+          <div className="bg-muted/5 relative flex items-center justify-center lg:max-w-[50%] lg:shrink-0">
             <Image
               src={eventData.imagePath}
               alt={eventData.title}
-              fill
+              width={800}
+              height={600}
               priority
               loading="eager"
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              className="h-auto w-full object-contain lg:min-h-[900px]"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
             {/* Overlay Date Badge on Mobile/Desktop */}
-            <div className="bg-background/90 text-deep-black absolute top-4 left-4 flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold shadow-sm backdrop-blur-sm">
+            <div className="bg-background/90 text-deep-black absolute top-4 left-4 z-10 flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold shadow-sm backdrop-blur-sm">
               <Calendar className="text-deep-black h-4 w-4" />
               <span>{eventData.date}</span>
             </div>
           </div>
 
           {/* Content Column */}
-          <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-12">
+          <div className="flex flex-1 flex-col justify-center p-8 sm:p-10 lg:p-12">
             <span className="text-deep-black/80 text-xs font-semibold tracking-wider uppercase">
               Nächstes Highlight
             </span>
