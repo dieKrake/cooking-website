@@ -26,7 +26,7 @@ export function EventTeaser() {
               className="h-auto w-full object-contain lg:min-h-[900px]"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            {/* Overlay Date Badge on Mobile/Desktop */}
+            {/* Overlay Date Badge on Mobile orDesktop */}
             <div className="bg-background/90 text-deep-black absolute top-4 left-4 z-10 flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold shadow-sm backdrop-blur-sm">
               <Calendar className="text-deep-black h-4 w-4" />
               <span>{eventData.date}</span>
