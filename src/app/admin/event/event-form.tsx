@@ -5,7 +5,14 @@ import { updateEvent, logout } from "./actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Calendar, Image as ImageIcon, CheckCircle2, LogOut, Loader2, ArrowLeft } from "lucide-react";
+import {
+  Calendar,
+  Image as ImageIcon,
+  CheckCircle2,
+  LogOut,
+  Loader2,
+  ArrowLeft,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,7 +26,9 @@ interface EventFormProps {
 }
 
 export function EventForm({ initialData }: EventFormProps) {
-  const [imagePreview, setImagePreview] = useState<string>(initialData.imagePath);
+  const [imagePreview, setImagePreview] = useState<string>(
+    initialData.imagePath,
+  );
   const [isSuccess, setIsSuccess] = useState(false);
 
   const [state, formAction, isPending] = useActionState(
@@ -31,7 +40,7 @@ export function EventForm({ initialData }: EventFormProps) {
       }
       return { error: result?.error || "Ein Fehler ist aufgetreten." };
     },
-    null
+    null,
   );
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,28 +65,31 @@ export function EventForm({ initialData }: EventFormProps) {
   if (isSuccess) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-border bg-background p-8 text-center shadow-sm space-y-6">
+        <div className="border-border bg-background space-y-6 rounded-2xl border p-8 text-center shadow-sm">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-500">
             <CheckCircle2 className="h-10 w-10" />
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground">
+          <h2 className="text-foreground text-3xl font-bold tracking-tight">
             Event erfolgreich aktualisiert!
           </h2>
-          <div className="text-foreground/70 space-y-4 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
+          <div className="text-foreground/70 mx-auto max-w-md space-y-4 text-sm leading-relaxed sm:text-base">
             <p>
-              Die neuen Daten und das Bild wurden erfolgreich in dein GitHub-Repository committet.
+              Die neuen Daten und das Bild wurden erfolgreich in dein
+              GitHub-Repository committet.
             </p>
-            <p className="font-medium text-primary">
+            <p className="text-primary font-medium">
               Vercel baut die Website jetzt im Hintergrund neu.
             </p>
-            <p className="text-xs text-foreground/50">
-              Dieser Vorgang dauert in der Regel ca. 2 bis 3 Minuten. Sobald der Build abgeschlossen ist, wird das neue Event direkt auf der Startseite angezeigt.
+            <p className="text-foreground/50 text-xs">
+              Dieser Vorgang dauert in der Regel ca. 2 bis 3 Minuten. Sobald der
+              Build abgeschlossen ist, wird das neue Event direkt auf der
+              Startseite angezeigt.
             </p>
           </div>
-          <div className="pt-6 flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 pt-6">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+              className="border-border bg-background text-foreground hover:bg-muted inline-flex items-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-semibold transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               Zur Startseite
@@ -89,7 +101,7 @@ export function EventForm({ initialData }: EventFormProps) {
                 window.location.reload();
               }}
               variant="brand"
-              className="cursor-pointer font-semibold px-5 py-2.5 text-sm"
+              className="cursor-pointer px-5 py-2.5 text-sm font-semibold"
             >
               Weiteres Event bearbeiten
             </Button>
@@ -101,19 +113,19 @@ export function EventForm({ initialData }: EventFormProps) {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6">
+      <div className="border-border flex flex-wrap items-center justify-between gap-4 border-b pb-6">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          <h1 className="text-foreground text-3xl font-bold tracking-tight">
             Event bearbeiten
           </h1>
-          <p className="mt-1 text-sm text-foreground/60">
+          <p className="text-foreground/60 mt-1 text-sm">
             Ändere hier die Details für das Highlight-Event auf der Startseite.
           </p>
         </div>
         <Button
           onClick={handleLogout}
           variant="outline"
-          className="cursor-pointer gap-2 border-destructive/20 text-destructive hover:bg-destructive/10 hover:text-destructive"
+          className="border-destructive/20 text-destructive hover:bg-destructive/10 hover:text-destructive cursor-pointer gap-2"
         >
           <LogOut className="h-4 w-4" />
           Abmelden
@@ -124,7 +136,10 @@ export function EventForm({ initialData }: EventFormProps) {
         {/* Left column: Form Fields */}
         <div className="space-y-6 md:col-span-2">
           <div className="space-y-2">
-            <label htmlFor="title" className="text-sm font-medium text-foreground">
+            <label
+              htmlFor="title"
+              className="text-foreground text-sm font-medium"
+            >
               Event-Titel <span className="text-primary">*</span>
             </label>
             <Input
@@ -139,7 +154,10 @@ export function EventForm({ initialData }: EventFormProps) {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="date" className="text-sm font-medium text-foreground">
+            <label
+              htmlFor="date"
+              className="text-foreground text-sm font-medium"
+            >
               Datum <span className="text-primary">*</span>
             </label>
             <div className="relative">
@@ -152,12 +170,15 @@ export function EventForm({ initialData }: EventFormProps) {
                 placeholder="z.B. 15. Juli 2026"
                 className="w-full pl-10"
               />
-              <Calendar className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-foreground/40" />
+              <Calendar className="text-foreground/40 absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
             </div>
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="description" className="text-sm font-medium text-foreground">
+            <label
+              htmlFor="description"
+              className="text-foreground text-sm font-medium"
+            >
               Beschreibung <span className="text-primary">*</span>
             </label>
             <Textarea
@@ -172,7 +193,7 @@ export function EventForm({ initialData }: EventFormProps) {
           </div>
 
           {state?.error && (
-            <p className="text-sm font-medium text-destructive" role="alert">
+            <p className="text-destructive text-sm font-medium" role="alert">
               {state.error}
             </p>
           )}
@@ -195,7 +216,7 @@ export function EventForm({ initialData }: EventFormProps) {
             </Button>
             <Link
               href="/"
-              className="inline-flex items-center justify-center rounded-lg border border-border bg-background px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+              className="border-border bg-background text-foreground hover:bg-muted inline-flex items-center justify-center rounded-lg border px-5 py-2.5 text-sm font-semibold transition-colors"
             >
               Abbrechen
             </Link>
@@ -204,13 +225,13 @@ export function EventForm({ initialData }: EventFormProps) {
 
         {/* Right column: Image upload and Live Preview */}
         <div className="space-y-6">
-          <div className="rounded-xl border border-border bg-muted/40 p-6 space-y-6">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/60">
+          <div className="border-border bg-muted/40 space-y-6 rounded-xl border p-6">
+            <h3 className="text-foreground/60 text-sm font-semibold tracking-wider uppercase">
               Event-Bild
             </h3>
 
             {/* Live Preview Container */}
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg border border-border bg-background">
+            <div className="border-border bg-background relative aspect-4/3 w-full overflow-hidden rounded-lg border">
               {imagePreview ? (
                 <Image
                   src={imagePreview}
@@ -220,7 +241,7 @@ export function EventForm({ initialData }: EventFormProps) {
                   unoptimized={imagePreview.startsWith("blob:")}
                 />
               ) : (
-                <div className="flex h-full items-center justify-center text-foreground/40">
+                <div className="text-foreground/40 flex h-full items-center justify-center">
                   <ImageIcon className="h-12 w-12" />
                 </div>
               )}
@@ -230,7 +251,7 @@ export function EventForm({ initialData }: EventFormProps) {
             <div className="space-y-2">
               <label
                 htmlFor="image"
-                className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                className="border-border bg-background text-foreground hover:bg-muted inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-semibold transition-colors"
               >
                 <ImageIcon className="h-4 w-4" />
                 Bild auswählen...
@@ -244,7 +265,7 @@ export function EventForm({ initialData }: EventFormProps) {
                 className="hidden"
                 disabled={isPending}
               />
-              <p className="text-center text-xs text-foreground/40">
+              <p className="text-foreground/40 text-center text-xs">
                 Maximal 4 MB (WebP, JPG, PNG empfohlen)
               </p>
             </div>

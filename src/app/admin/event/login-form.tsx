@@ -17,27 +17,30 @@ export function LoginForm() {
       }
       return { error: result?.error || "Ein Fehler ist aufgetreten." };
     },
-    null
+    null,
   );
 
   return (
     <div className="flex min-h-[60vh] items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
-      <div className="w-full max-w-md space-y-8 rounded-2xl border border-border bg-background p-8 shadow-sm">
+      <div className="border-border bg-background w-full max-w-md space-y-8 rounded-2xl border p-8 shadow-sm">
         <div className="flex flex-col items-center text-center">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <div className="bg-primary/10 text-primary flex h-12 w-12 items-center justify-center rounded-full">
             <Lock className="h-6 w-6" />
           </div>
-          <h2 className="mt-6 text-3xl font-bold tracking-tight text-foreground">
+          <h2 className="text-foreground mt-6 text-3xl font-bold tracking-tight">
             Admin-Bereich
           </h2>
-          <p className="mt-2 text-sm text-foreground/60">
+          <p className="text-foreground/60 mt-2 text-sm">
             Bitte gib das Passwort ein, um das Event zu bearbeiten.
           </p>
         </div>
 
         <form action={formAction} className="mt-8 space-y-6">
           <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-medium text-foreground">
+            <label
+              htmlFor="password"
+              className="text-foreground text-sm font-medium"
+            >
               Passwort
             </label>
             <Input
@@ -51,7 +54,7 @@ export function LoginForm() {
           </div>
 
           {state?.error && (
-            <p className="text-sm font-medium text-destructive" role="alert">
+            <p className="text-destructive text-sm font-medium" role="alert">
               {state.error}
             </p>
           )}

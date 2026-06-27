@@ -22,7 +22,9 @@ export async function login(formData: FormData) {
   const { adminPassword } = getEnvConfig();
 
   if (!adminPassword) {
-    return { error: "ADMIN_PASSWORD ist nicht in den Umgebungsvariablen konfiguriert." };
+    return {
+      error: "ADMIN_PASSWORD ist nicht in den Umgebungsvariablen konfiguriert.",
+    };
   }
 
   if (password === adminPassword) {
@@ -63,7 +65,12 @@ export async function checkAuth(): Promise<boolean> {
 /**
  * Fetches the SHA of an existing file in the GitHub repo to allow updates.
  */
-async function getFileSha(path: string, token: string, repo: string, branch: string): Promise<string | null> {
+async function getFileSha(
+  path: string,
+  token: string,
+  repo: string,
+  branch: string,
+): Promise<string | null> {
   try {
     const response = await fetch(
       `https://api.github.com/repos/${repo}/contents/${path}?ref=${branch}`,
@@ -75,7 +82,7 @@ async function getFileSha(path: string, token: string, repo: string, branch: str
           "User-Agent": "Culina-Event-Uploader",
         },
         cache: "no-store",
-      }
+      },
     );
 
     if (response.ok) {
@@ -98,7 +105,7 @@ async function pushToGithub(
   message: string,
   token: string,
   repo: string,
-  branch: string
+  branch: string,
 ): Promise<boolean> {
   const sha = await getFileSha(path, token, repo, branch);
 
@@ -123,7 +130,7 @@ async function pushToGithub(
         "User-Agent": "Culina-Event-Uploader",
       },
       body: JSON.stringify(body),
-    }
+    },
   );
 
   if (!response.ok) {
@@ -148,7 +155,10 @@ export async function updateEvent(prevState: any, formData: FormData) {
   const { githubToken, githubRepo, githubBranch } = getEnvConfig();
 
   if (!githubToken || !githubRepo) {
-    return { error: "GitHub API-Konfiguration (GITHUB_PAT, GITHUB_REPO) fehlt auf dem Server." };
+    return {
+      error:
+        "GitHub API-Konfiguration (GITHUB_PAT, GITHUB_REPO) fehlt auf dem Server.",
+    };
   }
 
   const title = formData.get("title") as string;
@@ -186,7 +196,7 @@ export async function updateEvent(prevState: any, formData: FormData) {
         `media: upload new event image [skip ci]`,
         githubToken,
         githubRepo,
-        githubBranch
+        githubBranch,
       );
 
       if (!imgPushSuccess) {
@@ -212,7 +222,7 @@ export async function updateEvent(prevState: any, formData: FormData) {
       `feat: update latest event data to "${title}"`,
       githubToken,
       githubRepo,
-      githubBranch
+      githubBranch,
     );
 
     if (!jsonPushSuccess) {
@@ -222,6 +232,8 @@ export async function updateEvent(prevState: any, formData: FormData) {
     return { success: true };
   } catch (error: any) {
     console.error("Error updating event:", error);
-    return { error: `Ein unerwarteter Fehler ist aufgetreten: ${error.message || error}` };
+    return {
+      error: `Ein unerwarteter Fehler ist aufgetreten: ${error.message || error}`,
+    };
   }
 }

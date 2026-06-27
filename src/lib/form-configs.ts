@@ -35,7 +35,7 @@ export const CONTACT_FORM: ContactFormConfig = {
   successTitle: "Nachricht gesendet!",
   successText: "Wir melden uns so schnell wie möglich bei dir.",
   accentEyebrow: "Sag Hallo",
-  accentImage: "/images/Culina_afterwork.webp",
+  accentImage: "/images/latest-event.webp",
   showContactInfo: true,
   fields: [
     {
@@ -133,7 +133,8 @@ export const INQUIRY_FORM: ContactFormConfig = {
 export const CATERING_FORM: ContactFormConfig = {
   type: "catering",
   title: "Catering anfragen",
-  subtitle: "Beschreib uns dein Event – wir erstellen dir ein passendes Angebot.",
+  subtitle:
+    "Beschreib uns dein Event – wir erstellen dir ein passendes Angebot.",
   submitLabel: "Anfrage absenden",
   successTitle: "Vielen Dank für deine Anfrage!",
   successText: "Wir melden uns innerhalb von 24 Stunden bei dir.",
