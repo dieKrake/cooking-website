@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import {
-  FEINKOST_PAGE,
-  FEINKOST_HIGHLIGHTS,
-  FEINKOST_USAGE,
-} from "@/lib/data";
+import { FEINKOST_PAGE, FEINKOST_HIGHLIGHTS, FEINKOST_USAGE } from "@/lib/data";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { LocationFeaturesGrid } from "@/components/organisms/location-features-grid";
 
@@ -28,10 +24,17 @@ export default function FeinkostPage() {
         </p>
       </div>
 
-      <p className="text-foreground/60 mt-3 text-lg">
-        {FEINKOST_PAGE.highlightsIntro}
-      </p>
-      <LocationFeaturesGrid features={FEINKOST_HIGHLIGHTS} />
+      <section className="mt-6 space-y-3">
+        <p className="text-foreground/60 text-lg">
+          {FEINKOST_PAGE.highlightsIntro}
+        </p>
+        <div className="border-border/40 max-h-[380px] overflow-y-auto rounded-2xl border p-4 lg:max-h-none lg:border-0 lg:p-0">
+          <LocationFeaturesGrid
+            features={FEINKOST_HIGHLIGHTS}
+            className="py-0"
+          />
+        </div>
+      </section>
 
       <section className="py-12">
         <SectionHeading title={FEINKOST_PAGE.sectionTitle} />
@@ -54,10 +57,12 @@ export default function FeinkostPage() {
 
       <p className="text-foreground/60 text-lg">{FEINKOST_PAGE.transition}</p>
 
-      <p className="text-foreground/60 mt-6 text-lg">
-        {FEINKOST_PAGE.usageIntro}
-      </p>
-      <LocationFeaturesGrid features={FEINKOST_USAGE} />
+      <section className="mt-8 space-y-3">
+        <p className="text-foreground/60 text-lg">{FEINKOST_PAGE.usageIntro}</p>
+        <div className="border-border/40 max-h-[380px] overflow-y-auto rounded-2xl border p-4 lg:max-h-none lg:border-0 lg:p-0">
+          <LocationFeaturesGrid features={FEINKOST_USAGE} className="py-0" />
+        </div>
+      </section>
 
       <p className="text-foreground/60 mt-4 text-lg">{FEINKOST_PAGE.outro}</p>
     </main>
