@@ -26,11 +26,11 @@ export function VoucherOptions() {
   return (
     <section className="py-12">
       <SectionHeading title="Erhältliche Gutscheine" />
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {OPTIONS.map((option) => (
-          <Card key={option.amount} className="text-center">
+          <Card key={option.amount} className="text-left lg:text-center">
             <CardHeader className="items-center pb-2">
-              <Gift className="text-primary h-8 w-8" aria-hidden="true" />
+              <Gift className="text-eisblau h-8 w-8" aria-hidden="true" />
               <CardTitle className="text-3xl font-bold">
                 {option.amount} €
               </CardTitle>
