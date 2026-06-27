@@ -28,8 +28,8 @@ export function VoucherOptions() {
       <SectionHeading title="Erhältliche Gutscheine" />
       <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {OPTIONS.map((option) => (
-          <Card key={option.amount} className="text-left lg:text-center">
-            <CardHeader className="items-center pb-2">
+          <Card key={option.amount} className="text-center">
+            <CardHeader className="grid place-items-center gap-2 pb-2 text-center">
               <Gift className="text-eisblau h-8 w-8" aria-hidden="true" />
               <CardTitle className="text-3xl font-bold">
                 {option.amount} €

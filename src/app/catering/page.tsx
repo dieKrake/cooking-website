@@ -40,7 +40,7 @@ export default function CateringPage() {
         <p className="text-foreground/60 text-lg">
           {CATERING_PAGE.featuresIntro}
         </p>
-        <div className="border-border/40 max-h-[380px] overflow-y-auto rounded-2xl border p-4 lg:max-h-none lg:border-0 lg:p-0">
+        <div className="max-h-[380px] overflow-y-auto rounded-2xl py-2 lg:max-h-none lg:border-0 lg:p-0">
           <LocationFeaturesGrid features={CATERING_FEATURES} className="py-0" />
         </div>
       </section>
