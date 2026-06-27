@@ -381,11 +381,15 @@ jobs:
 
 ### Environment-Variablen
 
-| Variable                    | Umgebung     | Beschreibung          |
-| --------------------------- | ------------ | --------------------- |
-| `NEXT_PUBLIC_SITE_URL`      | Dev / Prod   | Basis-URL der Website |
-| `NEXT_PUBLIC_CONTACT_EMAIL` | Dev / Prod   | Kontakt-E-Mail        |
-| `VERCEL_TOKEN`              | CI/CD Secret | Vercel Deploy-Token   |
+| Variable                    | Umgebung     | Beschreibung                                                          |
+| --------------------------- | ------------ | --------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`      | Dev / Prod   | Basis-URL der Website                                                 |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Dev / Prod   | Kontakt-E-Mail                                                        |
+| `VERCEL_TOKEN`              | CI/CD Secret | Vercel Deploy-Token                                                   |
+| `ADMIN_PASSWORD`            | Dev / Prod   | Passwort für den Admin-Bereich unter `/admin/event`                   |
+| `GITHUB_PAT`                | Dev / Prod   | GitHub Personal Access Token mit Schreibrechten (Contents Read/Write) |
+| `GITHUB_REPO`               | Dev / Prod   | GitHub Repository Name im Format `username/repo-name`                 |
+| `GITHUB_BRANCH`             | Dev / Prod   | Ziel-Branch für Commits (z.B. `develop` oder `main`)                  |
 
 ---
 
