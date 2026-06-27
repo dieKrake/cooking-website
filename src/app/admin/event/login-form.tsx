@@ -8,7 +8,7 @@ import { Lock } from "lucide-react";
 
 export function LoginForm() {
   const [state, formAction, isPending] = useActionState(
-    async (prevState: any, formData: FormData) => {
+    async (_prevState: unknown, formData: FormData) => {
       const result = await login(formData);
       if (result?.success) {
         // Reload page to reflect authenticated state

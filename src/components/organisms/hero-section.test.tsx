@@ -21,7 +21,15 @@ vi.mock("next/link", () => ({
 
 vi.mock("framer-motion", () => ({
   motion: {
-    div: ({ children, style, className }: any) => (
+    div: ({
+      children,
+      style,
+      className,
+    }: {
+      children: React.ReactNode;
+      style?: React.CSSProperties;
+      className?: string;
+    }) => (
       <div style={style} className={className}>
         {children}
       </div>

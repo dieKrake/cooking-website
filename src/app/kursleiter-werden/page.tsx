@@ -171,8 +171,8 @@ export default function KursleiterWerdenPage() {
           />
           <div className="relative z-10 space-y-6">
             <h2 className="font-heading text-3xl leading-tight tracking-tight">
-              "Wir suchen Menschen, die Geschichten erzählen – nicht nur Rezepte
-              runterkochen."
+              &quot;Wir suchen Menschen, die Geschichten erzählen – nicht nur
+              Rezepte runterkochen.&quot;
             </h2>
             <p className="text-pure-white/75 text-base">
               Fabry, Gastgeber und Gründer von Culina
@@ -187,7 +187,7 @@ export default function KursleiterWerdenPage() {
         <div className="border-border/60 bg-pure-white rounded-3xl border p-6 sm:p-8">
           <div className="mb-8">
             <p className="text-foreground/60 text-sm tracking-[0.35em] uppercase">
-              So läuft's
+              So läuft&apos;s
             </p>
             <h2 className="text-3xl font-semibold tracking-tight">
               Vom ersten Ping zum vollen Kurs

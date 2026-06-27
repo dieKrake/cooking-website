@@ -109,7 +109,12 @@ async function pushToGithub(
 ): Promise<boolean> {
   const sha = await getFileSha(path, token, repo, branch);
 
-  const body: any = {
+  const body: {
+    message: string;
+    content: string;
+    branch: string;
+    sha?: string;
+  } = {
     message,
     content: contentBase64,
     branch,
@@ -146,7 +151,7 @@ async function pushToGithub(
  * Primary server action to handle the event form submission.
  * It validates inputs, reads the uploaded image, and pushes the changes to GitHub.
  */
-export async function updateEvent(prevState: any, formData: FormData) {
+export async function updateEvent(_prevState: unknown, formData: FormData) {
   const isAuthenticated = await checkAuth();
   if (!isAuthenticated) {
     return { error: "Nicht autorisiert. Bitte melde dich erneut an." };
@@ -230,10 +235,11 @@ export async function updateEvent(prevState: any, formData: FormData) {
     }
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error updating event:", error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
     return {
-      error: `Ein unerwarteter Fehler ist aufgetreten: ${error.message || error}`,
+      error: `Ein unerwarteter Fehler ist aufgetreten: ${errorMessage}`,
     };
   }
 }

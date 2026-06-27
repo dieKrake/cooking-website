@@ -33,7 +33,7 @@ describe("ScrollToTop", () => {
 
   it("calls window.scrollTo(0, 0) and sets scrollBehavior temporarily to auto", () => {
     mockUsePathname.mockReturnValue("/page-1");
-    const { rerender } = render(<ScrollToTop />);
+    render(<ScrollToTop />);
 
     expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
     expect(document.documentElement.style.scrollBehavior).toBe("auto");

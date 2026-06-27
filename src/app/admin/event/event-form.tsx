@@ -32,8 +32,8 @@ export function EventForm({ initialData }: EventFormProps) {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const [state, formAction, isPending] = useActionState(
-    async (prevState: any, formData: FormData) => {
-      const result = await updateEvent(prevState, formData);
+    async (_prevState: unknown, formData: FormData) => {
+      const result = await updateEvent(null, formData);
       if (result?.success) {
         setIsSuccess(true);
         return { success: true };

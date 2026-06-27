@@ -1,4 +1,3 @@
-import { SectionHeading } from "@/components/atoms/section-heading";
 import { LocationFeatureCard } from "@/components/molecules/location-feature-card";
 import { cn } from "@/lib/utils";
 import type { LocationFeature } from "@/types";
