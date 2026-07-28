@@ -171,8 +171,8 @@ export function EventForm({ initialData }: EventFormProps) {
                 Event auf der Website anzeigen
               </label>
               <p className="text-muted-foreground text-xs">
-                Wenn deaktiviert, wird die Sektion "Aktuelles Event" auf der
-                Startseite komplett ausgeblendet.
+                Wenn deaktiviert, wird die Sektion &quot;Aktuelles Event&quot;
+                auf der Startseite komplett ausgeblendet.
               </p>
             </div>
           </div>

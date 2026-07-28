@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { HeroSection } from "@/components/organisms/hero-section";
 import { OfferGrid } from "@/components/organisms/offer-grid";
-import { CourseSlider } from "@/components/organisms/course-slider";
 import { EventTeaser } from "@/components/organisms/event-teaser";
 import { ContactForm } from "@/components/organisms/contact-form";
 import { CONTACT_FORM } from "@/lib/form-configs";
