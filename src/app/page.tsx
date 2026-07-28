@@ -17,20 +17,20 @@ export default function HomePage() {
               alt="Culina"
               width={200}
               height={60}
-              className="h-auto w-[600px] object-contain invert sm:w-[700px] lg:w-[800px]"
+              className="h-auto w-150 object-contain invert sm:w-175 lg:w-200"
               style={{ height: "auto" }}
               priority
             />
           </span>
         }
-        subtitle="Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente"
+        subtitle="Familiäre Kochkurse, einzigartige Kulinarik und unvergessliche Feinkost-Genussmomente"
         primaryCta={{ label: "Zu den Kursen", href: "/aktuelle-kurse" }}
         secondaryCta={{ label: "Location ansehen", href: "/eventlocation" }}
-        backgroundImage="/images/Zubereitung-Brot-Culina.webp"
+        backgroundImage="/images/header.jpeg"
+        mobileBackgroundImage="/images/header-mobile.jpeg"
       />
       <EventTeaser />
       <OfferGrid />
-      <CourseSlider />
       <ContactForm config={CONTACT_FORM} id="kontakt" />
     </>
   );

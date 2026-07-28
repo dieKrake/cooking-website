@@ -30,6 +30,7 @@ interface EventFormProps {
     description: string;
     date: string;
     imagePath: string;
+    visible?: boolean;
   };
 }
 
@@ -154,6 +155,28 @@ export function EventForm({ initialData }: EventFormProps) {
       <form action={formAction} className="mt-8 grid gap-8 md:grid-cols-3">
         {/* Left column: Form Fields */}
         <div className="space-y-6 md:col-span-2">
+          <div className="flex items-center space-x-2 rounded-lg border p-4">
+            <input
+              type="checkbox"
+              id="visible"
+              name="visible"
+              defaultChecked={initialData.visible ?? true}
+              className="text-primary focus:ring-primary h-4 w-4 rounded border-gray-300"
+            />
+            <div className="grid gap-1.5 leading-none">
+              <label
+                htmlFor="visible"
+                className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Event auf der Website anzeigen
+              </label>
+              <p className="text-muted-foreground text-xs">
+                Wenn deaktiviert, wird die Sektion "Aktuelles Event" auf der
+                Startseite komplett ausgeblendet.
+              </p>
+            </div>
+          </div>
+
           <div className="space-y-2">
             <label
               htmlFor="title"

@@ -10,6 +10,7 @@ export interface Course {
   instructor: string | null;
   hasFixedDate: boolean;
   category: string;
+  highlights?: string[];
 }
 
 export interface TeamMember {

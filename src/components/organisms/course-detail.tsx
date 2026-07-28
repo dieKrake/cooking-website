@@ -8,6 +8,7 @@ import {
   Euro,
   ArrowLeft,
   Tag,
+  CheckCircle2,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import type { Course } from "@/types";
@@ -81,8 +82,8 @@ export function CourseDetail({ course }: CourseDetailProps) {
         />
       </div>
 
-      <div className="grid gap-10 lg:grid-cols-3">
-        <div className="lg:col-span-2">
+      <div className="grid items-start gap-10 lg:grid-cols-5">
+        <div className="lg:col-span-3">
           <span className="text-foreground/60 inline-block rounded-full border px-3 py-0.5 text-xs font-medium">
             {course.category}
           </span>
@@ -92,9 +93,31 @@ export function CourseDetail({ course }: CourseDetailProps) {
           <p className="text-foreground/70 mt-4 text-base leading-relaxed">
             {course.longDescription}
           </p>
+
+          {course.highlights && course.highlights.length > 0 && (
+            <div className="mt-10 border-t pt-8">
+              <h2 className="text-lg font-semibold tracking-tight">
+                Das erwartet dich
+              </h2>
+              <ul className="mt-5 grid gap-4 sm:grid-cols-2">
+                {course.highlights.map((highlight) => (
+                  <li
+                    key={highlight}
+                    className="flex items-start gap-3 text-sm"
+                  >
+                    <CheckCircle2
+                      className="text-foreground mt-0.5 h-5 w-5 shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span className="text-foreground/80">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
-        <aside className="group bg-deep-black text-pure-white relative overflow-hidden rounded-[32px] p-6 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.8)] ring-1 ring-white/10 sm:p-8">
+        <aside className="group bg-deep-black text-pure-white relative overflow-hidden rounded-4xl p-6 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.8)] ring-1 ring-white/10 sm:p-8 lg:sticky lg:top-24 lg:col-span-2">
           <div
             aria-hidden
             className="absolute inset-0 bg-[radial-gradient(75%_100%_at_0%_0%,rgba(255,255,255,0.08),transparent)] opacity-80 transition-opacity duration-500 group-hover:opacity-100"
@@ -110,7 +133,7 @@ export function CourseDetail({ course }: CourseDetailProps) {
               <span className="bg-pasta-gelb/80 mt-4 block h-px w-12" />
             </div>
 
-            <div className="space-y-4">
+            <div className="grid gap-x-4 gap-y-6 sm:grid-cols-2">
               <MetaItem icon={Calendar} label="Datum" value={dateLabel} />
               {course.hasFixedDate && (
                 <MetaItem icon={Clock} label="Uhrzeit" value={timeLabel} />

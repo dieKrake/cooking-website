@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/atoms/section-heading";
 import eventData from "@/lib/latest-event.json";
 
 export function EventTeaser() {
-  if (!eventData || !eventData.title) {
+  if (!eventData || !eventData.title || eventData.visible === false) {
     return null;
   }
 

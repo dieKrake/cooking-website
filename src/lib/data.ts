@@ -19,63 +19,26 @@ import type {
 export const COURSES: Course[] = [
   {
     slug: "pasta",
-    title: "Pasta – Italiens Klassiker",
+    title: "Pasta Kurs + Aperol",
     shortDescription:
-      "Frische Pasta, perfekte Saucen und italienische Techniken – alles, was du für den Pastateller zuhause brauchst.",
+      "Pasta selbst zubereiten. Aperol genießen. Gemeinsam kochen.",
     longDescription:
-      "Lerne, wie frische Pasta von Grund auf zubereitet wird – vom Teigkneten bis zum Formen. Mit hochwertigen Zutaten und vielen Tipps für echte italienische Genussmomente.",
-    date: "",
-    time: "",
-    price: 89,
-    image: "/images/Zubereitung-Gurken-Culina.webp",
-    instructor: "",
+      "Tauche ein in die Welt der italienischen Pasta – von Hand geknetet, ausgerollt und mit Liebe geformt. Gemeinsam entdecken wir die Kunst der frischen Teigwaren und verfeinern sie mit aromatischen Saucen, die nach echtem italienischem Familienrezept schmecken. Bei einem gekühlten Aperol Spritz in geselliger Runde erlebst du, wie viel Freude gutes Essen und ehrliche Gastfreundschaft in Kombination erzeugen können – ganz im Sinne von Culina.",
+    date: "2026-09-05",
+    time: "18:00 Uhr",
+    price: 65,
+    image: "/images/Tomate-Culina.webp",
+    instructor: "Fabry",
     hasFixedDate: true,
     category: "Italienisch",
-  },
-  {
-    slug: "schwaebische-kueche",
-    title: "Schwäbische Küche – Tradition und Wärme",
-    shortDescription:
-      "Maultaschen, Spätzle & Co. neu entdecken – herzhaft, bodenständig und mit viel schwäbischer Gastlichkeit.",
-    longDescription:
-      "Von Maultaschen bis Brezeln: Entdecke die herzliche Küche Schwabens mit Geschichte, Geschmack und viel Herz. Wir kochen Klassiker step-by-step und zeigen, wie sie modern interpretiert werden.",
-    date: "",
-    time: "",
-    price: 85,
-    image: "/images/Zubereitung-Brot-Culina.webp",
-    instructor: "",
-    hasFixedDate: true,
-    category: "Deutsch",
-  },
-  {
-    slug: "mediterane-kueche",
-    title: "Mediterane Küche – Frische und Vielfalt",
-    shortDescription:
-      "Leichte mediterrane Gerichte mit viel Gemüse, Olivenöl und Kräutern – bereit für deinen Sommerabend zuhause.",
-    longDescription:
-      "Entdecke die vielfältige mediterrane Küche mit frischen Zutaten, aromatischen Gewürzen und gesunden Rezepten. Wir verbinden Mezze, Pasta & Fischgerichte zu einem genussvollen Menü.",
-    date: "",
-    time: "",
-    price: 85,
-    image: "/images/Zubereitung-Auberginen-Culina.webp",
-    instructor: "",
-    hasFixedDate: true,
-    category: "Italienisch",
-  },
-  {
-    slug: "vegane-kueche",
-    title: "Vegane Küche – Frische und Vielfalt",
-    shortDescription:
-      "Pflanzliche Küche ohne Verzicht – bunt, saisonal und überraschend aromatisch.",
-    longDescription:
-      "Entdecke die vielfältige vegane Küche mit frischen Zutaten, aromatischen Gewürzen und gesunden Rezepten. Wir zeigen Texturen, Marinaden und moderne Teller, die auch Nicht-Veganer begeistern.",
-    date: "",
-    time: "",
-    price: 85,
-    image: "/images/Zubereitung-Tomaten-Culina.webp",
-    instructor: "",
-    hasFixedDate: true,
-    category: "Vegan",
+    highlights: [
+      "Frische Pasta selbst herstellen",
+      "Hochwertige, italienische Zutaten",
+      "Aperol Spritz inklusive",
+      "Rezepte zum Mitnehmen",
+      "Gemütliche, familiäre Atmosphäre",
+      "Kleine Gruppe für persönliche Betreuung",
+    ],
   },
 ];
 
@@ -162,25 +125,16 @@ export const PLACEHOLDER_OFFER_CARDS: OfferCard[] = [
       "Erlebe inspirierende Kochevents voller Genuss, Spaß und echter Begegnungen - mit Freunden, Familie oder Kollegen bei Culina (ehemals Koch Klub am Kocher)",
     ctaLabel: "Zu den Kursen",
     ctaHref: "/aktuelle-kurse",
-    image: "/images/kochkurs-gericht-3.webp",
+    image: "/images/Kochkurs-essen.webp",
     imageAlt: "Menschen beim gemeinsamen Kochen in Aalen",
-  },
-  {
-    title: "Catering in die Region",
-    description:
-      "Unser Catering in Aalen und Umgebung bringt frische, kreative Küche direkt zu deinem Event. Vom entspannten Familienfest bis zum Firmenevent sorgen wir für genussvolle Momente mit persönlicher Note. ",
-    ctaLabel: "Catering anfragen",
-    ctaHref: "/catering",
-    image: "/images/Zubereitung-Edelstahlschalen-Culina.webp",
-    imageAlt: "Catering-Buffet mit frischen Speisen",
   },
   {
     title: "Feinkost bester Qualität",
     description:
-      "Entdecke ausgewählte Feinkost-Produkte, besondere Delikatessen und kulinarische Geschenkideen mit Geschmack. Perfekt für Genießer, besondere Anlässe oder ein Stück mediterranes Lebensgefühl für zuhause.",
+      "Entdecke ausgewählte Feinkost-Produkte, besondere Delikasessen und kulinarische Geschenkideen mit Geschmack. Perfekt für Genießer, besondere Anlässe oder ein Stück mediterranes Lebensgefühl für zuhause.",
     ctaLabel: "Feinkost entdecken",
     ctaHref: "/feinkost",
-    image: "/images/Zubereitung-Oliven-Culina.webp",
+    image: "/images/feinkost.jpeg",
     imageAlt: "Auswahl an hochwertigen Feinkost-Produkten",
   },
 ];
@@ -263,30 +217,30 @@ export const EVENTLOCATION_PAGE = {
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     src: "/images/kochkurs-tisch.webp",
-    alt: "Blick in das offene Kochstudio mit moderner Ausstattung",
+    alt: "Gemütlicher Essbereich für gemeinsame Genussmomente",
     span: "wide",
   },
   {
     src: "/images/kochlurs-zubereitung.webp",
-    alt: "Professionelle Küchenzeile mit NEFF-Equipment",
+    alt: "Kochinseln für interaktive Kochkurse und Events",
     span: "tall",
   },
   {
-    src: "/images/kochkurse-gerichte.webp",
-    alt: "Gemütlicher Essbereich für gemeinsame Genussmomente",
+    src: "/images/location-kitchen.jpeg",
+    alt: "Blick in das offene Kochstudio mit moderner Ausstattung",
   },
   {
-    src: "/images/kochkurs-pfannen.webp",
-    alt: "Kochinseln für interaktive Kochkurse und Events",
+    src: "/images/location-antipasti.jpeg",
+    alt: "test",
   },
   {
-    src: "/images/Kochkurs-essen.webp",
+    src: "/images/location-dj.jpeg",
     alt: "Stimmungsvolle Atmosphäre bei einem Abend-Event",
     span: "wide",
   },
   {
     src: "/images/Kochkurs-1.webp",
-    alt: "Einladender Eingangsbereich der Eventlocation",
+    alt: "testt",
   },
 ];
 
@@ -385,8 +339,9 @@ export const UEBER_MICH_PAGE = {
     'Mein Name ist Razvan George Pamfile, aber Freunde, Familie und viele Gäste nennen mich einfach "Fabry". Geboren und aufgewachsen bin ich in Rumänien – dort habe ich auch meine Leidenschaft fürs Kochen entdeckt und meine ersten Erfahrungen in der Küche gesammelt. Besonders die südliche und mediterrane Küche begeistert mich bis heute: frische Zutaten, ehrliche Gerichte und gemeinsames Genießen stehen für mich immer im Mittelpunkt.',
   section1Text2:
     "2017 kam ich nach Deutschland und habe meinen Weg in der Gastronomie Schritt für Schritt aufgebaut. Vom Tellerwäscher bis zum Koch durfte ich alle Stationen kennenlernen und wertvolle Erfahrungen sammeln. Gerade diese Zeit hat mich geprägt, denn ich habe gelernt, wie wichtig Teamgeist, Qualität und echte Gastfreundschaft sind.",
-  section1Image: "/images/der-fabry.webp",
+  section1Image: "/images/fabry-ueber-mich1.jpeg",
   section1ImageAlt: "Fabry – Gründer von Culina",
+  section1ImagePosition: "center 20%",
   section2Label: "Mein Weg",
   section2Title: "Erfahrung trifft Leidenschaft",
   section2Text1:
@@ -395,7 +350,7 @@ export const UEBER_MICH_PAGE = {
     "Heute lebe ich mit meiner Familie und meinen zwei Kindern in Aalen und freue mich, mit Culina einen Ort zu schaffen, an dem Menschen zusammenkommen, gemeinsam kochen und schöne Momente erleben können.",
   section2Text3:
     "Mir ist besonders wichtig, dass sich meine Gäste wohlfühlen, Spaß haben und neben gutem Essen auch neue Ideen mit nach Hause nehmen. Ob kleine Tipps aus der Gastronomie, neue Rezeptideen oder besondere Geschmackserlebnisse – ich möchte Menschen für gutes Essen begeistern und zeigen, wie viel Freude gemeinsames Kochen machen kann.",
-  section2Image: "/images/der-fabry-2.webp",
+  section2Image: "/images/fabry-ueber-mich2.jpeg",
   section2ImageAlt: "Fabry in der Küche bei Culina",
   quote:
     '"Culina soll ein Ort sein, an dem Genuss, Gemeinschaft und familiäre Atmosphäre im Mittelpunkt stehen."',

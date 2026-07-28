@@ -8,10 +8,10 @@ export function OfferGrid() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Entdecke Kulinarik neu"
-          subtitle="Kochkurse, Catering und hochwertige Feinkostartikel direkt aus Aalen und der Region"
+          subtitle="Kochkurse, Live-Events und hochwertige Feinkostartikel direkt aus Aalen und der Region"
           centered
         />
-        <div className="grid grid-cols-1 justify-items-center gap-6 lg:grid-cols-3 lg:gap-8">
+        <div className="grid grid-cols-1 justify-items-center gap-6 lg:grid-cols-2 lg:gap-8">
           {PLACEHOLDER_OFFER_CARDS.map((offer, index) => (
             <OfferCard key={offer.title} offer={offer} index={index} />
           ))}

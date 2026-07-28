@@ -19,6 +19,30 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  async redirects() {
+    return [
+      {
+        source: "/catering",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/team",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/kursleiter-werden",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/gutscheine",
+        destination: "/",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

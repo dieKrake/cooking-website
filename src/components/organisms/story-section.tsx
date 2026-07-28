@@ -10,7 +10,10 @@ export function StorySection() {
             src={UEBER_MICH_PAGE.section1Image}
             alt={UEBER_MICH_PAGE.section1ImageAlt}
             fill
-            className="scale-110 object-cover object-[center_100%]"
+            className="object-cover"
+            style={{
+              objectPosition: UEBER_MICH_PAGE.section1ImagePosition || "center",
+            }}
             sizes="(max-width: 1024px) 100vw, 50vw"
             quality={75}
             loading="lazy"

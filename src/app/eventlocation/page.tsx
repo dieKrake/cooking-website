@@ -47,13 +47,6 @@ export default function EventlocationPage() {
           variant="brandSecondary"
           size="lg"
         />
-        <CtaButton
-          href="/gutscheine"
-          label="Zu den Gutscheinen"
-          variant="ghost"
-          size="lg"
-          className="bg-eisblau text-deep-black hover:bg-eisblau/80! hover:text-deep-black! border-white/25"
-        />
       </div>
       <ContactForm config={INQUIRY_FORM} />
     </main>

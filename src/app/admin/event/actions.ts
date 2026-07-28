@@ -170,6 +170,7 @@ export async function updateEvent(_prevState: unknown, formData: FormData) {
   const description = formData.get("description") as string;
   const date = formData.get("date") as string;
   const imageFile = formData.get("image") as File | null;
+  const visible = formData.get("visible") === "on";
 
   if (!title || !description || !date) {
     return { error: "Bitte fülle alle erforderlichen Textfelder aus." };
@@ -215,6 +216,7 @@ export async function updateEvent(_prevState: unknown, formData: FormData) {
       description,
       date,
       imagePath,
+      visible,
     };
 
     const jsonString = JSON.stringify(eventJson, null, 2);

@@ -12,6 +12,7 @@ interface HeroSectionProps {
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   backgroundImage?: string;
+  mobileBackgroundImage?: string;
 }
 
 export function HeroSection({
@@ -20,6 +21,7 @@ export function HeroSection({
   primaryCta,
   secondaryCta,
   backgroundImage,
+  mobileBackgroundImage,
 }: HeroSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -39,24 +41,49 @@ export function HeroSection({
   return (
     <section
       ref={containerRef}
-      className="relative overflow-hidden py-16 sm:py-24"
+      className="relative overflow-hidden py-16 shadow-2xl sm:py-24"
     >
       {backgroundImage && (
         <motion.div
           className="absolute inset-0 z-0 scale-110"
           style={{ y: yBg }}
         >
-          <Image
-            src={backgroundImage}
-            alt="Hero Background"
-            fill
-            className="object-cover"
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-            quality={60}
-          />
-          <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/25 to-black/60" />
+          {/* Desktop Background */}
+          <div
+            className={cn(
+              "absolute inset-0",
+              mobileBackgroundImage && "hidden sm:block",
+            )}
+          >
+            <Image
+              src={backgroundImage}
+              alt="Hero Background Desktop"
+              fill
+              className="object-cover object-top"
+              priority
+              fetchPriority="high"
+              sizes="100vw"
+              quality={60}
+            />
+          </div>
+
+          {/* Mobile Background */}
+          {mobileBackgroundImage && (
+            <div className="absolute inset-0 block sm:hidden">
+              <Image
+                src={mobileBackgroundImage}
+                alt="Hero Background Mobile"
+                fill
+                className="object-cover"
+                priority
+                fetchPriority="high"
+                sizes="100vw"
+                quality={60}
+              />
+            </div>
+          )}
+
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
         </motion.div>
       )}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -65,7 +92,7 @@ export function HeroSection({
           className={cn(
             "mx-auto max-w-3xl text-center text-white transition-all duration-500",
             backgroundImage &&
-              "rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur-md sm:p-12 md:p-16",
+              "rounded-4xl border border-white/10 bg-white/5 p-8 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur-md sm:p-12 md:p-16",
           )}
         >
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
