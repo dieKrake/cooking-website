@@ -3,5 +3,5 @@
   "description": "Nächsten Donnerstag ist es wieder soweit! Kommt ins Culina und bringt eure Freunde mit! :)",
   "date": "18. Juni 2026",
   "imagePath": "/images/latest-event.webp",
-  "visible": false
+  "visible": true
 }
