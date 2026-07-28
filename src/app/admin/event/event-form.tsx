@@ -153,6 +153,11 @@ export function EventForm({ initialData }: EventFormProps) {
       </div>
 
       <form action={formAction} className="mt-8 grid gap-8 md:grid-cols-3">
+        <input
+          type="hidden"
+          name="currentImagePath"
+          value={initialData.imagePath}
+        />
         {/* Left column: Form Fields */}
         <div className="space-y-6 md:col-span-2">
           <div className="flex items-center space-x-2 rounded-lg border p-4">

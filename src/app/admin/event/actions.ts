@@ -171,13 +171,15 @@ export async function updateEvent(_prevState: unknown, formData: FormData) {
   const date = formData.get("date") as string;
   const imageFile = formData.get("image") as File | null;
   const visible = formData.get("visible") === "on";
+  const currentImagePath =
+    (formData.get("currentImagePath") as string) || "/images/latest-event.webp";
 
   if (!title || !description || !date) {
     return { error: "Bitte fülle alle erforderlichen Textfelder aus." };
   }
 
   try {
-    let imagePath = "/images/latest-event.webp"; // Default fallback/preserves existing if no new image uploaded
+    let imagePath = currentImagePath; // Preserves the existing image unless a new one is uploaded below
 
     // If a new image was uploaded, commit it first
     if (imageFile && imageFile.size > 0) {
