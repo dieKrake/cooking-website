@@ -28,11 +28,8 @@ export function FormField({
 
   const labelNode = (
     <label htmlFor={id} className="text-sm font-medium">
-      {field.label}{" "}
-      {field.required && <span aria-hidden="true">*</span>}
-      {field.optional && (
-        <span className="text-foreground/40">(optional)</span>
-      )}
+      {field.label} {field.required && <span aria-hidden="true">*</span>}
+      {field.optional && <span className="text-foreground/40">(optional)</span>}
     </label>
   );
 
@@ -53,6 +50,7 @@ export function FormField({
           placeholder={field.placeholder}
           rows={field.rows ?? 4}
           required={field.required}
+          readOnly={field.readOnly}
           aria-invalid={invalid}
           aria-describedby={errorId}
           className={invalid ? "border-destructive" : ""}
@@ -65,6 +63,7 @@ export function FormField({
           value={value}
           onChange={onChange}
           required={field.required}
+          disabled={field.readOnly}
           aria-invalid={invalid}
           aria-describedby={errorId}
           className={cn(
@@ -93,6 +92,7 @@ export function FormField({
           onChange={onChange}
           placeholder={field.placeholder}
           required={field.required}
+          readOnly={field.readOnly}
           min={field.type === "number" ? field.min : undefined}
           max={field.type === "number" ? field.max : undefined}
           aria-invalid={invalid}

@@ -198,6 +198,53 @@ export const CATERING_FORM: ContactFormConfig = {
   ],
 };
 
+export const COURSE_INQUIRY_FORM: ContactFormConfig = {
+  type: "course_inquiry",
+  title: "Kurs anfragen",
+  subtitle:
+    "Du möchtest an diesem Kurs teilnehmen? Schreib uns eine Nachricht.",
+  submitLabel: "Anfrage senden",
+  successTitle: "Anfrage gesendet!",
+  successText: "Wir melden uns so schnell wie möglich bei dir.",
+  accentEyebrow: "Kochkurs",
+  accentImage: "/images/Kochkurs-1.webp",
+  fields: [
+    {
+      name: "name",
+      label: "Name",
+      type: "text",
+      required: true,
+      placeholder: "Dein Name",
+      requiredMessage: "Bitte gib deinen Namen ein.",
+    },
+    {
+      name: "email",
+      label: "E-Mail",
+      type: "email",
+      required: true,
+      placeholder: "deine@email.de",
+      requiredMessage: "Bitte gib deine E-Mail-Adresse ein.",
+    },
+    {
+      name: "course",
+      label: "Gewünschter Kurs",
+      type: "text",
+      required: true,
+      readOnly: true,
+    },
+    {
+      name: "message",
+      label: "Nachricht",
+      type: "textarea",
+      required: true,
+      rows: 4,
+      colSpan: 2,
+      placeholder: "Hast du noch Fragen oder Anmerkungen?",
+      requiredMessage: "Bitte schreib uns eine Nachricht.",
+    },
+  ],
+};
+
 export const APPLICATION_FORM: ContactFormConfig = {
   type: "application",
   title: "Jetzt bewerben",

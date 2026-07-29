@@ -97,6 +97,7 @@ export interface FormFieldConfig {
   rows?: number;
   colSpan?: 1 | 2;
   defaultValue?: string;
+  readOnly?: boolean;
   requiredMessage?: string;
 }
 

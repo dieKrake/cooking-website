@@ -98,6 +98,14 @@ export async function POST(request: Request) {
         extra = data.idea;
         break;
 
+      case "course_inquiry":
+        rows =
+          row("Name", data.name) +
+          row("E-Mail", data.email) +
+          row("Kurs", data.course);
+        extra = data.message;
+        break;
+
       default:
         return NextResponse.json(
           { error: "Unknown form type" },

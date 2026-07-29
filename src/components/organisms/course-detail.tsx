@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,6 +16,8 @@ import {
 import { buttonVariants } from "@/components/ui/button";
 import type { Course } from "@/types";
 import { CONTACT_INFO } from "@/lib/constants";
+import { ContactForm } from "@/components/organisms/contact-form";
+import { COURSE_INQUIRY_FORM } from "@/lib/form-configs";
 
 interface CourseDetailProps {
   course: Course;
@@ -45,6 +50,8 @@ function MetaItem({ icon: Icon, label, value }: MetaItemProps) {
 }
 
 export function CourseDetail({ course }: CourseDetailProps) {
+  const formRef = useRef<HTMLDivElement>(null);
+
   const dateLabel =
     course.hasFixedDate && course.date
       ? new Intl.DateTimeFormat("de-DE", {
@@ -60,6 +67,20 @@ export function CourseDetail({ course }: CourseDetailProps) {
   const priceLabel = course.price
     ? `${course.price} € pro Person`
     : "Auf Anfrage";
+
+  // Create a customized form config with the course title pre-filled
+  const customizedFormConfig = {
+    ...COURSE_INQUIRY_FORM,
+    fields: COURSE_INQUIRY_FORM.fields.map((field) =>
+      field.name === "course"
+        ? { ...field, defaultValue: course.title }
+        : field,
+    ),
+  };
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <article className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
@@ -155,22 +176,23 @@ export function CourseDetail({ course }: CourseDetailProps) {
             </div>
 
             <div className="mt-4 border-t border-white/15 pt-5">
-              <Link
-                href="/#kontakt"
+              <button
+                onClick={scrollToForm}
                 className={buttonVariants({
                   variant: "brandSecondary",
                   size: "lg",
-                  className: "w-full text-base",
+                  className: "w-full cursor-pointer text-base",
                 })}
               >
                 Jetzt anfragen
-              </Link>
-              <p className="text-pure-white/65 mt-3 text-center text-xs leading-relaxed">
-                Verbindliche Anmeldung per E-Mail oder Kontaktformular
-              </p>
+              </button>
             </div>
           </div>
         </aside>
+      </div>
+
+      <div ref={formRef} className="mt-20 border-t pt-20">
+        <ContactForm config={customizedFormConfig} className="py-0" />
       </div>
     </article>
   );

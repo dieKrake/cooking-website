@@ -101,11 +101,19 @@ describe("CourseDetail", () => {
     expect(screen.queryByText("Uhrzeit")).not.toBeInTheDocument();
   });
 
-  it("renders the inquiry link pointing to /#kontakt", () => {
+  it("renders the inquiry button", () => {
     render(<CourseDetail course={mockCourse} />);
     expect(
-      screen.getByRole("link", { name: /Jetzt anfragen/i }),
-    ).toHaveAttribute("href", "/#kontakt");
+      screen.getByRole("button", { name: /Jetzt anfragen/i }),
+    ).toBeInTheDocument();
+  });
+
+  it("renders the inquiry form section", () => {
+    render(<CourseDetail course={mockCourse} />);
+    expect(screen.getByText(/Kurs anfragen/i)).toBeInTheDocument();
+    expect(
+      screen.getByDisplayValue("Pizza & Pasta – Italiens Klassiker"),
+    ).toBeInTheDocument();
   });
 
   it("renders a back link to /aktuelle-kurse", () => {
