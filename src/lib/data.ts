@@ -43,8 +43,12 @@ export const COURSES: Course[] = [
 ];
 
 export const AKTUELLE_KURSE_PAGE = {
-  title: "Unsere Kurse",
-  description: "Alle unseren Kochkurse im Culina Aalen.",
+  title: "Aktuelle Kurse",
+  description: "Alle unseren aktuellen Kochkurse im Culina Aalen.",
+  subtitle:
+    "Von internationaler Küche bis hin zu besonderen Themenabenden – gemeinsam kochen, genießen und Neues entdecken.",
+  heroImage: "/images/kurse-hero.jpeg",
+  heroImageAlt: "Gemeinsames Kochen bei Culina",
   intro:
     "Entdecke unsere Kochkurse – von internationaler Küche bis hin zu besonderen Themenabenden.",
 };
@@ -205,6 +209,8 @@ export const EVENTLOCATION_PAGE = {
     "Modernes Kochstudio für Firmenfeiern, private Events und gemeinsame Genussmomente in Aalen.",
   subtitle:
     "Modernes Kochstudio für Firmenfeiern, private Events und gemeinsame Genussmomente",
+  heroImage: "/images/location-hero.jpeg",
+  heroImageAlt: "Eventlocation von Culina in Aalen",
   intro:
     "Unser Kochstudio in Aalen verbindet moderne Ausstattung mit familiärer Atmosphäre und schafft den perfekten Rahmen für unvergessliche Events, Kochabende und Feiern. Ob Firmenevent, Geburtstag, Teamabend oder private Feier – unsere Eventlocation bietet Platz für bis zu 50 Personen und lädt zum gemeinsamen Genießen und Erleben ein. Die helle, offene Raumgestaltung sorgt für eine einladende Atmosphäre, in der sich Gäste sofort wohlfühlen. Hochwertiges Küchenequipment von NEFF ermöglicht professionelle Kochkurse, Live-Cooking-Erlebnisse und kulinarische Events auf höchstem Niveau.",
   flyingBuffet:
@@ -231,7 +237,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     src: "/images/location-antipasti.jpeg",
-    alt: "test",
+    alt: "Leckere Antipasti, frisch serviert",
   },
   {
     src: "/images/location-dj.jpeg",
@@ -240,7 +246,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     src: "/images/Kochkurs-1.webp",
-    alt: "testt",
+    alt: "Gemeinsames Kochen in familärer Atmosphäre",
   },
 ];
 
@@ -288,25 +294,40 @@ export const FEINKOST_PAGE = {
   description:
     "Hochwertige Antipasti, Feinkost und Delikatessen von ilcesto bei Culina in Aalen.",
   subtitle: "Hochwertige Antipasti, Feinkost und Delikatessen von ilcesto",
+  heroImage: "/images/feinkost.jpeg",
+  heroImageAlt: "Mediterrane Feinkost von Culina",
   intro:
     "Bei Culina steht Genuss nicht nur beim gemeinsamen Kochen im Mittelpunkt, sondern auch bei ausgewählten Feinkost-Produkten mit echter Qualität. Deshalb arbeiten wir mit ilcesto zusammen – einer Bio-Manufaktur, die seit vielen Jahren für mediterrane Feinkost, frische Antipasti und hochwertige Delikatessen steht.",
   introSecond:
     "Die Produkte von ilcesto überzeugen durch frische Verarbeitung, hochwertige biologische Zutaten und echte Handwerkskunst. Viele Antipasti, Oliven, Artischocken, Peperoni, Pestos und Feinkost-Spezialitäten werden wöchentlich frisch hergestellt und direkt verarbeitet – inspiriert von mediterraner Genusskultur und traditionellen Rezepturen.",
+  introLabel: "ilcesto x Culina",
+  introImage: "/images/location-antipasti.jpeg",
+  introImageAlt: "Mediterrane Antipasti Auswahl",
   highlightsIntro:
     "Bei unserer Feinkost in Aalen legen wir besonderen Wert auf:",
   sectionTitle: "Mediterrane Feinkost mit Qualität und Herkunft",
+  sectionLabel: "Qualität & Herkunft",
   sectionText:
     "Die Philosophie von ilcesto passt perfekt zu Culina: ehrliche Lebensmittel, frische Verarbeitung, nachhaltiges Denken und echter Geschmack statt Massenproduktion. Verarbeitet werden ausschließlich hochwertige Rohstoffe und ausgewählte Zutaten – mit viel Erfahrung, Fingerspitzengefühl und Leidenschaft für gutes Essen.",
+  sectionImage: "/images/Tomate-Culina.webp",
+  sectionImageAlt: "Frische Zutaten für mediterrane Feinkost",
   quoteTitle:
-    '"Für mich zählt nicht nur die Feinkost selbst – sondern die Qualität bis ins kleinste Detail."',
+    "Für mich zählt nicht nur die Feinkost selbst – sondern die Qualität bis ins kleinste Detail.",
   quoteText:
     '"Ich arbeite mit ilcesto, weil man die Qualität einfach schmeckt. Nicht nur bei den Antipasti und Delikatessen selbst, sondern auch bei den Ölen, Gewürzen und Zutaten, mit denen alles eingelegt und veredelt wird. Genau diese Liebe zum Produkt möchte ich auch meinen Gästen in Aalen weitergeben."',
   quoteAuthor: "Fabry",
+  quoteImage: "/images/fabry-ueber-mich1.jpeg",
+  quoteImageAlt: "Fabry, Culina",
   transition:
     "Ob mediterrane Antipasti, besondere Delikatessen, hochwertige Öle, Essige oder kreative Feinkost-Geschenkideen – bei Culina findest du ausgewählte Produkte für echte Genussmomente zuhause.",
   usageIntro: "Unsere Feinkost-Produkte eignen sich perfekt:",
   outro:
     "Mit unserer Feinkost von ilcesto möchten wir Menschen für gute Lebensmittel, bewussten Genuss und mediterrane Küche begeistern.",
+  ctaTitle: "Lust auf echten mediterranen Genuss?",
+  ctaText:
+    "Entdecke unsere Feinkost-Auswahl bei einem Kochkurs oder frage direkt nach unseren Produkten für zuhause.",
+  ctaImage: "/images/kochkurs-tisch.webp",
+  ctaImageAlt: "Genussvoller Tisch bei Culina",
 };
 
 export const FEINKOST_HIGHLIGHTS: LocationFeature[] = [
