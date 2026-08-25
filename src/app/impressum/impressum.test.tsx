@@ -10,18 +10,37 @@ describe("ImpressumPage", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders the TMG section", () => {
+  it("renders the business details", () => {
     render(<ImpressumPage />);
-    expect(screen.getByText(/§ 5 TMG/)).toBeInTheDocument();
+
+    expect(screen.getByText(/Razvan George Pamfile/)).toBeInTheDocument();
+    expect(screen.getByText(/Kochkurse & Feinkost/)).toBeInTheDocument();
+    expect(screen.getByText(/Bahnhofstraße 38/)).toBeInTheDocument();
+    expect(screen.getByText(/73430 Aalen/)).toBeInTheDocument();
   });
 
-  it("renders the address", () => {
+  it("renders the contact links", () => {
     render(<ImpressumPage />);
-    expect(screen.getAllByText(/Wiesbaden/).length).toBeGreaterThan(0);
+
+    expect(
+      screen.getByRole("link", { name: "+49 (0) 1604031569" }),
+    ).toHaveAttribute("href", "tel:+491604031569");
+    expect(
+      screen.getByRole("link", { name: "fabry@culina-aalen.de" }),
+    ).toHaveAttribute("href", "mailto:fabry@culina-aalen.de");
   });
 
-  it("renders the contact email", () => {
+  it("renders the VAT ID and consumer dispute information", () => {
     render(<ImpressumPage />);
-    expect(screen.getByText(/kontakt@culina\.de/)).toBeInTheDocument();
+
+    expect(screen.getByText(/DE 463771474/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", {
+        name: "Verbraucherstreitbeilegung/Universalschlichtungsstelle",
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/nicht bereit oder verpflichtet/),
+    ).toBeInTheDocument();
   });
 });
