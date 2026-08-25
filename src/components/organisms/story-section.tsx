@@ -22,7 +22,7 @@ export function StorySection() {
         </div>
         <div className="space-y-5">
           <div>
-            <p className="text-primary text-sm font-medium tracking-widest uppercase">
+            <p className="text-sm font-medium tracking-widest text-black uppercase">
               {UEBER_MICH_PAGE.section1Label}
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight">
@@ -37,7 +37,7 @@ export function StorySection() {
       <section className="grid items-center gap-12 lg:grid-cols-2">
         <div className="order-2 space-y-5 lg:order-1">
           <div>
-            <p className="text-primary text-sm font-medium tracking-widest uppercase">
+            <p className="text-sm font-medium tracking-widest text-black uppercase">
               {UEBER_MICH_PAGE.section2Label}
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight">
