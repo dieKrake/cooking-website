@@ -27,7 +27,6 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const FOOTER_LEGAL_LINKS = [
-  { label: "AGB", href: "/agb" },
   { label: "Impressum", href: "/impressum" },
   { label: "Datenschutz", href: "/datenschutz" },
 ];

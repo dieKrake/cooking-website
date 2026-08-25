@@ -23,11 +23,18 @@ describe("Footer", () => {
     expect(screen.getByText("Home")).toBeInTheDocument();
   });
 
-  it("renders all legal links", () => {
+  it("renders the remaining legal links without AGB", () => {
     render(<Footer />);
-    expect(screen.getByText("AGB")).toBeInTheDocument();
-    expect(screen.getByText("Impressum")).toBeInTheDocument();
-    expect(screen.getByText("Datenschutz")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Impressum" })).toHaveAttribute(
+      "href",
+      "/impressum",
+    );
+    expect(screen.getByRole("link", { name: "Datenschutz" })).toHaveAttribute(
+      "href",
+      "/datenschutz",
+    );
+    expect(screen.queryByText("AGB")).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "AGB" })).not.toBeInTheDocument();
   });
 
   it("renders the copyright notice", () => {
