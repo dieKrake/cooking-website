@@ -283,7 +283,7 @@ export default function KursleiterWerdenPage() {
                 Telefon
               </p>
               <Link
-                href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
+                href={`tel:${CONTACT_INFO.phone.replace(/\s|\(0\)/g, "")}`}
                 className="text-lg font-semibold"
               >
                 {CONTACT_INFO.phone}

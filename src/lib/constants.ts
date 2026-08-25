@@ -5,8 +5,8 @@ export const SITE_DESCRIPTION =
   "Familiäre Kochkurse, einzigartiges Catering und unvergessliche Feinkost-Genussmomente";
 
 export const CONTACT_INFO: ContactInfo = {
-  email: "kontakt@culina.de",
-  phone: "+49 123 456 789",
+  email: "fabry@culina-aalen.de",
+  phone: "+49 (0) 1604031569",
   address: {
     street: "Bahnhofstraße 38",
     zip: "73430",

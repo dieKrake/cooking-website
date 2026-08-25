@@ -161,7 +161,7 @@ export function ContactForm({ config, id, className }: ContactFormProps) {
                 <span className="text-sm">{CONTACT_INFO.email}</span>
               </a>
               <a
-                href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
+                href={`tel:${CONTACT_INFO.phone.replace(/\s|\(0\)/g, "")}`}
                 className="hover:text-pasta-gelb flex items-start gap-3 transition-colors"
               >
                 <Phone className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />

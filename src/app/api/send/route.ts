@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const RECIPIENT = "kevin@krazius-solutions.com";
+const RECIPIENT = "fabry@culina-aalen.de";
 const FROM = "Culina Kontaktformular <onboarding@resend.dev>";
 
 function escapeHtml(text: string | undefined): string {

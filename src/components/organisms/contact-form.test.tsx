@@ -2,11 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { ContactForm } from "./contact-form";
-import {
-  CONTACT_FORM,
-  INQUIRY_FORM,
-  CATERING_FORM,
-} from "@/lib/form-configs";
+import { CONTACT_FORM, INQUIRY_FORM, CATERING_FORM } from "@/lib/form-configs";
 
 beforeEach(() => {
   vi.restoreAllMocks();
@@ -26,9 +22,9 @@ describe("ContactForm (contact config)", () => {
 
   it("renders contact info when showContactInfo is true", () => {
     render(<ContactForm config={CONTACT_FORM} />);
-    expect(screen.getByText(/kontakt@culina\.de/i)).toBeInTheDocument();
+    expect(screen.getByText(/fabry@culina-aalen\.de/i)).toBeInTheDocument();
     expect(screen.getByText(/\+49/)).toBeInTheDocument();
-    expect(screen.getByText(/Aalen/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Aalen/i).length).toBeGreaterThan(0);
   });
 
   it("renders all configured fields and submit button", () => {
@@ -151,7 +147,9 @@ describe("ContactForm (inquiry config)", () => {
     await userEvent.click(
       screen.getByRole("button", { name: /Anfrage absenden/i }),
     );
-    expect(screen.getByText(/Bitte gib ein Wunschdatum an/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Bitte gib ein Wunschdatum an/i),
+    ).toBeInTheDocument();
     expect(
       screen.getByText(/Bitte gib die Anzahl der Personen an/i),
     ).toBeInTheDocument();
