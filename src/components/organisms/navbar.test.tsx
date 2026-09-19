@@ -53,6 +53,7 @@ describe("Navbar", () => {
     expect(screen.getByText("Home")).toBeInTheDocument();
     expect(screen.getByText("Kurse")).toBeInTheDocument();
     expect(screen.getByText("Eventlocation")).toBeInTheDocument();
+    expect(screen.getByText("Catering")).toBeInTheDocument();
     expect(screen.getByText("Feinkost")).toBeInTheDocument();
     expect(screen.getByText("Über mich")).toBeInTheDocument();
   });

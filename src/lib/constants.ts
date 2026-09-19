@@ -22,6 +22,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/aktuelle-kurse",
   },
   { label: "Eventlocation", href: "/eventlocation" },
+  { label: "Catering", href: "/catering" },
   { label: "Feinkost", href: "/feinkost" },
   { label: "Über mich", href: "/ueber-mich" },
 ];
