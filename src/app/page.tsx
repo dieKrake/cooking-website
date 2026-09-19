@@ -15,7 +15,7 @@ export default function HomePage() {
               src="/images/Culina-Logo.svg"
               alt="Culina"
               width={200}
-              height={60}
+              height={50}
               className="h-auto w-150 object-contain invert sm:w-175 lg:w-200"
               style={{ height: "auto" }}
               priority

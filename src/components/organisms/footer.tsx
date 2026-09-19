@@ -20,7 +20,7 @@ export function Footer() {
                 src="/images/Culina-Logo.svg"
                 alt={SITE_NAME}
                 width={200}
-                height={80}
+                height={50}
                 className="hidden h-auto w-80 object-contain brightness-0 invert lg:block"
                 style={{ height: "auto" }}
               />

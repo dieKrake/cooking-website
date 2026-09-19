@@ -77,7 +77,7 @@ export function HeroSection({
                 className="object-cover"
                 priority
                 fetchPriority="high"
-                sizes="100vw"
+                sizes="110vw"
                 quality={60}
               />
             </div>
