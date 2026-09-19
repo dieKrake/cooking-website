@@ -60,7 +60,7 @@ export default function CateringPage() {
           </div>
           <div className="hidden gap-4 lg:grid lg:grid-cols-4">
             {CATERING_STYLES.map((style) => (
-              <BenefitCard key={style.title} benefit={style} />
+              <BenefitCard key={style.title} benefit={style} tone="light" />
             ))}
           </div>
         </section>

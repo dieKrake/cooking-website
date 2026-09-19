@@ -42,7 +42,7 @@ export function CateringStylesCarousel() {
             className="w-72 shrink-0 snap-start sm:w-80"
             aria-label={style.title}
           >
-            <BenefitCard benefit={style} className="h-full" />
+            <BenefitCard benefit={style} tone="light" className="h-full" />
           </div>
         ))}
       </div>
