@@ -10,4 +10,8 @@ describe("formatDate", () => {
     expect(formatDate("2026-12-24")).toBe("24. Dezember 2026");
     expect(formatDate("2026-01-01")).toBe("01. Januar 2026");
   });
+
+  it("returns invalid date input unchanged", () => {
+    expect(formatDate("not-a-date")).toBe("not-a-date");
+  });
 });

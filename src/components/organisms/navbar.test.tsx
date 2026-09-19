@@ -20,6 +20,25 @@ vi.mock("next/link", () => ({
   ),
 }));
 
+vi.mock("@/lib/constants", () => ({
+  SITE_NAME: "Culina",
+  NAV_ITEMS: [
+    { label: "Home", href: "/" },
+    {
+      label: "Kurse",
+      href: "/aktuelle-kurse",
+      children: [
+        { label: "Alle Kurse", href: "/aktuelle-kurse" },
+        { label: "Kursleiter werden", href: "/kursleiter-werden" },
+      ],
+    },
+    { label: "Eventlocation", href: "/eventlocation" },
+    { label: "Catering", href: "/catering" },
+    { label: "Feinkost", href: "/feinkost" },
+    { label: "Über mich", href: "/ueber-mich" },
+  ],
+}));
+
 vi.mock("next/navigation", () => ({
   usePathname: () => "/",
 }));
@@ -63,6 +82,17 @@ describe("Navbar", () => {
     expect(
       screen.getByRole("button", { name: /Menü öffnen/i }),
     ).toBeInTheDocument();
+  });
+
+  it("opens the courses dropdown and closes it through a child link", async () => {
+    const user = userEvent.setup();
+    render(<Navbar />);
+    const coursesButton = screen.getByRole("button", { name: "Kurse" });
+    await user.hover(coursesButton);
+    expect(screen.getByRole("menu")).toBeInTheDocument();
+    expect(screen.getByText("Alle Kurse")).toBeInTheDocument();
+    await user.click(screen.getByText("Alle Kurse"));
+    expect(screen.queryByRole("menu")).not.toBeInTheDocument();
   });
 
   it("opens mobile menu on button click", async () => {

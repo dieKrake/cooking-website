@@ -83,4 +83,11 @@ describe("CoursesGrid", () => {
     await userEvent.click(screen.getByRole("button", { name: "Japanisch" }));
     expect(screen.queryByText("Pizza & Pasta")).not.toBeInTheDocument();
   });
+
+  it("renders the wide layout variant", () => {
+    const { container } = render(
+      <CoursesGrid courses={mockCourses} layout="wide" />,
+    );
+    expect(container.querySelector(".max-w-6xl")).toBeInTheDocument();
+  });
 });

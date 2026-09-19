@@ -123,6 +123,20 @@ describe("ContactForm (contact config)", () => {
       await screen.findByText(/Beim Senden ist ein Fehler aufgetreten/i),
     ).toBeInTheDocument();
   });
+
+  it("shows an error when the API responds unsuccessfully", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false }));
+    render(<ContactForm config={CONTACT_FORM} />);
+    await userEvent.type(screen.getByLabelText(/Name/i), "Max");
+    await userEvent.type(screen.getByLabelText(/E-Mail/i), "max@test.de");
+    await userEvent.type(screen.getByLabelText(/Nachricht/i), "Hallo!");
+    await userEvent.click(
+      screen.getByRole("button", { name: /Nachricht senden/i }),
+    );
+    expect(
+      await screen.findByText(/Beim Senden ist ein Fehler aufgetreten/i),
+    ).toBeInTheDocument();
+  });
 });
 
 describe("ContactForm (inquiry config)", () => {

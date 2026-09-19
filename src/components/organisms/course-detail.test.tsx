@@ -123,4 +123,21 @@ describe("CourseDetail", () => {
       "/aktuelle-kurse",
     );
   });
+
+  it("renders highlights and fallback metadata", () => {
+    render(
+      <CourseDetail
+        course={{
+          ...mockCourseNoDate,
+          price: null,
+          instructor: null,
+          highlights: ["Gemeinsam kochen", "Neue Techniken lernen"],
+        }}
+      />,
+    );
+    expect(screen.getByText("Das erwartet dich")).toBeInTheDocument();
+    expect(screen.getByText("Gemeinsam kochen")).toBeInTheDocument();
+    expect(screen.getByText("Auf Anfrage")).toBeInTheDocument();
+    expect(screen.queryByText("Luca M.")).not.toBeInTheDocument();
+  });
 });

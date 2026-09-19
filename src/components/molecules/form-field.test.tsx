@@ -91,4 +91,29 @@ describe("FormField", () => {
     });
     expect(onChange).toHaveBeenCalled();
   });
+
+  it("renders optional and numeric field attributes", () => {
+    render(
+      <FormField
+        field={{
+          name: "guests",
+          label: "Personen",
+          type: "number",
+          optional: true,
+          colSpan: 2,
+          min: 1,
+          max: 20,
+          readOnly: true,
+        }}
+        value="4"
+        idPrefix="catering"
+        onChange={() => {}}
+      />,
+    );
+    const input = screen.getByLabelText(/Personen/);
+    expect(input).toHaveAttribute("min", "1");
+    expect(input).toHaveAttribute("max", "20");
+    expect(input).toHaveAttribute("readonly");
+    expect(screen.getByText("(optional)")).toBeInTheDocument();
+  });
 });

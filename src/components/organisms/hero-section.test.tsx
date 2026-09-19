@@ -19,6 +19,12 @@ vi.mock("next/link", () => ({
   ),
 }));
 
+vi.mock("next/image", () => ({
+  default: ({ src, alt }: { src: string; alt: string }) => (
+    <img src={src} alt={alt} />
+  ),
+}));
+
 vi.mock("framer-motion", () => ({
   motion: {
     div: ({
@@ -87,5 +93,21 @@ describe("HeroSection", () => {
   it("does not render secondary CTA when omitted", () => {
     render(<HeroSection {...defaultProps} />);
     expect(screen.queryByText("Location ansehen")).not.toBeInTheDocument();
+  });
+
+  it("renders desktop and mobile background images", () => {
+    render(
+      <HeroSection
+        {...defaultProps}
+        backgroundImage="/desktop.webp"
+        mobileBackgroundImage="/mobile.webp"
+      />,
+    );
+    expect(
+      screen.getByRole("img", { name: "Hero Background Desktop" }),
+    ).toHaveAttribute("src", "/desktop.webp");
+    expect(
+      screen.getByRole("img", { name: "Hero Background Mobile" }),
+    ).toHaveAttribute("src", "/mobile.webp");
   });
 });
