@@ -10,7 +10,7 @@ describe("CateringPage", () => {
       screen.getByRole("heading", { level: 1, name: /Catering in Aalen/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("img", { name: "Dessert beim Catering von Culina" }),
+      screen.getByRole("img", { name: "Gemeinsames Kochen bei Culina" }),
     ).toBeInTheDocument();
     expect(
       screen.getAllByRole("link", { name: "Catering anfragen" })[0],

@@ -45,11 +45,11 @@ describe("OfferGrid", () => {
       screen.getByRole("link", { name: /Catering anfragen/ }),
     ).toHaveAttribute("href", "/catering");
     const image = screen.getByRole("img", {
-      name: "Dessert beim Catering von Culina",
+      name: "Gemeinsames Kochen bei Culina",
     });
     expect(image).toHaveAttribute(
       "src",
-      expect.stringContaining("kochkurs-dessert.webp"),
+      expect.stringContaining("kurse-hero.jpeg"),
     );
   });
 

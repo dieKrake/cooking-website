@@ -147,8 +147,8 @@ export const PLACEHOLDER_OFFER_CARDS: OfferCard[] = [
       "Frisch, regional und mit Liebe zum Genuss – hochwertiges Catering für Events, Firmenfeiern und besondere Anlässe.",
     ctaLabel: "Catering anfragen",
     ctaHref: "/catering",
-    image: "/images/kochkurs-dessert.webp",
-    imageAlt: "Dessert beim Catering von Culina",
+    image: "/images/kurse-hero.jpeg",
+    imageAlt: "Gemeinsames Kochen bei Culina",
   },
   {
     title: "Feinkost bester Qualität",
@@ -166,8 +166,8 @@ export const CATERING_PAGE = {
   description: "Catering in Aalen – Frisch, regional und mit Liebe zum Genuss",
   subtitle:
     "Kulinarisches Catering für Events, Firmenfeiern und besondere Anlässe",
-  heroImage: "/images/kochkurs-dessert.webp",
-  heroImageAlt: "Dessert beim Catering von Culina",
+  heroImage: "/images/kurse-hero.jpeg",
+  heroImageAlt: "Gemeinsames Kochen bei Culina",
   intro:
     "Mit unserem Catering bringen wir hochwertige, kreative und frisch zubereitete Küche direkt zu deinem Event. Ob Firmenfeier, Geburtstag, Business-Lunch oder private Veranstaltung – Culina bietet eine vielseitige Auswahl an Speisen, Snacks und Getränken für genussvolle Momente in besonderer Atmosphäre. Unsere Küche verbindet regionale Zutaten mit mediterranen Einflüssen, gutbürgerlichen Klassikern und modernen, kreativen Gerichten. Dabei legen wir besonderen Wert auf frische Produkte, hochwertige Qualität und eine abwechslungsreiche Auswahl für jeden Geschmack.",
   sectionTitle: "Unsere Küchenwelten",
