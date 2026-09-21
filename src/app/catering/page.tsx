@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function CateringPage() {
   return (
     <main>
-      <section className="relative overflow-hidden py-20 shadow-2xl sm:py-28">
+      <section className="relative flex min-h-96 items-center overflow-hidden py-16 shadow-2xl sm:min-h-110">
         <div className="absolute inset-0 z-0">
           <Image
             src={CATERING_PAGE.heroImage}
@@ -31,9 +31,9 @@ export default function CateringPage() {
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/45 to-transparent" />
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl text-white">
-            <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
               {CATERING_PAGE.title}
             </h1>
             <h2 className="mt-4 max-w-2xl text-xl font-medium text-white/90 sm:text-2xl">

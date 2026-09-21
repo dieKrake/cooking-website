@@ -14,7 +14,7 @@ export default function FeinkostPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden py-20 shadow-2xl sm:py-28">
+      <section className="relative flex min-h-96 items-center overflow-hidden py-16 shadow-2xl sm:min-h-110">
         <div className="absolute inset-0 z-0">
           <Image
             src={FEINKOST_PAGE.heroImage}
@@ -28,7 +28,7 @@ export default function FeinkostPage() {
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl text-white">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
               {FEINKOST_PAGE.title}

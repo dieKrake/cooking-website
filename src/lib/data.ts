@@ -47,8 +47,8 @@ export const AKTUELLE_KURSE_PAGE = {
   description: "Alle unseren aktuellen Kochkurse im Culina Aalen.",
   subtitle:
     "Von internationaler Küche bis hin zu besonderen Themenabenden – gemeinsam kochen, genießen und Neues entdecken.",
-  heroImage: "/images/kurse-hero.jpeg",
-  heroImageAlt: "Gemeinsames Kochen bei Culina",
+  heroImage: "/images/Kochkurs-essen.webp",
+  heroImageAlt: "Menschen beim gemeinsamen Kochen in Aalen",
   intro:
     "Entdecke unsere Kochkurse – von internationaler Küche bis hin zu besonderen Themenabenden.",
 };
