@@ -6,18 +6,37 @@ describe("OfferGrid", () => {
   it("renders the offer cards in the correct order", () => {
     render(<OfferGrid />);
     const cards = screen.getAllByRole("article");
-    expect(cards).toHaveLength(3);
+    expect(cards).toHaveLength(4);
     expect(
       within(cards[0]).getByRole("heading", { name: "Kochkurse in Aalen" }),
     ).toBeInTheDocument();
     expect(
-      within(cards[1]).getByRole("heading", { name: "Catering in Aalen" }),
+      within(cards[1]).getByRole("heading", {
+        name: "Eventlocation in Aalen",
+      }),
     ).toBeInTheDocument();
     expect(
-      within(cards[2]).getByRole("heading", {
+      within(cards[2]).getByRole("heading", { name: "Catering in Aalen" }),
+    ).toBeInTheDocument();
+    expect(
+      within(cards[3]).getByRole("heading", {
         name: "Feinkost bester Qualität",
       }),
     ).toBeInTheDocument();
+  });
+
+  it("renders the eventlocation card with its CTA and hero image", () => {
+    render(<OfferGrid />);
+    expect(
+      screen.getByRole("link", { name: /Location entdecken/ }),
+    ).toHaveAttribute("href", "/eventlocation");
+    const image = screen.getByRole("img", {
+      name: "Eventlocation von Culina in Aalen",
+    });
+    expect(image).toHaveAttribute(
+      "src",
+      expect.stringContaining("location-hero.jpeg"),
+    );
   });
 
   it("renders the catering card with its CTA and image", () => {
@@ -34,10 +53,10 @@ describe("OfferGrid", () => {
     );
   });
 
-  it("keeps the feinkost card linked to /feinkost on position three", () => {
+  it("keeps the feinkost card linked to /feinkost on the last position", () => {
     render(<OfferGrid />);
     const cards = screen.getAllByRole("article");
-    expect(within(cards[2]).getByText("03")).toBeInTheDocument();
+    expect(within(cards[3]).getByText("04")).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Feinkost entdecken/ }),
     ).toHaveAttribute("href", "/feinkost");

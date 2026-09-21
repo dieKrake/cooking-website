@@ -133,6 +133,15 @@ export const PLACEHOLDER_OFFER_CARDS: OfferCard[] = [
     imageAlt: "Menschen beim gemeinsamen Kochen in Aalen",
   },
   {
+    title: "Eventlocation in Aalen",
+    description:
+      "Modernes Kochstudio für Firmenfeiern, private Events und gemeinsame Genussmomente – Platz für bis zu 50 Personen.",
+    ctaLabel: "Location entdecken",
+    ctaHref: "/eventlocation",
+    image: "/images/location-hero.jpeg",
+    imageAlt: "Eventlocation von Culina in Aalen",
+  },
+  {
     title: "Catering in Aalen",
     description:
       "Frisch, regional und mit Liebe zum Genuss – hochwertiges Catering für Events, Firmenfeiern und besondere Anlässe.",
