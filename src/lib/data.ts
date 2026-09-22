@@ -8,39 +8,12 @@ import {
   UtensilsCrossed,
 } from "lucide-react";
 import type {
-  Course,
   TeamMember,
   Benefit,
   OfferCard,
   GalleryImage,
   LocationFeature,
 } from "@/types";
-
-export const COURSES: Course[] = [
-  {
-    slug: "pasta",
-    title: "Pasta Kurs + Aperol",
-    shortDescription:
-      "Pasta selbst zubereiten. Aperol genießen. Gemeinsam kochen.",
-    longDescription:
-      "Tauche ein in die Welt der italienischen Pasta – von Hand geknetet, ausgerollt und mit Liebe geformt. Gemeinsam entdecken wir die Kunst der frischen Teigwaren und verfeinern sie mit aromatischen Saucen, die nach echtem italienischem Familienrezept schmecken. Bei einem gekühlten Aperol Spritz in geselliger Runde erlebst du, wie viel Freude gutes Essen und ehrliche Gastfreundschaft in Kombination erzeugen können – ganz im Sinne von Culina.",
-    date: "2026-09-05",
-    time: "18:00 Uhr",
-    price: 65,
-    image: "/images/Tomate-Culina.webp",
-    instructor: "Fabry",
-    hasFixedDate: true,
-    category: "Italienisch",
-    highlights: [
-      "Frische Pasta selbst herstellen",
-      "Hochwertige, italienische Zutaten",
-      "Aperol Spritz inklusive",
-      "Rezepte zum Mitnehmen",
-      "Gemütliche, familiäre Atmosphäre",
-      "Kleine Gruppe für persönliche Betreuung",
-    ],
-  },
-];
 
 export const AKTUELLE_KURSE_PAGE = {
   title: "Aktuelle Kurse",

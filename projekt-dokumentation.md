@@ -386,10 +386,27 @@ jobs:
 | `NEXT_PUBLIC_SITE_URL`      | Dev / Prod   | Basis-URL der Website                                                 |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | Dev / Prod   | Kontakt-E-Mail                                                        |
 | `VERCEL_TOKEN`              | CI/CD Secret | Vercel Deploy-Token                                                   |
-| `ADMIN_PASSWORD`            | Dev / Prod   | Passwort für den Admin-Bereich unter `/admin/event`                   |
+| `ADMIN_PASSWORD`            | Dev / Prod   | Passwort für den Admin-Bereich unter `/admin`                         |
 | `GITHUB_PAT`                | Dev / Prod   | GitHub Personal Access Token mit Schreibrechten (Contents Read/Write) |
 | `GITHUB_REPO`               | Dev / Prod   | GitHub Repository Name im Format `username/repo-name`                 |
 | `GITHUB_BRANCH`             | Dev / Prod   | Ziel-Branch für Commits (z.B. `develop` oder `main`)                  |
+
+### Admin-Bereich (`/admin`)
+
+Der Admin-Bereich ist ein Dashboard mit zwei Tabs und einem gemeinsamen Passwort-Login
+(`ADMIN_PASSWORD`, HMAC-signiertes Session-Cookie, 24 h gültig). Die alte URL
+`/admin/event` leitet auf `/admin` weiter.
+
+- **Tab "Event":** verwaltet das Highlight-Event der Startseite (`src/lib/latest-event.json`).
+- **Tab "Kurse":** verwaltet die Kochkurse (`src/lib/courses.json`) – Kurse anlegen,
+  bearbeiten und löschen. Der Slug wird bei Neuanlage automatisch aus dem Titel generiert.
+
+Beide Tabs nutzen denselben Mechanismus: Änderungen (JSON + hochgeladene Bilder, max. 4 MB)
+werden per GitHub Contents API auf `GITHUB_BRANCH` committet. Bild-Commits erhalten
+`[skip ci]`; erst der abschließende JSON-Commit triggert den Vercel-Build (~2–3 Minuten).
+Vor jedem Schreiben wird `courses.json` frisch von GitHub geladen, damit Änderungen seit
+dem letzten Deployment nicht verloren gehen. Ersetzte Bilder unter `/images/events/` bzw.
+`/images/courses/` werden automatisch aus dem Repo gelöscht.
 
 ---
 

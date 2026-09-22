@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
+    serverActions: {
+      // Admin uploads (event/course images) are allowed up to 4 MB
+      bodySizeLimit: "5mb",
+    },
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",

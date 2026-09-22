@@ -4,7 +4,7 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { SectionHeading } from "@/components/atoms/section-heading";
 import { CourseCard } from "@/components/molecules/course-card";
-import { COURSES } from "@/lib/data";
+import { COURSES } from "@/lib/courses";
 
 export function CourseSlider() {
   const upcomingCourses = COURSES.filter((course) => course.hasFixedDate);
@@ -30,6 +30,8 @@ export function CourseSlider() {
       window.removeEventListener("resize", checkScroll);
     };
   }, [checkScroll]);
+
+  if (upcomingCourses.length === 0) return null;
 
   return (
     <section className="px-4 py-16 sm:py-20 lg:px-4">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { COURSES, AKTUELLE_KURSE_PAGE } from "@/lib/data";
+import { AKTUELLE_KURSE_PAGE } from "@/lib/data";
+import { COURSES } from "@/lib/courses";
 import { CoursesGrid } from "@/components/organisms/courses-grid";
 
 export const metadata: Metadata = {
@@ -42,7 +43,13 @@ export default function AktuelleKursePage() {
         <p className="text-foreground/60 mb-10 max-w-2xl text-lg">
           {AKTUELLE_KURSE_PAGE.intro}
         </p>
-        <CoursesGrid courses={COURSES} layout="wide" />
+        {COURSES.length > 0 ? (
+          <CoursesGrid courses={COURSES} layout="wide" />
+        ) : (
+          <p className="text-foreground/60 text-lg">
+            Aktuell sind keine Kurse verfügbar. Schau bald wieder vorbei!
+          </p>
+        )}
       </div>
     </main>
   );

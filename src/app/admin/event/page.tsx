@@ -1,26 +1,7 @@
-import { checkAuth } from "./actions";
-import { LoginForm } from "./login-form";
-import { EventForm } from "./event-form";
-import eventData from "@/lib/latest-event.json";
+import { redirect } from "next/navigation";
 
-export const metadata = {
-  title: "Admin-Bereich | Event bearbeiten",
-  description: "Verwalte das aktuelle Highlight-Event auf der Startseite.",
-};
-
-// Force dynamic rendering since we are checking cookies on the server
-export const dynamic = "force-dynamic";
-
-export default async function AdminEventPage() {
-  const isAuthenticated = await checkAuth();
-
-  return (
-    <main className="min-h-screen bg-background py-10">
-      {isAuthenticated ? (
-        <EventForm initialData={eventData} />
-      ) : (
-        <LoginForm />
-      )}
-    </main>
-  );
+// The admin area now lives at /admin (dashboard with tabs).
+// Keep this route as a redirect for existing bookmarks.
+export default function AdminEventPage() {
+  redirect("/admin");
 }

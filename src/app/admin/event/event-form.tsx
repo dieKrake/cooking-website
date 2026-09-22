@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useActionState, startTransition } from "react";
+import { useState, useActionState } from "react";
 import { format, parse } from "date-fns";
 import { de } from "date-fns/locale";
-import { updateEvent, logout } from "./actions";
+import { updateEvent } from "./actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,7 +17,6 @@ import {
   Calendar as CalendarIcon,
   Image as ImageIcon,
   CheckCircle2,
-  LogOut,
   Loader2,
   ArrowLeft,
 } from "lucide-react";
@@ -87,12 +86,6 @@ export function EventForm({ initialData }: EventFormProps) {
     }
   };
 
-  const handleLogout = () => {
-    startTransition(() => {
-      logout();
-    });
-  };
-
   if (isSuccess) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 lg:px-8">
@@ -132,24 +125,14 @@ export function EventForm({ initialData }: EventFormProps) {
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="border-border flex flex-wrap items-center justify-between gap-4 border-b pb-6">
-        <div>
-          <h1 className="text-foreground text-3xl font-bold tracking-tight">
-            Event bearbeiten
-          </h1>
-          <p className="text-foreground/60 mt-1 text-sm">
-            Ändere hier die Details für das Highlight-Event auf der Startseite.
-          </p>
-        </div>
-        <Button
-          onClick={handleLogout}
-          variant="outline"
-          className="border-destructive/20 text-destructive hover:bg-destructive/10 hover:text-destructive cursor-pointer gap-2"
-        >
-          <LogOut className="h-4 w-4" />
-          Abmelden
-        </Button>
+    <div className="py-6">
+      <div>
+        <h2 className="text-foreground text-xl font-bold tracking-tight">
+          Event bearbeiten
+        </h2>
+        <p className="text-foreground/60 mt-1 text-sm">
+          Ändere hier die Details für das Highlight-Event auf der Startseite.
+        </p>
       </div>
 
       <form action={formAction} className="mt-8 grid gap-8 md:grid-cols-3">

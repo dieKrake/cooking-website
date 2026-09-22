@@ -1,18 +1,20 @@
 "use client";
 
 import { useActionState } from "react";
-import { login } from "./actions";
+import { useRouter } from "next/navigation";
+import { login } from "./lib/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Lock } from "lucide-react";
 
 export function LoginForm() {
+  const router = useRouter();
   const [state, formAction, isPending] = useActionState(
     async (_prevState: unknown, formData: FormData) => {
       const result = await login(formData);
       if (result?.success) {
-        // Reload page to reflect authenticated state
-        window.location.reload();
+        // Re-render the server components to reflect authenticated state
+        router.refresh();
         return { success: true };
       }
       return { error: result?.error || "Ein Fehler ist aufgetreten." };
@@ -31,7 +33,7 @@ export function LoginForm() {
             Admin-Bereich
           </h2>
           <p className="text-foreground/60 mt-2 text-sm">
-            Bitte gib das Passwort ein, um das Event zu bearbeiten.
+            Bitte gib das Passwort ein, um Events und Kurse zu verwalten.
           </p>
         </div>
 
