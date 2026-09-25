@@ -2,7 +2,7 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
 const RECIPIENT = "fabry@culina-aalen.de";
-const FROM = "Culina Kontaktformular <onboarding@resend.dev>";
+const FROM = "Culina Kontaktformular <kontakt@culina-aalen.de>";
 
 function escapeHtml(text: string | undefined): string {
   if (!text) return "";

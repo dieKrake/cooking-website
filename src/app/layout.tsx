@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/organisms/navbar";
 import { Footer } from "@/components/organisms/footer";
 import { ScrollToTop } from "@/components/atoms/scroll-to-top";
@@ -41,6 +42,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
