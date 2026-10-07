@@ -37,6 +37,10 @@ export async function getFileSha(
       const data = await response.json();
       return data.sha;
     }
+    console.error(
+      `Failed to fetch SHA for ${path} (${repo}@${branch}): ${response.status} ${response.statusText}`,
+      await response.text(),
+    );
     return null;
   } catch (error) {
     console.error(`Error fetching SHA for ${path}:`, error);
@@ -64,10 +68,19 @@ export async function getFileContent(
       },
     );
 
-    if (!response.ok) return null;
+    if (!response.ok) {
+      console.error(
+        `Failed to fetch content for ${path} (${repo}@${branch}): ${response.status} ${response.statusText}`,
+        await response.text(),
+      );
+      return null;
+    }
 
     const data = await response.json();
-    if (typeof data.content !== "string") return null;
+    if (typeof data.content !== "string") {
+      console.error(`Unexpected response for ${path}: no file content`, data);
+      return null;
+    }
     return Buffer.from(data.content, "base64").toString("utf-8");
   } catch (error) {
     console.error(`Error fetching content for ${path}:`, error);
