@@ -32,5 +32,25 @@
     "instructor": null,
     "hasFixedDate": true,
     "category": "Vegetarisch"
+  },
+  {
+    "slug": "brunch-mit-live-musik",
+    "title": "Brunch mit LIVE-Musik",
+    "shortDescription": "Sonntagsbrunch bei Culina\r\n\r\nFrisches Brunchbuffet, Eierspeisen, Pancakes, Live-Musik & Spielecke für die Kleinen.",
+    "longDescription": "Sonntagsbrunch bei Culina\r\n\r\nFrisches Brunchbuffet, Eierspeisen, Pancakes, Live-Musik & Spielecke für die Kleinen.\r\n\r\n25.10. | 29.11. | 13.12.\r\njeweils ab 10 Uhr\r\n\r\nErwachsene: 40 €\r\ninkl. warme Getränke & Sektempfang\r\n\r\nKinder 3–6 Jahre: 5 €\r\nKinder 6–12 Jahre: 10 €\r\nGetränke für Kinder inklusive.\r\n\r\nPlätze jetzt reservieren.",
+    "date": "2026-10-25",
+    "time": "10:00",
+    "price": 40,
+    "image": "/images/courses/brunch-mit-live-musik-1791896489812.png",
+    "instructor": "Fabry",
+    "hasFixedDate": true,
+    "category": "Brunch",
+    "highlights": [
+      "Pancake Station",
+      "frisches Brunchbuffet",
+      "LIVE-Musik",
+      "inkl. warm Getränke",
+      "Sektempfang"
+    ]
   }
 ]
