@@ -402,7 +402,14 @@ Der Admin-Bereich ist ein Dashboard mit zwei Tabs und einem gemeinsamen Passwort
   bearbeiten und löschen. Der Slug wird bei Neuanlage automatisch aus dem Titel generiert.
 
 Beide Tabs nutzen denselben Mechanismus: Änderungen (JSON + hochgeladene Bilder, max. 4 MB)
-werden per GitHub Contents API auf `GITHUB_BRANCH` committet. Bild-Commits erhalten
+werden per GitHub Contents API auf `GITHUB_BRANCH` committet.
+
+**Erlaubte Bildformate:** nur JPG, PNG und WebP (`src/app/admin/lib/images.ts`). Die Prüfung
+erfolgt client- und serverseitig anhand von Dateiendung und MIME-Typ. HEIC/HEIF (iPhone-Standard)
+wird bewusst abgelehnt, da Browser und der Next.js Image Optimizer (sharp auf Vercel) das Format
+nicht dekodieren können – solche Bilder würden auf der Live-Seite nicht angezeigt. Zusätzlich
+prüft `src/lib/content-data.test.ts` in der CI, dass alle Bildpfade in `courses.json` und
+`latest-event.json` auf existierende Dateien mit erlaubter Endung zeigen. Bild-Commits erhalten
 `[skip ci]`; erst der abschließende JSON-Commit triggert den Vercel-Build (~2–3 Minuten).
 Vor jedem Schreiben wird `courses.json` frisch von GitHub geladen, damit Änderungen seit
 dem letzten Deployment nicht verloren gehen. Ersetzte Bilder unter `/images/events/` bzw.

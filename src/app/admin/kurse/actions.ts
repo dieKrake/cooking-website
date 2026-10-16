@@ -8,6 +8,7 @@ import {
   pushToGithub,
   deleteFromGithub,
 } from "../lib/github";
+import { validateImageFile } from "../lib/images";
 import { slugify, uniqueSlug, upsertCourse, removeCourse } from "./helpers";
 
 const COURSES_JSON_PATH = "src/lib/courses.json";
@@ -82,11 +83,12 @@ async function uploadCourseImage(
   slug: string,
   config: GithubConfig,
 ): Promise<{ imagePath: string } | { error: string }> {
-  if (imageFile.size > 4 * 1024 * 1024) {
-    return { error: "Das Bild darf maximal 4 MB groß sein." };
+  const validation = validateImageFile(imageFile);
+  if (!validation.ok) {
+    return { error: validation.error };
   }
 
-  const extension = imageFile.name.split(".").pop() || "webp";
+  const { extension } = validation;
   const timestamp = Date.now();
   const imagePath = `/images/courses/${slug}-${timestamp}.${extension}`;
 
