@@ -52,5 +52,26 @@
       "inkl. warm Getränke",
       "Sektempfang"
     ]
+  },
+  {
+    "slug": "pasta-kurs",
+    "title": "Pasta Kurs",
+    "shortDescription": "Pasta selbst zubereiten. Aperol genießen. Gemeinsam kochen.",
+    "longDescription": "Tauche ein in die Welt der italienischen Pasta – von Hand geknetet, ausgerollt und mit Liebe geformt. Gemeinsam entdecken wir die Kunst der frischen Teigwaren und verfeinern sie mit aromatischen Saucen, die nach echtem italienischem Familienrezept schmecken. Bei einem gekühlten Aperol Spritz in geselliger Runde erlebst du, wie viel Freude gutes Essen und ehrliche Gastfreundschaft in Kombination erzeugen können – ganz im Sinne von Culina.",
+    "date": "2026-11-18",
+    "time": "18:00",
+    "price": 65,
+    "image": "/images/courses/pasta-kurs-1792140106556.webp",
+    "instructor": "Fabry",
+    "hasFixedDate": true,
+    "category": "Italienisch",
+    "highlights": [
+      "Frische Pasta selbst herstellen",
+      "Aperol Spritz inklusive",
+      "Rezepte zum Mitnehmen",
+      "Gemütliche, familiäre Atmosphäre",
+      "Hochwertige, italienische Zutaten",
+      "Kleine Gruppe für persönliche Betreuung"
+    ]
   }
 ]
