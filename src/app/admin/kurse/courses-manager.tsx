@@ -4,6 +4,11 @@ import { useState, useActionState, useTransition } from "react";
 import { format, parse } from "date-fns";
 import Image from "next/image";
 import { saveCourse, deleteCourse } from "./actions";
+import {
+  validateImageFile,
+  ACCEPTED_IMAGE_TYPES,
+  IMAGE_FORMAT_HINT,
+} from "../lib/images";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -325,8 +330,9 @@ function CourseForm({
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      if (file.size > 4 * 1024 * 1024) {
-        alert("Das Bild darf maximal 4 MB groß sein.");
+      const validation = validateImageFile(file);
+      if (!validation.ok) {
+        alert(validation.error);
         e.target.value = "";
         return;
       }
@@ -666,13 +672,13 @@ function CourseForm({
                 id="image"
                 name="image"
                 type="file"
-                accept="image/*"
+                accept={ACCEPTED_IMAGE_TYPES}
                 onChange={handleImageChange}
                 className="hidden"
                 disabled={isPending}
               />
               <p className="text-foreground/40 text-center text-xs">
-                Maximal 4 MB (WebP, JPG, PNG empfohlen)
+                {IMAGE_FORMAT_HINT}
               </p>
             </div>
           </div>

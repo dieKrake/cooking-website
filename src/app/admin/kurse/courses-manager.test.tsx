@@ -53,9 +53,7 @@ describe("CoursesManager", () => {
 
   it("shows an empty state without courses", () => {
     render(<CoursesManager initialCourses={[]} />);
-    expect(
-      screen.getByText(/noch keine Kurse vorhanden/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/noch keine Kurse vorhanden/i)).toBeInTheDocument();
   });
 
   it("opens the form for a new course", async () => {
@@ -97,30 +95,57 @@ describe("CoursesManager", () => {
     deleteCourseMock.mockResolvedValue({ success: true });
     render(<CoursesManager initialCourses={mockCourses} />);
     await userEvent.click(screen.getByRole("button", { name: /^Löschen$/i }));
-    await userEvent.click(
-      screen.getByRole("button", { name: /Ja, löschen/i }),
-    );
+    await userEvent.click(screen.getByRole("button", { name: /Ja, löschen/i }));
     expect(deleteCourseMock).toHaveBeenCalledWith("pasta");
     expect(await screen.findByText("Kurs gespeichert!")).toBeInTheDocument();
-    expect(
-      screen.getByText(/wurde erfolgreich gelöscht/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/wurde erfolgreich gelöscht/i)).toBeInTheDocument();
     // Back to the list: course is gone
     await userEvent.click(
       screen.getByRole("button", { name: /Zurück zur Kursübersicht/i }),
     );
-    expect(
-      screen.getByText(/noch keine Kurse vorhanden/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/noch keine Kurse vorhanden/i)).toBeInTheDocument();
+  });
+
+  it("rejects HEIC images in the file input and keeps the current preview", async () => {
+    const alertSpy = vi.spyOn(window, "alert").mockImplementation(() => {});
+    vi.stubGlobal("URL", {
+      ...URL,
+      createObjectURL: vi.fn(() => "blob:preview"),
+    });
+    render(<CoursesManager initialCourses={mockCourses} />);
+    await userEvent.click(screen.getByRole("button", { name: /Bearbeiten/i }));
+
+    const input = screen.getByLabelText(/Bild auswählen/i) as HTMLInputElement;
+    expect(input).toHaveAttribute("accept", "image/jpeg,image/png,image/webp");
+
+    const heic = new File(["x"], "IMG_0001.HEIC", { type: "image/heic" });
+    await userEvent.upload(input, heic, { applyAccept: false });
+
+    expect(alertSpy).toHaveBeenCalledWith(
+      expect.stringMatching(/Bildformat wird nicht unterstützt/),
+    );
+    expect(input.value).toBe("");
+    expect(screen.getByAltText("Kurs Vorschau")).toHaveAttribute(
+      "src",
+      "/images/Tomate-Culina.webp",
+    );
+
+    const jpg = new File(["x"], "photo.jpg", { type: "image/jpeg" });
+    await userEvent.upload(input, jpg);
+    expect(screen.getByAltText("Kurs Vorschau")).toHaveAttribute(
+      "src",
+      "blob:preview",
+    );
+
+    alertSpy.mockRestore();
+    vi.unstubAllGlobals();
   });
 
   it("shows an error message when deleting fails", async () => {
     deleteCourseMock.mockResolvedValue({ error: "GitHub-Fehler" });
     render(<CoursesManager initialCourses={mockCourses} />);
     await userEvent.click(screen.getByRole("button", { name: /^Löschen$/i }));
-    await userEvent.click(
-      screen.getByRole("button", { name: /Ja, löschen/i }),
-    );
+    await userEvent.click(screen.getByRole("button", { name: /Ja, löschen/i }));
     expect(await screen.findByText("GitHub-Fehler")).toBeInTheDocument();
     expect(screen.getByText("Pasta Kurs + Aperol")).toBeInTheDocument();
   });

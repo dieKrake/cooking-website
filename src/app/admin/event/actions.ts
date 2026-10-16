@@ -2,6 +2,7 @@
 
 import { checkAuth } from "../lib/auth";
 import { getEnvConfig, pushToGithub, deleteFromGithub } from "../lib/github";
+import { validateImageFile } from "../lib/images";
 
 const DEFAULT_IMAGE_PATH = "/images/latest-event.webp";
 
@@ -41,13 +42,13 @@ export async function updateEvent(_prevState: unknown, formData: FormData) {
 
     // If a new image was uploaded, commit it first
     if (imageFile && imageFile.size > 0) {
-      // Validate file size (max 4MB)
-      if (imageFile.size > 4 * 1024 * 1024) {
-        return { error: "Das Bild darf maximal 4 MB groß sein." };
+      // Validate size and format (only JPG/PNG/WebP are browser-renderable)
+      const validation = validateImageFile(imageFile);
+      if (!validation.ok) {
+        return { error: validation.error };
       }
 
-      // Convert to webp if possible, or preserve original extension
-      const extension = imageFile.name.split(".").pop() || "webp";
+      const { extension } = validation;
       const timestamp = Date.now();
       const targetImagePath = `public/images/events/latest-event-${timestamp}.${extension}`;
       imagePath = `/images/events/latest-event-${timestamp}.${extension}`;
