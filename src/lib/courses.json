@@ -23,15 +23,18 @@
   {
     "slug": "vegetarischer-kochkurs",
     "title": "Vegetarischer Kochkurs",
-    "shortDescription": "vegetarisches 3-Gang-Menü\r\n65€ pro Person mit Softgetränken\r\n90€ pro Person all you can drink",
+    "shortDescription": "Gemüse kann mehr, als du denkst! Wir kochen zusammen ein vegetarisches 3-Gänge-Menü, das garantiert jeden begeistert, auch die Fleischfans. 75 € p. P. inkl. Softdrinks.",
     "longDescription": "Entdecke, wie vielseitig, kreativ und köstlich vegetarische Küche sein kann! In meinem vegetarischen Kochkurs zaubern wir gemeinsam ein abwechslungsreiches 3-Gänge-Menü, das nicht nur Vegetarier begeistert.\r\nVon der Vorspeise über den Hauptgang bis zum Dessert lernst du verschiedene Zutaten, Zubereitungstechniken und Tricks kennen, die du auch zu Hause ganz einfach umsetzen kannst. Dabei steht nicht nur das Kochen im Mittelpunkt – wir nehmen uns Zeit, gemeinsam zu genießen, uns auszutauschen und einen schönen kulinarischen Abend zu verbringen.\r\nFreu dich auf:\r\nein kreatives vegetarisches 3-Gänge-Menü\r\npraktische Tipps und Tricks rund ums vegetarische Kochen\r\nfrische, saisonale Zutaten\r\ngemeinsames Kochen in entspannter Atmosphäre\r\nund natürlich das anschließende Genießen unseres selbst gekochten Menüs\r\nEgal, ob du bereits gerne kochst oder einfach Lust hast, etwas Neues auszuprobieren: Hier geht es um gutes Essen, gemeinsames Erleben und jede Menge Inspiration für deine eigene Küche.\r\nSchürze an, Ärmel hoch und los geht’s!",
-    "date": "2026-10-20",
+    "date": "2027-01-30",
     "time": "18:00",
-    "price": 65,
+    "price": 75,
     "image": "/images/courses/vegetarischer-kochkurs-1790262318773.png",
-    "instructor": null,
+    "instructor": "Fabry",
     "hasFixedDate": true,
-    "category": "Vegetarisch"
+    "category": "Vegetarisch",
+    "highlights": [
+      "Vegetarisches 3-Gänge-Menü gemeinsam kochen & genießen"
+    ]
   },
   {
     "slug": "brunch-mit-live-musik",
