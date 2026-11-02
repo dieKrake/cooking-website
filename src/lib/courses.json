@@ -73,5 +73,25 @@
       "Hochwertige, italienische Zutaten",
       "Kleine Gruppe für persönliche Betreuung"
     ]
+  },
+  {
+    "slug": "bauchgefuehl-darmfreundlich-kochen",
+    "title": "Bauchgefühl-Darmfreundlich Kochen",
+    "shortDescription": "Zum ersten Mal bei CULINA: ein darmfreundlicher, glutenfreier Kochabend mit 3 Gängen. Isst sich richtig gut und fühlt sich danach auch gut an.",
+    "longDescription": "Was wäre, wenn Essen nicht nur richtig gut schmeckt, sondern sich danach auch richtig gut anfühlt? Kein Völlegefühl, kein „puh, zu viel“. Einfach satt, zufrieden und leicht.",
+    "date": "2026-11-17",
+    "time": "18:00",
+    "price": 89,
+    "image": "/images/courses/bauchgefuehl-darmfreundlich-kochen-1793650085022.png",
+    "instructor": "Fabry Und Miriam",
+    "hasFixedDate": true,
+    "category": "Gesund & Glutenfrei",
+    "highlights": [
+      "Komplett Glutenfrei & Darmfreundlich",
+      "3-Gänge-Menü gemeinsam kochen & genießen",
+      "Sektempfang & Oliven-Snack",
+      "Alkoholfreie Getränke & Kaffee inklusive",
+      "Alltagstipps für eine bauchfreundliche Küche"
+    ]
   }
 ]
