@@ -99,5 +99,24 @@
       "Alkoholfreie Getränke & Kaffee inklusive",
       "Alltagstipps für eine bauchfreundliche Küche"
     ]
+  },
+  {
+    "slug": "crafted",
+    "title": "CRAFTED",
+    "shortDescription": "Entdecke die Kunst hinter einem erstklassigen Cocktail.",
+    "longDescription": "Cocktail-Masterclass mit Tim bei uns in der Kochschule. Ihr lernt klassische Cocktails mit weihnachtlichem Twist und stellt euch selbst hinter die Bar.",
+    "date": "2026-12-05",
+    "time": "13:30",
+    "price": 50,
+    "image": "/images/courses/crafted-1795549381665.jpg",
+    "instructor": "Tim",
+    "hasFixedDate": true,
+    "category": "COKTAIL-Kurs",
+    "highlights": [
+      "Selbst hinter der Bar stehen und mixen",
+      "Tipps und Tricks vom Profi Tim",
+      "Gemütliche Weihnachtsstimmung in kleiner Runde",
+      "Alle Zutaten und Drinks im Preis inklusive"
+    ]
   }
 ]
